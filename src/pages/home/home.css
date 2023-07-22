@@ -1,0 +1,32 @@
+.home{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    border: 2px solid;
+    height: 100vh;
+}
+
+.home__left, .home__right, .home__main{
+    border: 2px solid;
+}
+
+.home__left{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home__links{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.home__main{
+    text-align:center;
+}

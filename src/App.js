@@ -1,4 +1,7 @@
 import './App.css';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
+import Home from './pages/home/Home';
 
 
 /*
@@ -21,11 +24,11 @@ import './App.css';
     
     :SIDE-RIGHT
       -Trending / Latest
-      -Suggestions
-
+      --
   ::FOOTER
     :COPYRIGHT
     : OTHER INFO
+
 */
 
 
@@ -33,8 +36,10 @@ import './App.css';
 function App() {
   return (
     <div className='app'>
-      <h1>social media app</h1>
-    </div>
+      <Header />
+      <Home />
+      <Footer />
+  </div>
     );
 }
 
