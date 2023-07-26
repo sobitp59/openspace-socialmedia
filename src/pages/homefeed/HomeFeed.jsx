@@ -1,10 +1,10 @@
 import React from 'react'
-import Post from '../../components/post/Post'
+import CreatePost from '../../components/createpost/CreatePost'
 
 const HomeFeed = () => {
   return (
     <div>
-        <Post />
+        <CreatePost />
         <ul>
             <li>post 1</li>
             <li>post 2</li>
