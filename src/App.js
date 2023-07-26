@@ -2,12 +2,14 @@ import { Route, Routes } from "react-router-dom";
 import './App.css';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
+import RequiresAuth from "./components/requiresauth/RequiresAuth";
 import Bookmark from './pages/bookmark/Bookmark';
 import Explore from './pages/explore/Explore';
 import Home from './pages/home/Home';
 import HomeFeed from "./pages/homefeed/HomeFeed";
 import Liked from './pages/likedposts/Liked';
 import Login from './pages/login/Login';
+import Signup from "./pages/signup/Signup";
 
 /*
   ::HEADER
@@ -29,14 +31,14 @@ import Login from './pages/login/Login';
     
     :SIDE-RIGHT
       -Trending / Latest
-      --
+      -suggestions
   ::FOOTER
     :COPYRIGHT
     : OTHER INFO
 
 */
 
-const login = false;
+const login = true;
 
 
 function App() {
@@ -45,18 +47,23 @@ function App() {
 
 
 
-      <Header />
-      {/* {login ? <Home/> : <Login />} */}
+      {login && <Header />}
       <Routes>
-        <Route path='/' element={<Home />}>
-          <Route path='/' element={<HomeFeed />}/>
+
+        {/* Nested Route */}
+        <Route path='/' element={ <RequiresAuth isLoggedIn={login} children={<Home />} /> }>
+          <Route index element={<HomeFeed />}/>
           <Route path='/explore' element={<Explore />}/>
           <Route path='/bookmarks' element={<Bookmark />}/>
           <Route path='/likedposts' element={<Liked />}/>
         </Route>
+
+        {/* Auth Route */}
+        <Route path='/login' element={<Login />}/>
+        <Route path='/signup' element={<Signup />}/>
+
       </Routes>
-      {/* <Home /> */}
-      <Footer />
+      {login && <Footer />}
   </div>
     );
 }
