@@ -1,8 +1,13 @@
+import { Route, Routes } from "react-router-dom";
 import './App.css';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
+import Bookmark from './pages/bookmark/Bookmark';
+import Explore from './pages/explore/Explore';
 import Home from './pages/home/Home';
-
+import HomeFeed from "./pages/homefeed/HomeFeed";
+import Liked from './pages/likedposts/Liked';
+import Login from './pages/login/Login';
 
 /*
   ::HEADER
@@ -31,13 +36,26 @@ import Home from './pages/home/Home';
 
 */
 
+const login = false;
 
 
 function App() {
   return (
     <div className='app'>
+
+
+
       <Header />
-      <Home />
+      {/* {login ? <Home/> : <Login />} */}
+      <Routes>
+        <Route path='/' element={<Home />}>
+          <Route path='/' element={<HomeFeed />}/>
+          <Route path='/explore' element={<Explore />}/>
+          <Route path='/bookmarks' element={<Bookmark />}/>
+          <Route path='/likedposts' element={<Liked />}/>
+        </Route>
+      </Routes>
+      {/* <Home /> */}
       <Footer />
   </div>
     );
