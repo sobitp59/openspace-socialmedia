@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 const RequiresAuth = ({children, isLoggedIn}) => {
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if(!isLoggedIn){
+            navigate('/login')
+        }
+    }, [navigate, isLoggedIn])
+
     return (
     <div>
-        {isLoggedIn ? children : navigate('/login')}
+        {isLoggedIn && children}
     </div>
   )
 }

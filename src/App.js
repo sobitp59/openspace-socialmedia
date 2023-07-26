@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import RequiresAuth from "./components/requiresauth/RequiresAuth";
+import { useAuth } from "./context/AuthContext";
 import Bookmark from './pages/bookmark/Bookmark';
 import Explore from './pages/explore/Explore';
 import Home from './pages/home/Home';
@@ -38,24 +39,25 @@ import Signup from "./pages/signup/Signup";
 
 */
 
-const login = true;
 
 
 function App() {
+  const {isLoggedIn} = useAuth();
+
   return (
     <div className='app'>
 
 
 
-      {login && <Header />}
+      {isLoggedIn && <Header />}
       <Routes>
 
         {/* Nested Route */}
-        <Route path='/' element={ <RequiresAuth isLoggedIn={login} children={<Home />} /> }>
+        <Route path='/' element={ <RequiresAuth isLoggedIn={isLoggedIn} children={<Home />} /> }>
           <Route index element={<HomeFeed />}/>
-          <Route path='/explore' element={<Explore />}/>
-          <Route path='/bookmarks' element={<Bookmark />}/>
-          <Route path='/likedposts' element={<Liked />}/>
+          <Route path='/explore' element={  <RequiresAuth isLoggedIn={isLoggedIn} children={<Explore />} /> }/>
+          <Route path='/bookmarks' element={<RequiresAuth isLoggedIn={isLoggedIn} children={<Bookmark />} />}/>
+          <Route path='/likedposts' element={<RequiresAuth isLoggedIn={isLoggedIn} children={<Liked />} />}/>
         </Route>
 
         {/* Auth Route */}
@@ -63,7 +65,7 @@ function App() {
         <Route path='/signup' element={<Signup />}/>
 
       </Routes>
-      {login && <Footer />}
+      {isLoggedIn && <Footer />}
   </div>
     );
 }
