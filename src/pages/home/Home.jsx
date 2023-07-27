@@ -1,12 +1,16 @@
 import React from 'react';
 import { useLocation } from "react-router";
 import { NavLink, Outlet } from "react-router-dom";
+import User from '../../components/user/User';
+import { useData } from '../../context/DataContext';
 import './home.css';
 
 const Home = () => {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
 
+    const {users} = useData();
+    console.log(users)
 
   return (
     <div className='home'>
@@ -37,6 +41,17 @@ const Home = () => {
 
             <section>
                 <p>suggestions for you</p>
+                <ul>
+                    {users?.map((user) => (
+                        <User 
+                            key={user?._id} 
+                            firstname={user?.firstName}
+                            lastname={user?.lastName}
+                            avatar={user?.avatarUrl}
+                            username={user?.username}
+                        />
+                    ))}
+                </ul>
             </section>
         </aside>
     </div>

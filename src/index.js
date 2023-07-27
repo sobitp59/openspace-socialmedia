@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { makeServer } from './server';
 
 import { AuthContextProvider } from './context/AuthContext';
+import { DataContextProvider } from './context/DataContext';
 
 // Call make Server
 makeServer()
@@ -17,7 +18,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <AuthContextProvider>
-        <App />
+        <DataContextProvider>
+          <App />
+        </DataContextProvider>
       </AuthContextProvider>
     </Router>
   </React.StrictMode>
