@@ -10,12 +10,13 @@ const LoginForm = () => {
   
   console.log(loginData)
 
+  document.title = "login | openspace"
 
   return (
     <form className='loginForm' onSubmit={(event) => userLogin(event, loginData?.username, loginData?.password)}>
       
       <label className='loginForm__label'>
-        email
+        username
         <input 
           value={loginData?.username}
           type="text"

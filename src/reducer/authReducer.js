@@ -1,6 +1,7 @@
 
 export const initialState = {
     isLoggedIn : false,
+    
     loginData : {
         username : "",
         password : ""
@@ -12,11 +13,11 @@ export const initialState = {
     },
   
     signupData : {
-        firstname : "",
-        lastname : "",
+        firstName : "",
+        lastName : "",
         email : "",
+        username : "",
         password : "",
-        confirmpassword : ""
     }
 }
 

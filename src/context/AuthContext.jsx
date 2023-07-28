@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import { initialState, userAuthReducer } from "../reducer/authReducer";
-import { userLoginService } from "../services/authservice";
+import { userLoginService, userSignupService } from "../services/authservice";
 
 const AuthContext = createContext();
 
@@ -33,7 +33,7 @@ export const AuthContextProvider = ({children}) => {
     }
 
 
-    const setGuestLoginData = async () => {
+    const setGuestLoginData = () => {
         console.log('guest user')
         dispatch({
             type : "SET_GUEST_LOGIN_DATA",
@@ -48,16 +48,45 @@ export const AuthContextProvider = ({children}) => {
         event?.preventDefault();
 
         try {
-            const response = await userLoginService(username, password)
-            if(response?.status === 200){
-                const data = response?.data;
-                const userData = {userInfo : data?.foundUser, token : data?.encodedToken};
+            const response = await userLoginService(username, password);
+            const {status, data : {foundUser, encodedToken}} = response;
+            if(status === 200){
+                const userData = {userInfo : foundUser, token : encodedToken};
                 localStorage.setItem("userData", JSON.stringify(userData))
                 dispatch({
                     type : "USER_LOGGED_IN",
                     payload : {
-                        userInfo : data?.foundUser,
-                        token : data?.encodedToken
+                        userInfo : foundUser,
+                        token : encodedToken
+                    }
+                })
+                navigate("/");
+            }
+        } catch (error) {
+            console.log(error)
+        }
+
+    }    
+    
+    const userSignup = async (event, firstName, lastName, username, password) => {
+    
+        event?.preventDefault();
+
+        console.log(firstName, lastName, username, password)
+
+        try {
+            const response = await userSignupService(firstName, lastName, username, password)
+            const {status, data : {createdUser, encodedToken}} = response;
+
+            console.log(status, createdUser, encodedToken)
+            if(status === 201){
+                const userData = {userInfo : createdUser, token : encodedToken};
+                localStorage.setItem("userData", JSON.stringify(userData))
+                dispatch({
+                    type : "USER_LOGGED_IN",
+                    payload : {
+                        userInfo : createdUser,
+                        token : encodedToken
                     }
                 })
                 navigate("/");
@@ -83,6 +112,7 @@ export const AuthContextProvider = ({children}) => {
         signupData : state.signupData,
         currentUser : state.currentUser,
         userLogin,
+        userSignup,
         userLogout,
         loginFormDataHandler,
         signupFormDataHandler,
