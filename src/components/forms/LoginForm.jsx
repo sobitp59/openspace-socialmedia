@@ -6,21 +6,21 @@ import "./loginform.css";
 
 
 const LoginForm = () => {
-  const {loginData, loginFormDataHandler} = useAuth();
+  const {loginData,userLogin,setGuestLoginData, loginFormDataHandler} = useAuth();
   
   console.log(loginData)
 
 
   return (
-    <form className='loginForm'>
+    <form className='loginForm' onSubmit={(event) => userLogin(event, loginData?.username, loginData?.password)}>
       
       <label className='loginForm__label'>
         email
         <input 
-          value={loginData?.email}
-          type="email"
-          name="email"
-          placeholder='enter your email'
+          value={loginData?.username}
+          type="text"
+          name="username"
+          placeholder='enter your username'
           required 
           onChange={loginFormDataHandler}
           />
@@ -41,14 +41,13 @@ const LoginForm = () => {
       <Button 
         label="sign in"
         type="submit"
-        onClick=""
         btnType=""
       />
 
       <Button 
         label="sign in as guest"
         type="submit"
-        onClick=""
+        onClick={setGuestLoginData}
         btnType=""
       />
 

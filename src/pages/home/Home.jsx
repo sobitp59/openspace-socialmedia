@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from "react-router";
 import { NavLink, Outlet } from "react-router-dom";
 import User from '../../components/user/User';
+import { useAuth } from '../../context/AuthContext';
 import { useData } from '../../context/DataContext';
 import './home.css';
 
@@ -10,7 +11,12 @@ const Home = () => {
     const isHomePage = location.pathname === '/';
 
     const {users} = useData();
+    const {currentUser : {userInfo}} = useAuth();
+
+    const allUsers = users?.filter(({username}) => username !== userInfo?.username)
+
     console.log(users)
+    console.log(userInfo)
 
   return (
     <div className='home'>
@@ -23,7 +29,13 @@ const Home = () => {
                 <button>create a post</button>
             </section>
             <section>
-                profile
+                <User 
+                    firstname={userInfo?.firstName}
+                    lastname={userInfo?.lastName}
+                    avatar={userInfo?.avatarUrl}
+                    username={userInfo?.username}
+                    currentuser={true}
+                />
             </section>
         </aside>
         
@@ -41,10 +53,10 @@ const Home = () => {
 
             <section>
                 <p>suggestions for you</p>
-                <ul>
-                    {users?.map((user) => (
+                <ul className='users__lists'>
+                    {allUsers?.map((user) => (
                         <User 
-                            key={user?._id} 
+                            key={user?.username} 
                             firstname={user?.firstName}
                             lastname={user?.lastName}
                             avatar={user?.avatarUrl}

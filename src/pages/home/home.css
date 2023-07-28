@@ -29,3 +29,8 @@
 .home__main{
     text-align:center;
 }
+
+.users__lists{
+    height: 80vh;
+    overflow-y: scroll;
+}

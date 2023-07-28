@@ -5,9 +5,9 @@ import "./user.css"
 
 
 
-const User = ({key, firstname, lastname, avatar, username}) => {
+const User = ({key, firstname, lastname, avatar, username, currentuser}) => {
   return (
-    <div className='user' key={key}>
+    <li className='user' key={key}>
         <div className='user_info'>
             <img className='user__avatar' src={avatar} alt={`avatar of ${firstname}`} />
             <section className='user_name'>
@@ -15,9 +15,8 @@ const User = ({key, firstname, lastname, avatar, username}) => {
                 <p>{username}</p>
             </section>
         </div>
-            
-        <Button label="follow"/>
-    </div>
+        {!currentuser &&   <Button label="follow"/> }    
+    </li>
   )
 }
 
