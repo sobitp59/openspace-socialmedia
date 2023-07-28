@@ -7,7 +7,7 @@ import { formatDate } from "../utils/authUtils";
 
 export const users = [
   {
-    "_id": uuid(),
+    "_id": "abCDeFgH-1",
     "firstName": "Pain",
     "lastName": "",
     "username": "pain_akatsuki",
@@ -20,7 +20,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id":"xyZ12PQr-s",
     "firstName": "Itachi",
     "lastName": "Uchiha",
     "username": "itachi_akatsuki",
@@ -33,7 +33,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id":  "mnoPqrST-4",
     "firstName": "Kisame",
     "lastName": "Hoshigaki",
     "username": "kisame_akatsuki",
@@ -46,7 +46,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id": "uvwXYzAB-3",
     "firstName": "Sasori",
     "lastName": "",
     "username": "sasori_akatsuki",
@@ -59,7 +59,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id": "56cDEfgH-i",
     "firstName": "Hidan",
     "lastName": "",
     "username": "hidan_akatsuki",
@@ -72,7 +72,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id":"jKLMnOpQ-9",
     "firstName": "Deidara",
     "lastName": "",
     "username": "deidara_akatsuki",
@@ -85,7 +85,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id":  "0RstUVwx-y",
     "firstName": "Konan",
     "lastName": "",
     "username": "konan_akatsuki",
@@ -98,7 +98,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id": "zABcdEFg-8",
     "firstName": "Obito",
     "lastName": "Uchiha",
     "username": "obito_akatsuki",
@@ -111,7 +111,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id": "HijKLmNo-2",
     "firstName": "Naruto",
     "lastName": "Uzumaki",
     "username": "naruto_uzumaki",
@@ -124,7 +124,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id":  "pQRsTUvw-7",
     "firstName": "Sasuke",
     "lastName": "Uchiha",
     "username": "sasuke_uchiha",
@@ -137,7 +137,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id":  "XYZabCDE-5",
     "firstName": "Madara",
     "lastName": "Uchiha",
     "username": "madara_uchiha",
@@ -150,7 +150,7 @@ export const users = [
     "updatedAt": formatDate()
   },
   {
-    "_id": uuid(),
+    "_id":"FghIJKlm-6",
     "firstName": "Shikamaru",
     "lastName": "Nara",
     "username": "shikamaru_nara",

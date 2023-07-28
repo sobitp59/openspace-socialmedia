@@ -13,7 +13,7 @@ const Home = () => {
     const {users} = useData();
     const {currentUser : {userInfo}} = useAuth();
 
-    const allUsers = users?.filter(({username}) => username !== userInfo?.username)
+    const allUsers = users?.filter(({_id}) => _id !== userInfo?._id)
 
     console.log(users)
     console.log(userInfo)
@@ -56,7 +56,7 @@ const Home = () => {
                 <ul className='users__lists'>
                     {allUsers?.map((user) => (
                         <User 
-                            key={user?.username} 
+                            key={user?._id} 
                             firstname={user?.firstName}
                             lastname={user?.lastName}
                             avatar={user?.avatarUrl}

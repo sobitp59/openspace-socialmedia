@@ -1,11 +1,11 @@
 import React from 'react';
 import { useAuth } from '../../context/AuthContext';
-import './header.css';
 import Button from '../button/Button';
+import './header.css';
 
 const Header = () => {
-  const {userLogout}= useAuth();
-
+  const {userLogout, currentUser : {userInfo}}= useAuth();
+  
   return (
     <div className='header'>
         <section className='header__logo'>
@@ -24,7 +24,9 @@ const Header = () => {
             />
             
             <button className='header__theme'>light/dark</button>
-            <span className='header__profile'>profile</span>
+            <span className='header__profile'>
+              profile
+            </span>
         </section>
     </div>
   )
