@@ -1,7 +1,9 @@
 import { createContext, useContext, useReducer } from "react";
+import toast from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
 import { initialState, userAuthReducer } from "../reducer/authReducer";
 import { userLoginService, userSignupService } from "../services/authservice";
+
 
 const AuthContext = createContext();
 
@@ -61,6 +63,9 @@ export const AuthContextProvider = ({children}) => {
                     }
                 })
                 navigate("/");
+                setTimeout(() => {
+                    toast.success(`welcome back! ${foundUser?.firstName}`)
+                }, 100)
             }
         } catch (error) {
             console.log(error)
@@ -69,7 +74,7 @@ export const AuthContextProvider = ({children}) => {
     }    
     
     const userSignup = async (event, firstName, lastName, username, password) => {
-    
+        
         event?.preventDefault();
 
         console.log(firstName, lastName, username, password)
@@ -77,7 +82,7 @@ export const AuthContextProvider = ({children}) => {
         try {
             const response = await userSignupService(firstName, lastName, username, password)
             const {status, data : {createdUser, encodedToken}} = response;
-
+            
             console.log(status, createdUser, encodedToken)
             if(status === 201){
                 const userData = {userInfo : createdUser, token : encodedToken};
@@ -90,6 +95,7 @@ export const AuthContextProvider = ({children}) => {
                     }
                 })
                 navigate("/");
+                toast.success(`welcome back! ${createdUser?.firstName}`)
             }
         } catch (error) {
             console.log(error)

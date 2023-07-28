@@ -7,3 +7,15 @@
     padding: 1.5rem 2rem;
 }
 
+
+.header__avatar{
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    outline: 1.5px solid;
+    outline-offset: 0.2rem;
+
+    display: grid;
+    place-content: center;
+    background-color: rgba(137, 43, 226, 0.37);
+}

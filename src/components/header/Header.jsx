@@ -5,11 +5,12 @@ import './header.css';
 
 const Header = () => {
   const {userLogout, currentUser : {userInfo}}= useAuth();
-  
+  const userDefault = userInfo?.firstName?.charAt(0)?.toUpperCase()
+  console.log(userDefault)
   return (
     <div className='header'>
         <section className='header__logo'>
-            <h2>openspace</h2>
+            <h2>//openspace</h2>
         </section>
         
         <section className='header__search'>
@@ -25,7 +26,8 @@ const Header = () => {
             
             <button className='header__theme'>light/dark</button>
             <span className='header__profile'>
-              profile
+            {!userInfo?.avatarUrl ? <section className='header__avatar'>{userDefault}</section> : <img className='header__avatar' src={userInfo?.avatarUrl} alt={`avatar of ${userInfo?.firstName}`} /> }
+              
             </span>
         </section>
     </div>

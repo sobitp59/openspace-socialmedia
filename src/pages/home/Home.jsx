@@ -6,6 +6,8 @@ import { useAuth } from '../../context/AuthContext';
 import { useData } from '../../context/DataContext';
 import './home.css';
 
+import { Toaster } from 'react-hot-toast';
+
 const Home = () => {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
@@ -20,6 +22,8 @@ const Home = () => {
 
   return (
     <div className='home'>
+        <Toaster />
+
         <aside className='home__left'>
             <section className='home__links'>
                 <NavLink to={"/"}> home</NavLink>

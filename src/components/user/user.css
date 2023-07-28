@@ -22,6 +22,10 @@
     border-radius: 50%;
     outline: 1px solid;
     outline-offset: 0.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user_name > p {
@@ -30,4 +34,9 @@
 
 .user_name > p:nth-child(2){
     font-size: small;
+}
+
+.user__avatar--default{
+    font-weight: bold;
+    background-color: rgba(137, 43, 226, 0.37);
 }
