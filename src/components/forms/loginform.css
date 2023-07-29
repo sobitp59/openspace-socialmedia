@@ -3,10 +3,36 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    position: relative;
 }
 
 .loginForm__label{
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.loginForm__users{
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    gap: 1.5rem;
+    overflow-y: scroll;
+    background: white;
+}
+
+.loginForm__avatar{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    outline: 2px solid;
+    outline-offset: 2px;
+}
+
+.loginForm__user{
+    width: 80%;
+    margin: 0.5rem auto;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    align-items: center;
 }

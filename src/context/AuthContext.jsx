@@ -35,13 +35,13 @@ export const AuthContextProvider = ({children}) => {
     }
 
 
-    const setGuestLoginData = () => {
+    const setGuestLoginData = (username,password) => {
         console.log('guest user')
         dispatch({
             type : "SET_GUEST_LOGIN_DATA",
             payload : {
-                username : "shikamaru_nara",
-                password : "Str@tegyM@ster"
+                username : username,
+                password : password
             }
         })
     }

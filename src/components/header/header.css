@@ -15,7 +15,16 @@
     outline: 1.5px solid;
     outline-offset: 0.2rem;
 
+    object-fit: cover;
+    
     display: grid;
     place-content: center;
     background-color: rgba(137, 43, 226, 0.37);
+}
+
+.header__user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }

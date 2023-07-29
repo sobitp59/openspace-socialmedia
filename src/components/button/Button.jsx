@@ -1,8 +1,9 @@
 import React from 'react'
+import "./button.css"
 
 const Button = ({label, type, onClick, onSubmit, btnType}) => {
   return (
-            <button onClick={onClick} onSubmit={onSubmit} type={type}>{label}</button>
+            <button className='btn' onClick={onClick} onSubmit={onSubmit} type={type}>{label}</button>
   )
 }
 
