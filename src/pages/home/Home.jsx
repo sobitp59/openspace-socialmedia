@@ -12,6 +12,8 @@ const Home = () => {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
 
+    document.title = "home | openspace"
+
     const {users} = useData();
     const {currentUser : {userInfo}} = useAuth();
 

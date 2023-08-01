@@ -14,7 +14,7 @@ export const users = [
     "password": "P@1n_1234",
     "bio": "Those who do not understand true pain can never understand true peace.",
     "bookmarks": [],
-    "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442780/openspace/users/s3uddaqxa6001_lvnb4e.jpg",
+    "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
     "website": "https://hiddenrainvillage.com/",
     "createdAt": "2022-01-01T10:55:06+05:30",
     "updatedAt": formatDate()
@@ -158,6 +158,32 @@ export const users = [
     "bio": "What a drag...",
     "bookmarks": [],
     "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443798/openspace/users/shikamaru_nara_render__naruto_mobile__by_maxiuchiha22_dd1ptk5-fullview.png_sm9u48.png",
+    "website": "https://narastrategies.com/",
+    "createdAt": "2022-01-02T13:45:30+05:30",
+    "updatedAt": formatDate()
+  },
+  {
+    "_id":"FshIJllm-2",
+    "firstName": "Kakashi",
+    "lastName": "Hatake",
+    "username": "kakashi_hatake",
+    "password": "hat@keK@k2ahi",
+    "bio": "Those who break the rules are scum, but those who abandon their friends are worse than scum.",
+    "bookmarks": [],
+    "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690609489/openspace/users/kakashi-hatake-naruto_mzo7wa.jpg",
+    "website": "https://narastrategies.com/",
+    "createdAt": "2022-01-02T13:45:30+05:30",
+    "updatedAt": formatDate()
+  },
+  {
+    "_id":"RshkJslm-9",
+    "firstName": "Shisui",
+    "lastName": "Uchiha",
+    "username": "shisui_uchiha",
+    "password": "sis@uiUchih@",
+    "bio": "The future is not set in stone. It's what you make of it.",
+    "bookmarks": [],
+    "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690610860/openspace/users/avatars-SyKsn0JofxgNmWX9-03bSbQ-t240x240_bbcukn.jpg",
     "website": "https://narastrategies.com/",
     "createdAt": "2022-01-02T13:45:30+05:30",
     "updatedAt": formatDate()
