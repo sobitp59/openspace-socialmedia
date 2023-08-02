@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
-import { getAllUsersService } from "../services/userService";
-
+import { getUserPosts } from "../services/postservice";
+import { getAllUsersService, getUserService } from "../services/userService";
 
 const DataContext = createContext();
 
@@ -15,11 +15,11 @@ export const DataContextProvider = ({children}) => {
     const getAllUsers = async () => {
         try {
             const response = await getAllUsersService();
-            if(response.status === 200){
-                const data = await response.data;
+            const {status, data : {users}} = response;
+            if(status === 200){
                 dispatch({
                     type : "GET_ALL_USERS",
-                    payload : data?.users
+                    payload : users
                 })
             }
         } catch (error) {
@@ -27,14 +27,50 @@ export const DataContextProvider = ({children}) => {
         }
     }
 
+    const getUserHandler = async (userId, setLoadingHandle, setUserhandle) => {
+        try {
+                setLoadingHandle(true);
+                  const response = await getUserService(userId);
+                   const {status, data : {user}} = response;
+                   if(status === 200){
+                     setUserhandle(user)
+                    } 
+                    setLoadingHandle(false);
+                } catch (error) {
+                    console.log(error);
+                }
+    }
 
+    const getPosts = async (username, setLoadingPosts, setUserPosts) => {
+        if(username){
+            try {
+                    setLoadingPosts(true);
+                      const response = await getUserPosts(username);
+                       const {status, data : {posts} } = response;
+                       if(status === 200){
+                        setUserPosts(posts)
+                         console.log(posts)
+                        } 
+                        setLoadingPosts(false);
+                    } catch (error) {
+                        console.log(error);
+                    }
+    }
+        }
+
+    
     useEffect(() => {
         getAllUsers();
     }, [])
 
 
+
     const value = {
-        users : state?.users
+        users : state?.users,
+        userhandle : state?.userhandle,
+        getAllUsers,
+        getUserHandler,
+        getPosts
     }
 
     return(

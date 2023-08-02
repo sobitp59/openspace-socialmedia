@@ -1,0 +1,28 @@
+.post{
+    width: 100%;
+    border: 2px solid;
+}
+
+.post__media{
+    width: 100%;
+}
+
+.post__content{
+    text-align: left;
+}
+
+.post__buttons{
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+}
+
+.post__buttons > button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}

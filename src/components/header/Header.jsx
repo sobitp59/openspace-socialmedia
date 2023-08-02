@@ -6,7 +6,6 @@ import './header.css';
 const Header = () => {
   const {userLogout, currentUser : {userInfo}}= useAuth();
   const userDefault = userInfo?.firstName?.charAt(0)?.toUpperCase()
-  console.log(userDefault)
   return (
     <div className='header'>
         <section className='header__logo'>

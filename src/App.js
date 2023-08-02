@@ -11,6 +11,7 @@ import HomeFeed from "./pages/homefeed/HomeFeed";
 import Liked from './pages/likedposts/Liked';
 import Login from './pages/login/Login';
 import Signup from "./pages/signup/Signup";
+import UserPage from "./pages/userpage/UserPage";
 
 /*
   ::HEADER
@@ -58,6 +59,7 @@ function App() {
           <Route path='/explore' element={  <RequiresAuth isLoggedIn={token} children={<Explore />} /> }/>
           <Route path='/bookmarks' element={<RequiresAuth isLoggedIn={token} children={<Bookmark />} />}/>
           <Route path='/likedposts' element={<RequiresAuth isLoggedIn={token} children={<Liked />} />}/>
+          <Route path='/profile/:username' element={<RequiresAuth isLoggedIn={token} children={<UserPage />} />}/>
         </Route>
 
         {/* Auth Route */}

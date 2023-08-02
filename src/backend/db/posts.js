@@ -900,7 +900,75 @@ export const posts = [
     "username": "shisui_uchiha",
     "createdAt": "2022-08-05T14:10:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
+  },
+  {
+    "_id": "k3xPtL7Jm",
+    "content": "Diving into the abyss. The power of the Seven Swordsmen flows through me.",
+    "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690959611/d99176bf-d060-458d-ac2d-79c20279325f_itmg51.jpg",
+    "likes": {
+      "likeCount": 35,
+      "likedBy": ["itachi_akatsuki", "pain_akatsuki", "konan_akatsuki", "sasori_akatsuki"],
+      "dislikedBy": []
+    },
+    "comments": [
+      {
+        "_id": "x5gXmQ9Ln",
+        "username": "itachi_akatsuki",
+        "text": "Together, we wield the strength of the Mist Village.",
+        "votes": {
+          "upvotedBy": [],
+          "downvotedBy": []
+        }
+      },
+      {
+        "_id": "p8jClU1Tm",
+        "username": "pain_akatsuki",
+        "text": "Your loyalty to Akatsuki and your comrades is commendable, Kisame.",
+        "votes": {
+          "upvotedBy": [],
+          "downvotedBy": []
+        }
+      }
+    ],
+    "username": "kisame_akatsuki",
+    "createdAt": "2022-08-10T12:05:20+05:30",
+    "updatedAt": "2023-07-27T12:00:00+05:30"
+  },
+  {
+    "_id": "n5gWtF2Xp",
+    "content": "Mystery of the deep ocean. My true identity concealed within Samehada.",
+    "mediaURL": "",
+    "likes": {
+      "likeCount": 30,
+      "likedBy": ["itachi_akatsuki", "pain_akatsuki", "konan_akatsuki", "sasori_akatsuki"],
+      "dislikedBy": []
+    },
+    "comments": [
+      {
+        "_id": "g2pQtZ1Hn",
+        "username": "pain_akatsuki",
+        "text": "Your association with Samehada adds to your enigma, Kisame.",
+        "votes": {
+          "upvotedBy": [],
+          "downvotedBy": []
+        }
+      },
+      {
+        "_id": "i9mGzK5Fp",
+        "username": "sasori_akatsuki",
+        "text": "Your secrets make you a valuable asset to Akatsuki.",
+        "votes": {
+          "upvotedBy": [],
+          "downvotedBy": []
+        }
+      }
+    ],
+    "username": "kisame_akatsuki",
+    "createdAt": "2022-08-15T09:30:45+05:30",
+    "updatedAt": "2023-07-27T12:00:00+05:30"
   }
+  
+  
   
   
   

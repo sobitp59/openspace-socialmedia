@@ -19,9 +19,6 @@ const Home = () => {
 
     const allUsers = users?.filter(({_id}) => _id !== userInfo?._id)
 
-    console.log(users)
-    console.log(userInfo)
-
   return (
     <div className='home'>
         <Toaster />
