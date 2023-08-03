@@ -12,8 +12,24 @@ export const posts = [
     "content": "Just finished a strategic Shogi match. It was a real brain-teaser!",
     "mediaURL": "",
     "likes": {
-      "likeCount": 10,
-      "likedBy": ["naruto_uzumaki", "sasuke_uchiha", "deidara_akatsuki", "hidan_akatsuki"],
+      "likeCount": 2,
+      "likedBy": [
+        {
+        "_id": "pAka_123",
+        "firstName": "Pain",
+        "lastName": "",
+        "username": "pain_akatsuki",
+        "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+    "website": "https://hiddenrainvillage.com/",
+      },
+      {
+        "_id": "iAka_456",
+        "firstName": "Itachi",
+        "lastName": "Uchiha",
+        "username": "itachi_uchiha",
+        "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+      }
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -45,8 +61,32 @@ export const posts = [
     "content": "Cloud-watching on a lazy afternoon. Troublesome, but surprisingly relaxing.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690608108/openspace/posts/62a4b1c4e1b6d2aee23e0329e8bc9b03f9ab94abv2_00_wuk4px.jpg",
     "likes": {
-      "likeCount": 5,
-      "likedBy": ["hidan_akatsuki", "kisame_akatsuki"],
+      "likeCount": 3,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "kAka_012",
+          "firstName": "Kisame",
+          "lastName": "Hoshigaki",
+          "username": "kisame_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442825/openspace/users/38e5a-16589157875295_vgfqxy.jpg",
+        }
+        
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -78,8 +118,24 @@ export const posts = [
     "content": "Another drag of a day at the office. Troublesome missions, as always.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 7,
-      "likedBy": ["naruto_uzumaki", "sasuke_uchiha", "deidara_akatsuki", "hidan_akatsuki"],
+      "likeCount": 2,
+      "likedBy": [
+        {
+          "_id": "kAka_012",
+          "firstName": "Kisame",
+          "lastName": "Hoshigaki",
+          "username": "kisame_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442825/openspace/users/38e5a-16589157875295_vgfqxy.jpg",
+        },
+        {
+          "_id": "dAka_345",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+          "website": "https://artisticexplosions.net/",
+        }
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -111,8 +167,39 @@ export const posts = [
     "content": "Witness my power! The Infinite Tsukuyomi shall bring forth a new world.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690608392/openspace/posts/tsukayomi-madara_x1zchl.gif",
     "likes": {
-      "likeCount": 15,
-      "likedBy": ["obito_akatsuki"],
+      "likeCount": 4,
+      "likedBy": [
+        {
+          "_id": "kAka_012",
+          "firstName": "Kisame",
+          "lastName": "Hoshigaki",
+          "username": "kisame_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442825/openspace/users/38e5a-16589157875295_vgfqxy.jpg",
+        },
+        {
+          "_id": "dAka_345",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+          "website": "https://artisticexplosions.net/",
+        },
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -144,8 +231,31 @@ export const posts = [
     "content": "The Uchiha clan's power will reign supreme! Embrace the Sharingan!",
     "mediaURL": "",
     "likes": {
-      "likeCount": 8,
-      "likedBy": ["sasuke_uchiha", "itachi_uchiha", "obito_akatsuki"],
+      "likeCount": 3,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        }
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -177,8 +287,23 @@ export const posts = [
     "content": "Training to become stronger every day. The path to revenge is long, but I won't falter.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 20,
-      "likedBy": ["naruto_uzumaki", "kakashi_hatake"],
+      "likeCount": 2,
+      "likedBy": [
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        },
+        {
+          "_id":  "XYZabw22DE-5",
+          "firstName": "Madara",
+          "lastName": "Uchiha",
+          "username": "madara_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443909/openspace/users/3e3d2-clickwallpapers-madara-uchiha-img3-scaled-Cropped-a3f2024_u5uswi.jpg",
+        }
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -201,8 +326,45 @@ export const posts = [
     "content": "Restless thoughts in the midst of battle. A chance encounter with an old friend...",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690609679/openspace/posts/naruto-Sasuke-punch_xucl6q.jpg",
     "likes": {
-      "likeCount": 25,
-      "likedBy": ["naruto_uzumaki", "kakashi_hatake", "itachi_uchiha"],
+      "likeCount": 5,
+      "likedBy": [
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        },
+        {
+          "_id":  "XYZabw22DE-5",
+          "firstName": "Madara",
+          "lastName": "Uchiha",
+          "username": "madara_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443909/openspace/users/3e3d2-clickwallpapers-madara-uchiha-img3-scaled-Cropped-a3f2024_u5uswi.jpg",
+        },
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        }
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -234,8 +396,31 @@ export const posts = [
     "content": "Believe it! Training hard to become the Hokage!",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690609981/openspace/posts/jiraiya-training_oi0p1e.gif",
     "likes": {
-      "likeCount": 30,
-      "likedBy": ["sasuke_uchiha", "kakashi_hatake"],
+      "likeCount": 3,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        }
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -267,8 +452,52 @@ export const posts = [
     "content": "Ramen time! Nothing beats a good bowl of Ichiraku's ramen!",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690610133/openspace/posts/033030e076d4bdf77d4e69750cb21918_j35sht.jpg",
     "likes": {
-      "likeCount": 25,
-      "likedBy": ["shikamaru_nara","kakashi_hatake"],
+      "likeCount": 6,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        },
+        {
+          "_id":"Fgsd233hIJKlm-6",
+          "firstName": "Shikamaru",
+          "lastName": "Nara",
+          "username": "shikamaru_nara",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443798/openspace/users/shikamaru_nara_render__naruto_mobile__by_maxiuchiha22_dd1ptk5-fullview.png_sm9u48.png",
+        },
+        {
+          "_id":"FshIJllm-2",
+          "firstName": "Kakashi",
+          "lastName": "Hatake",
+          "username": "kakashi_hatake",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690609489/openspace/users/kakashi-hatake-naruto_mzo7wa.jpg",
+        },
+        {
+          "_id":"Rshsds232kJslm-9",
+          "firstName": "Shisui",
+          "lastName": "Uchiha",
+          "username": "shisui_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690610860/openspace/users/avatars-SyKsn0JofxgNmWX9-03bSbQ-t240x240_bbcukn.jpg",
+        }
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -300,8 +529,23 @@ export const posts = [
     "content": "Carrying on Rin's dream. The Moon's Eye Plan will bring everyone together.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690610357/openspace/posts/d9463mj-2a90aef6-f933-45ef-ac5c-e3ec55849e7a.png_j3e9fx.png",
     "likes": {
-      "likeCount": 12,
-      "likedBy": ["kakashi_hatake", "naruto_uzumaki", "madara_uchiha"],
+      "likeCount": 2,
+      "likedBy": [
+        {
+          "_id":"Fgsd233hIJKlm-6",
+          "firstName": "Shikamaru",
+          "lastName": "Nara",
+          "username": "shikamaru_nara",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443798/openspace/users/shikamaru_nara_render__naruto_mobile__by_maxiuchiha22_dd1ptk5-fullview.png_sm9u48.png",
+        },
+        {
+          "_id":"FshIJllm-2",
+          "firstName": "Kakashi",
+          "lastName": "Hatake",
+          "username": "kakashi_hatake",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690609489/openspace/users/kakashi-hatake-naruto_mzo7wa.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -333,8 +577,52 @@ export const posts = [
     "content": "Struggling with the darkness within. My past haunts me, but I must move forward.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 18,
-      "likedBy": ["kakashi_hatake", "naruto_uzumaki"],
+      "likeCount": 6,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        },
+        {
+          "_id":"Fgsd233hIJKlm-6",
+          "firstName": "Shikamaru",
+          "lastName": "Nara",
+          "username": "shikamaru_nara",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443798/openspace/users/shikamaru_nara_render__naruto_mobile__by_maxiuchiha22_dd1ptk5-fullview.png_sm9u48.png",
+        },
+        {
+          "_id":"FshIJllm-2",
+          "firstName": "Kakashi",
+          "lastName": "Hatake",
+          "username": "kakashi_hatake",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690609489/openspace/users/kakashi-hatake-naruto_mzo7wa.jpg",
+        },
+        {
+          "_id":"Rshsds232kJslm-9",
+          "firstName": "Shisui",
+          "lastName": "Uchiha",
+          "username": "shisui_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690610860/openspace/users/avatars-SyKsn0JofxgNmWX9-03bSbQ-t240x240_bbcukn.jpg",
+        }
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -366,8 +654,45 @@ export const posts = [
     "content": "Carrying the weight of my past. The darkness within me fuels my determination.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 25,
-      "likedBy": ["sasuke_uchiha", "kisame_akatsuki", "kakashi_hatake", "shisui_uchiha"],
+      "likeCount": 5,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        },
+        {
+          "_id":"Fgsd233hIJKlm-6",
+          "firstName": "Shikamaru",
+          "lastName": "Nara",
+          "username": "shikamaru_nara",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443798/openspace/users/shikamaru_nara_render__naruto_mobile__by_maxiuchiha22_dd1ptk5-fullview.png_sm9u48.png",
+        },
+        {
+          "_id":"FshIJllm-2",
+          "firstName": "Kakashi",
+          "lastName": "Hatake",
+          "username": "kakashi_hatake",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690609489/openspace/users/kakashi-hatake-naruto_mzo7wa.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -399,8 +724,30 @@ export const posts = [
     "content": "Protecting the village from the shadows. Sacrifices must be made for peace.",
     "mediaURL": "https://res.cloudinary.com/dtrjdcrme/image/upload/v1652188492/upload-socialmedia/itachi_shadows_tzhzzh.jpg",
     "likes": {
-      "likeCount": 30,
-      "likedBy": ["shisui_uchiha", "kakashi_hatake", "naruto_uzumaki", "kisame_akatsuki"],
+      "likeCount": 3,
+      "likedBy": [
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        },
+        {
+          "_id":"FshIJllm-2",
+          "firstName": "Kakashi",
+          "lastName": "Hatake",
+          "username": "kakashi_hatake",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690609489/openspace/users/kakashi-hatake-naruto_mzo7wa.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -432,8 +779,45 @@ export const posts = [
     "content": "In search of true peace. Pain is a path to understanding.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611305/openspace/posts/E_qP3b_WYAUf95-_cjsfs4.jpg",
     "likes": {
-      "likeCount": 35,
-      "likedBy": ["konan_akatsuki", "itachi_uchiha", "naruto_uzumaki", "kakashi_hatake"],
+      "likeCount": 5,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "sUchi_567",
+          "firstName": "Sasuke",
+          "lastName": "Uchiha",
+          "username": "sasuke_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444052/openspace/users/LAND_16_9_opq3td.jpg",
+        },
+        {
+          "_id":"Rshsds232kJslm-9",
+          "firstName": "Shisui",
+          "lastName": "Uchiha",
+          "username": "shisui_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690610860/openspace/users/avatars-SyKsn0JofxgNmWX9-03bSbQ-t240x240_bbcukn.jpg",
+        },
+        {
+          "_id": "abCDeasasFgH-1",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -465,8 +849,24 @@ export const posts = [
     "content": "Remembering the lessons of Jiraiya. Pain and loss have shaped me, but I will carry on.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 28,
-      "likedBy": ["konan_akatsuki", "itachi_uchiha", "naruto_uzumaki", "kakashi_hatake"],
+      "likeCount": 2,
+      "likedBy": [
+        {
+          "_id": "abCDeFgH-sad1",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+        },
+        {
+          "_id":  "mnoPqrST-4",
+          "firstName": "Kisame",
+          "lastName": "Hoshigaki",
+          "username": "kisame_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442825/openspace/users/38e5a-16589157875295_vgfqxy.jpg",
+        },
+
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -489,8 +889,14 @@ export const posts = [
     "content": "Art is eternal. My puppets capture the essence of life, frozen in time.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690865745/openspace/posts/just-another-technically-immortal-shinobi-that-passed-way-v0-gvvjx408b4sa1_akfxer.jpg",
     "likes": {
-      "likeCount": 20,
-      "likedBy": ["deidara_akatsuki", "itachi_uchiha", "konan_akatsuki"],
+      "likeCount": 1,
+      "likedBy": [{
+        "_id":  "mnoaaweePqrST-4",
+        "firstName": "Kisame",
+        "lastName": "Hoshigaki",
+        "username": "kisame_akatsuki",
+        "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442825/openspace/users/38e5a-16589157875295_vgfqxy.jpg",
+      },],
       "dislikedBy": []
     },
     "comments": [
@@ -522,8 +928,23 @@ export const posts = [
     "content": "The strings of fate entangle us all. Embrace the puppet master's control.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 15,
-      "likedBy": ["konan_akatsuki", "kakuzu_akatsuki", "itachi_uchiha", "deidara_akatsuki"],
+      "likeCount": 2,
+      "likedBy": [
+        {
+          "_id":  "mnoPqrST-4",
+          "firstName": "Kisame",
+          "lastName": "Hoshigaki",
+          "username": "kisame_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442825/openspace/users/38e5a-16589157875295_vgfqxy.jpg",
+        },
+        {
+          "_id": "uvwXYzAB-3",
+          "firstName": "Sasori",
+          "lastName": "",
+          "username": "sasori_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442951/openspace/users/27qaakl9ab251_oeyna6.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -546,8 +967,38 @@ export const posts = [
     "content": "Basking in the thrill of battle. My rituals grant immortality and endless carnage.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690866056/openspace/posts/hidan-naruto-shippuden_pchfdo.gif",
     "likes": {
-      "likeCount": 18,
-      "likedBy": ["konan_akatsuki", "deidara_akatsuki", "sasori_akatsuki"],
+      "likeCount": 4,
+      "likedBy": [
+        {
+          "_id": "uvwXYzAB-3",
+          "firstName": "Sasori",
+          "lastName": "",
+          "username": "sasori_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442951/openspace/users/27qaakl9ab251_oeyna6.jpg",
+        },
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id": "56cDEfgH-i",
+          "firstName": "Hidan",
+          "lastName": "",
+          "username": "hidan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442990/openspace/users/ykc0juhgd4351_cd2gdb.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -579,9 +1030,27 @@ export const posts = [
     "content": "Worshipping Jashin, the god of pain. My faith fuels my relentless fury.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 12,
-      "likedBy": ["konan_akatsuki", "deidara_akatsuki", "sasori_akatsuki"],
-      "dislikedBy": []
+      "likeCount": 2,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+      ],
+      "dislikedBy": [
+
+      ]
     },
     "comments": [
       {
@@ -603,8 +1072,24 @@ export const posts = [
     "content": "Blood for blood. My scythe will harvest the souls of my enemies.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 20,
-      "likedBy": ["konan_akatsuki", "deidara_akatsuki", "sasori_akatsuki"],
+      "likeCount": 2,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -627,8 +1112,24 @@ export const posts = [
     "content": "Art is an explosion! The beauty of destruction is my ultimate creation.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690866572/openspace/posts/main-qimg-04b92afba0e290b76c994478cc5a45a3-lq_zgahj3.jpg",
     "likes": {
-      "likeCount": 25,
-      "likedBy": ["hidan_akatsuki", "sasori_akatsuki", "konan_akatsuki"],
+      "likeCount": 2,
+      "likedBy": [
+        
+        {
+          "_id": "56cDEfgH-i",
+          "firstName": "Hidan",
+          "lastName": "",
+          "username": "hidan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442990/openspace/users/ykc0juhgd4351_cd2gdb.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -660,8 +1161,30 @@ export const posts = [
     "content": "A masterpiece in the making. Watch as my art unfolds with a blast!",
     "mediaURL": "",
     "likes": {
-      "likeCount": 18,
-      "likedBy": ["hidan_akatsuki", "sasori_akatsuki","konan_akatsuki"],
+      "likeCount": 3,
+      "likedBy": [
+        {
+          "_id": "56cDEfgH-i",
+          "firstName": "Hidan",
+          "lastName": "",
+          "username": "hidan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442990/openspace/users/ykc0juhgd4351_cd2gdb.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+        {
+          "_id": "uvwXYzAB-3",
+          "firstName": "Sasori",
+          "lastName": "",
+          "username": "sasori_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442951/openspace/users/27qaakl9ab251_oeyna6.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -684,8 +1207,37 @@ export const posts = [
     "content": "Folding paper into wings. Embracing peace as gently as a crane in flight.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690866953/openspace/posts/main-qimg-cfaf2543b77fadf7b412127a17a6a38d-lq_oipoqk.jpg",
     "likes": {
-      "likeCount": 30,
-      "likedBy": ["pain_akatsuki", "itachi_uchiha",  "deidara_akatsuki"],
+      "likeCount": 4,
+      "likedBy": [
+        {
+          "_id": "56cDEfgH-i",
+          "firstName": "Hidan",
+          "lastName": "",
+          "username": "hidan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442990/openspace/users/ykc0juhgd4351_cd2gdb.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+        {
+          "_id": "uvwXYzAB-3",
+          "firstName": "Sasori",
+          "lastName": "",
+          "username": "sasori_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442951/openspace/users/27qaakl9ab251_oeyna6.jpg",
+        },
+        {
+          "_id":  "mnoPqrST-4",
+          "firstName": "Kisame",
+          "lastName": "Hoshigaki",
+          "username": "kisame_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442825/openspace/users/38e5a-16589157875295_vgfqxy.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -717,8 +1269,30 @@ export const posts = [
     "content": "Whispers of the rain. My paper trails reflect the sorrows of war.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 25,
-      "likedBy": ["pain_akatsuki", "itachi_uchiha",  "deidara_akatsuki"],
+      "likeCount": 3,
+      "likedBy": [
+        {
+          "_id": "56cDEfgH-i",
+          "firstName": "Hidan",
+          "lastName": "",
+          "username": "hidan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442990/openspace/users/ykc0juhgd4351_cd2gdb.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+        {
+          "_id": "uvwXYzAB-3",
+          "firstName": "Sasori",
+          "lastName": "",
+          "username": "sasori_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442951/openspace/users/27qaakl9ab251_oeyna6.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -750,8 +1324,37 @@ export const posts = [
     "content": "Reading the Icha Icha series.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690867170/openspace/posts/0e3d194ab5b76907b12901749366c4b8_odytxq.jpg",
     "likes": {
-      "likeCount": 40,
-      "likedBy": ["naruto_uzumaki", "shikamaru_nara"],
+      "likeCount": 4,
+      "likedBy": [
+        {
+          "_id": "56cDEfgH-i",
+          "firstName": "Hidan",
+          "lastName": "",
+          "username": "hidan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442990/openspace/users/ykc0juhgd4351_cd2gdb.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+        {
+          "_id": "uvwXYzAB-3",
+          "firstName": "Sasori",
+          "lastName": "",
+          "username": "sasori_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442951/openspace/users/27qaakl9ab251_oeyna6.jpg",
+        },
+        {
+          "_id":  "mnoPqrST-4",
+          "firstName": "Kisame",
+          "lastName": "Hoshigaki",
+          "username": "kisame_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442825/openspace/users/38e5a-16589157875295_vgfqxy.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -783,8 +1386,23 @@ export const posts = [
     "content": "Sharing the wisdom of the White Fang. My father's legacy guides me every day.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 35,
-      "likedBy": ["sasuke_uchiha", "naruto_uzumaki", "shikamaru_nara"],
+      "likeCount": 2,
+      "likedBy": [
+        {
+          "_id": "56cDEfgH-i",
+          "firstName": "Hidan",
+          "lastName": "",
+          "username": "hidan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442990/openspace/users/ykc0juhgd4351_cd2gdb.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -816,8 +1434,30 @@ export const posts = [
     "content": "Copying Obito's techniques. Memories of my past drive me forward.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690867328/openspace/posts/dei18by-50b0b533-8de7-453c-a9c3-5374e13693c0.png_uvgojt.png",
     "likes": {
-      "likeCount": 45,
-      "likedBy": [ "naruto_uzumaki", "sasuke_uchiha", "shikamaru_nara"],
+      "likeCount": 3,
+      "likedBy": [
+        {
+          "_id": "HijKLmNo-2",
+          "firstName": "Naruto",
+          "lastName": "Uzumaki",
+          "username": "naruto_uzumaki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444109/openspace/users/naruto-b9f92c5_gee9ga.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+        {
+          "_id": "56cDEfgH-i",
+          "firstName": "Hidan",
+          "lastName": "",
+          "username": "hidan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442990/openspace/users/ykc0juhgd4351_cd2gdb.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -840,8 +1480,23 @@ export const posts = [
     "content": "Gazing at the rising sun. New day, new possibilities.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690867486/openspace/posts/shisui_uchiha_render__ntob_shinobi_striker__by_maxiuchiha22_dehhx77-pre.png_ha4uio.png",
     "likes": {
-      "likeCount": 50,
-      "likedBy": ["itachi_uchiha", "naruto_uzumaki", "kakashi_hatake"],
+      "likeCount": 2,
+      "likedBy": [
+        {
+          "_id": "HijKLmNo-2",
+          "firstName": "Naruto",
+          "lastName": "Uzumaki",
+          "username": "naruto_uzumaki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444109/openspace/users/naruto-b9f92c5_gee9ga.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -873,8 +1528,37 @@ export const posts = [
     "content": "Protecting the village. Duty and loyalty run deep in my veins.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 40,
-      "likedBy": ["itachi_uchiha", "naruto_uzumaki","kakashi_hatake"],
+      "likeCount": 4,
+      "likedBy": [
+        {
+          "_id": "HijKLmNo-2",
+          "firstName": "Naruto",
+          "lastName": "Uzumaki",
+          "username": "naruto_uzumaki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690444109/openspace/users/naruto-b9f92c5_gee9ga.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+        {
+          "_id":  "0RstUVwx-y",
+          "firstName": "Konan",
+          "lastName": "",
+          "username": "konan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443105/openspace/users/23bc7-16587437244924_uaijeo.jpg",
+        },
+        {
+          "_id": "zABcdEFg-8",
+          "firstName": "Obito",
+          "lastName": "Uchiha",
+          "username": "obito_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442546/openspace/users/IMAGEN-GOOGLE_bcyoxb.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -906,8 +1590,30 @@ export const posts = [
     "content": "Diving into the abyss. The power of the Seven Swordsmen flows through me.",
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690959611/d99176bf-d060-458d-ac2d-79c20279325f_itmg51.jpg",
     "likes": {
-      "likeCount": 35,
-      "likedBy": ["itachi_uchiha", "pain_akatsuki", "konan_akatsuki", "sasori_akatsuki"],
+      "likeCount": 3,
+      "likedBy": [
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+        {
+          "_id":  "0RstUVwx-y",
+          "firstName": "Konan",
+          "lastName": "",
+          "username": "konan_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443105/openspace/users/23bc7-16587437244924_uaijeo.jpg",
+        },
+        {
+          "_id": "zABcdEFg-8",
+          "firstName": "Obito",
+          "lastName": "Uchiha",
+          "username": "obito_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442546/openspace/users/IMAGEN-GOOGLE_bcyoxb.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -939,8 +1645,31 @@ export const posts = [
     "content": "Mystery of the deep ocean. My true identity concealed within Samehada.",
     "mediaURL": "",
     "likes": {
-      "likeCount": 30,
-      "likedBy": ["itachi_uchiha", "pain_akatsuki", "konan_akatsuki", "sasori_akatsuki"],
+      "likeCount": 3,
+      "likedBy": [
+        {
+          "_id": "pAka_123",
+          "firstName": "Pain",
+          "lastName": "",
+          "username": "pain_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611389/openspace/users/a3234-16859133338394-1920_x4ljun.jpg",
+      "website": "https://hiddenrainvillage.com/",
+        },
+        {
+          "_id": "iAka_456",
+          "firstName": "Itachi",
+          "lastName": "Uchiha",
+          "username": "itachi_uchiha",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690442462/openspace/users/aedcf-16570135965843_r0vt6s.jpg",
+        },
+        {
+          "_id":"jKLMnOpQ-9",
+          "firstName": "Deidara",
+          "lastName": "",
+          "username": "deidara_akatsuki",
+          "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443061/openspace/users/e367c-16566796086194_zmoxnf.jpg",
+        },
+      ],
       "dislikedBy": []
     },
     "comments": [
@@ -961,38 +1690,11 @@ export const posts = [
           "upvotedBy": [],
           "downvotedBy": []
         }
-      }
+      },
+      
     ],
     "username": "kisame_akatsuki",
     "createdAt": "2022-08-15T09:30:45+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 ];
