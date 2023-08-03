@@ -85,7 +85,7 @@ export const posts = [
     "comments": [
       {
         "_id": "v5gSnHtPz",
-        "username": "itachi_akatsuki",
+        "username": "itachi_uchiha",
         "text": "Don't overwork yourself, Shikamaru! Take a break and relax.",
         "votes": {
           "upvotedBy": [],
@@ -145,13 +145,13 @@ export const posts = [
     "mediaURL": "",
     "likes": {
       "likeCount": 8,
-      "likedBy": ["sasuke_uchiha", "itachi_akatsuki", "obito_akatsuki"],
+      "likedBy": ["sasuke_uchiha", "itachi_uchiha", "obito_akatsuki"],
       "dislikedBy": []
     },
     "comments": [
       {
         "_id": "z6vRpL3Tq",
-        "username": "itachi_akatsuki",
+        "username": "itachi_uchiha",
         "text": "Brother, your ambition... it will only bring sorrow.",
         "votes": {
           "upvotedBy": [],
@@ -202,7 +202,7 @@ export const posts = [
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690609679/openspace/posts/naruto-Sasuke-punch_xucl6q.jpg",
     "likes": {
       "likeCount": 25,
-      "likedBy": ["naruto_uzumaki", "kakashi_hatake", "itachi_akatsuki"],
+      "likedBy": ["naruto_uzumaki", "kakashi_hatake", "itachi_uchiha"],
       "dislikedBy": []
     },
     "comments": [
@@ -390,7 +390,7 @@ export const posts = [
         }
       }
     ],
-    "username": "itachi_akatsuki",
+    "username": "itachi_uchiha",
     "createdAt": "2022-04-12T14:35:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
@@ -423,7 +423,7 @@ export const posts = [
         }
       }
     ],
-    "username": "itachi_akatsuki",
+    "username": "itachi_uchiha",
     "createdAt": "2022-04-15T12:20:12+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
@@ -433,7 +433,7 @@ export const posts = [
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690611305/openspace/posts/E_qP3b_WYAUf95-_cjsfs4.jpg",
     "likes": {
       "likeCount": 35,
-      "likedBy": ["konan_akatsuki", "itachi_akatsuki", "naruto_uzumaki", "kakashi_hatake"],
+      "likedBy": ["konan_akatsuki", "itachi_uchiha", "naruto_uzumaki", "kakashi_hatake"],
       "dislikedBy": []
     },
     "comments": [
@@ -907,13 +907,13 @@ export const posts = [
     "mediaURL": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690959611/d99176bf-d060-458d-ac2d-79c20279325f_itmg51.jpg",
     "likes": {
       "likeCount": 35,
-      "likedBy": ["itachi_akatsuki", "pain_akatsuki", "konan_akatsuki", "sasori_akatsuki"],
+      "likedBy": ["itachi_uchiha", "pain_akatsuki", "konan_akatsuki", "sasori_akatsuki"],
       "dislikedBy": []
     },
     "comments": [
       {
         "_id": "x5gXmQ9Ln",
-        "username": "itachi_akatsuki",
+        "username": "itachi_uchiha",
         "text": "Together, we wield the strength of the Mist Village.",
         "votes": {
           "upvotedBy": [],
@@ -940,7 +940,7 @@ export const posts = [
     "mediaURL": "",
     "likes": {
       "likeCount": 30,
-      "likedBy": ["itachi_akatsuki", "pain_akatsuki", "konan_akatsuki", "sasori_akatsuki"],
+      "likedBy": ["itachi_uchiha", "pain_akatsuki", "konan_akatsuki", "sasori_akatsuki"],
       "dislikedBy": []
     },
     "comments": [

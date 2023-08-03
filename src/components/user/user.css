@@ -5,40 +5,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-    margin: 0.5rem 0;
-
     cursor: pointer;
 }
 
-.user_info{
+.user__date{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.user__avatar{
-    width: 3rem;
-    height: 3rem;
-    object-fit: cover;
-    border-radius: 50%;
-    outline: 1px solid;
-    outline-offset: 0.2rem;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.user_name > p {
-    text-transform: lowercase;
-}
-
-.user_name > p:nth-child(2){
     font-size: small;
-}
-
-.user__avatar--default{
-    font-weight: bold;
-    background-color: rgba(137, 43, 226, 0.37);
 }

@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
-import { getUserPosts } from "../services/postservice";
+import { getUserPostDetails, getUserPosts } from "../services/postservice";
 import { getAllUsersService, getUserService } from "../services/userService";
 
 const DataContext = createContext();
@@ -56,7 +56,23 @@ export const DataContextProvider = ({children}) => {
                         console.log(error);
                     }
     }
-        }
+    }
+
+    const getUserPost = async (postId, setPostLoading, setPost) => {
+            if(postId){
+                try {
+                    setPostLoading(true);
+                          const response = await getUserPostDetails(`${postId}`);
+                           const {status, data :{post}  } = response;
+                           if(status === 200){
+                            setPost(post);
+                            } 
+                            setPostLoading(false);
+                        } catch (error) {
+                            console.log(error);
+                        }
+            }
+    }
 
     
     useEffect(() => {
@@ -70,7 +86,8 @@ export const DataContextProvider = ({children}) => {
         userhandle : state?.userhandle,
         getAllUsers,
         getUserHandler,
-        getPosts
+        getPosts,
+        getUserPost
     }
 
     return(

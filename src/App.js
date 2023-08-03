@@ -10,6 +10,7 @@ import Home from './pages/home/Home';
 import HomeFeed from "./pages/homefeed/HomeFeed";
 import Liked from './pages/likedposts/Liked';
 import Login from './pages/login/Login';
+import PostDetails from "./pages/postdetails/PostDetails";
 import Signup from "./pages/signup/Signup";
 import UserPage from "./pages/userpage/UserPage";
 
@@ -60,6 +61,7 @@ function App() {
           <Route path='/bookmarks' element={<RequiresAuth isLoggedIn={token} children={<Bookmark />} />}/>
           <Route path='/likedposts' element={<RequiresAuth isLoggedIn={token} children={<Liked />} />}/>
           <Route path='/profile/:username' element={<RequiresAuth isLoggedIn={token} children={<UserPage />} />}/>
+          <Route path='/posts/:postId' element={<RequiresAuth isLoggedIn={token} children={<PostDetails />} />}/>
         </Route>
 
         {/* Auth Route */}
@@ -67,7 +69,7 @@ function App() {
         <Route path='/signup' element={<Signup />}/>
 
       </Routes>
-      {token && <Footer />}
+      {/* {token && <Footer />} */}
   </div>
     );
 }

@@ -1,0 +1,40 @@
+.avatar{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar__image{
+    width: 3rem;
+    height: 3rem;
+    outline: 1.5px solid ;
+    border-radius: 50%;
+    outline-offset: 2px;
+    object-fit: cover;
+}
+
+.avatar__default{
+    width: 100%;
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.avatar_name{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.avatar_name > p{
+    text-transform: lowercase;
+}
+
+.avatar_name  p:last-child{
+    font-size: small;
+}

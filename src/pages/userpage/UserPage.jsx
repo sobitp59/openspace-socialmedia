@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BiSolidBadgeCheck } from "react-icons/bi";
 import { MdDateRange } from "react-icons/md";
 import { Link, useParams } from 'react-router-dom';
+import Avatar from '../../components/avatar/Avatar';
 import Button from '../../components/button/Button';
 import Post from '../../components/post/Post';
 import { useData } from '../../context/DataContext';
@@ -43,11 +44,9 @@ const UserPage = () => {
             
             <section className='userprofile__details'>
                 <section className='user_info'>
-                {!userhandle?.avatarUrl ? <section className='user__avatar user__avatar--default'>{userDefault}</section> : <img className='user__avatar' src={userhandle?.avatarUrl} alt={`avatar of ${userhandle?.firstname}`} /> }
-                <section className='user_name'>
-                    <p><strong>{userhandle?.firstName} {userhandle?.lastName} <BiSolidBadgeCheck /> </strong></p>
-                    <p>{userhandle?.username}</p>
-                </section>
+                    <Avatar 
+                        userName={userhandle?.username}
+                    />
                 </section>
                 <Button label="follow"/>
             </section>
@@ -68,7 +67,8 @@ const UserPage = () => {
             <ul className='user__posts'>
                 {userPosts?.map(({_id, content, comments, mediaURL, username, likes, createdAt}) => (
                         <li key={_id}>
-                            <Post 
+                            <Post
+                                postId={_id} 
                                 content={content}
                                 comments={comments}
                                 mediaURL={mediaURL}

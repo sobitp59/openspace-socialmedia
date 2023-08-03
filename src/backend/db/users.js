@@ -23,7 +23,7 @@ export const users = [
     "_id":"xyZ12PQr-s",
     "firstName": "Itachi",
     "lastName": "Uchiha",
-    "username": "itachi_akatsuki",
+    "username": "itachi_uchiha",
     "password": "Uch1h@_It@chi",
     "bio": "Those who forgive themselves and are able to accept their true nature... They are the strong ones.",
     "bookmarks": [],

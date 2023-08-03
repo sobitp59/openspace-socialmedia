@@ -58,13 +58,14 @@ const Home = () => {
                 <p>suggestions for you</p>
                 <ul className='users__lists'>
                     {allUsers?.map((user) => (
-                        <User 
-                            key={user?._id} 
-                            firstname={user?.firstName}
-                            lastname={user?.lastName}
-                            avatar={user?.avatarUrl}
-                            username={user?.username}
-                        />
+                        <li className='user__list' key={user?._id}>
+                            <User  
+                                username={user?.username}
+                                firstname={user?.firstName}
+                                lastname={user?.lastName}
+                                avatar={user?.avatarUrl}
+                            />
+                        </li>
                     ))}
                 </ul>
             </section>

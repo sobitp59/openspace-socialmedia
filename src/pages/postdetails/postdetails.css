@@ -1,0 +1,32 @@
+.postdetails{
+    width: 70%;
+    margin: auto;
+    height: 87vh;
+    overflow-y: scroll;
+}
+
+.postdetails__comments{
+    width: 100%;
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.postdetails__comment{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    align-items: start;
+    border: 2px solid;
+    padding: 0.5rem;
+}
+
+.postdetails__text{
+    margin-top: 0.3rem;
+    text-align: left;
+}
