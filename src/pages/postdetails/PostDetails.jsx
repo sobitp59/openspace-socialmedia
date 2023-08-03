@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Avatar from '../../components/avatar/Avatar';
+import { LikedBy } from '../../components/likedby/LikedBy';
 import Post from '../../components/post/Post';
 import { useData } from '../../context/DataContext';
 import "./postdetails.css";
@@ -10,6 +11,7 @@ const PostDetails = () => {
     const {postId} = useParams();
     const [post, setPost] = useState({});
     const [postLoading, setPostLoading] = useState(true);
+    const [showLikedBy, setShowLikedBy] = useState(false);
 
     useEffect(() => {
         if(post?._id) return;
@@ -36,7 +38,7 @@ const PostDetails = () => {
                 createdAt={post?.createdAt}
             />
             <hr />
-            <p>{post?.likes?.likeCount} likes</p>
+            <p className='postdetails__likes' onClick={() => setShowLikedBy(true)}>{post?.likes?.likeCount} likes</p>
             <hr />
             
             <ul className='postdetails__comments'>
@@ -53,8 +55,26 @@ const PostDetails = () => {
             </ul>
           </>
         )}
+        {showLikedBy && (
+           <ul className='likedby'>
+            <section className='likedBy__div'>
+                <section className='likedBy__top'>
+                  <span>liked by</span>
+                  <button onClick={() => setShowLikedBy(false)}>X</button>
+                </section>
+                <hr />  
+              {post?.likes?.likedBy?.map(({_id, username}) => (
+                <li className="likedby__section" key={_id}>
+                    <LikedBy username={username}/>   
+                </li>
+              ))}
+            </section>
+       </ul>
+        )}
+    
     </div>
   )
 }
 
 export default PostDetails;
+
