@@ -12,23 +12,22 @@ import "./userpage.css";
 
 const UserPage = () => {
     const {username} = useParams();
-    const {users, getPosts, getUserHandler} = useData(); 
+    const {users, getUserPostsHandler, getUserHandler} = useData(); 
     const [userhandle, setUserhandle] = useState({});
     const [loadingHandle, setLoadingHandle] = useState(true);   
     const [loadingPosts, setLoadingPosts] = useState(true);   
     const [userPosts, setUserPosts] = useState([]);
     
     const user = users?.find((user) => user?.username === username );
-    const userDefault = user?.firstName.charAt(0)?.toUpperCase();
 
     document.title = 'profile | openspace'
     
 
     useEffect(() => {
         if(username){
-            getPosts(username, setLoadingPosts, setUserPosts);
+            getUserPostsHandler(username, setLoadingPosts, setUserPosts);
         }
-    }, [getPosts, username])
+    }, [getUserPostsHandler, username])
     
     useEffect(() => {
         if(user?._id){
@@ -86,15 +85,3 @@ const UserPage = () => {
 }
 
 export default UserPage;
-
-// "_id":  "XYZabCDE-5",
-// "firstName": "Madara",
-// "lastName": "Uchiha",
-// "username": "madara_uchiha",
-// "password": "EternalM@dara",
-// "bio": "You really think you can defeat me? Foolishness. The power of the Uchiha is unmatched!",
-// "bookmarks": [],
-// "avatarUrl": "https://res.cloudinary.com/dibzjsyhk/image/upload/v1690443909/openspace/users/3e3d2-clickwallpapers-madara-uchiha-img3-scaled-Cropped-a3f2024_u5uswi.jpg",
-// "website": "https://eternaltsukuyomi.com/",
-// "createdAt": "2022-01-02T12:00:57+05:30",
-    // "updatedAt": formatDate()

@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
-import { getUserPostDetails, getUserPosts } from "../services/postservice";
+import { dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService } from "../services/postservice";
 import { getAllUsersService, getUserService } from "../services/userService";
 
 const DataContext = createContext();
@@ -27,6 +27,21 @@ export const DataContextProvider = ({children}) => {
         }
     }
 
+    const getAllPostsHandler = async () => {
+        try {
+            const response = await getAllPostsService();
+            const {status, data : {posts} } = response;
+            if(status === 200){
+                dispatch({
+                    type : "GET_ALL_POSTS",
+                    payload : posts
+                })
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const getUserHandler = async (userId, setLoadingHandle, setUserhandle) => {
         try {
                 setLoadingHandle(true);
@@ -41,7 +56,7 @@ export const DataContextProvider = ({children}) => {
                 }
     }
 
-    const getPosts = async (username, setLoadingPosts, setUserPosts) => {
+    const getUserPostsHandler = async (username, setLoadingPosts, setUserPosts) => {
         if(username){
             try {
                     setLoadingPosts(true);
@@ -65,8 +80,9 @@ export const DataContextProvider = ({children}) => {
                           const response = await getUserPostDetails(`${postId}`);
                            const {status, data :{post}  } = response;
                            if(status === 200){
-                            setPost(post);
+                            setPost(post)
                             } 
+                            console.log(post)
                             setPostLoading(false);
                         } catch (error) {
                             console.log(error);
@@ -74,20 +90,59 @@ export const DataContextProvider = ({children}) => {
             }
     }
 
+
+    const likePostHandler = async (postID, token) => {
+        console.log(postID)
+        try{
+            const response = await likePostService(postID, token);
+            const {status, data : {posts} } = response;
+            if(status === 201){
+                dispatch({
+                    type : "LIKE_POST",
+                    payload : posts
+                })
+                console.log(posts)
+            }
+        }catch (error){
+            console.log(error);
+        }
+    }
+    
+    const dislikePostHandler = async (postID, token) => {
+        console.log(postID)
+        try{
+            const response = await dislikePostService(postID, token);
+            const {status, data : {posts} } = response;
+            if(status === 201){
+                dispatch({
+                    type : "DISLIKE_POST",
+                    payload : posts
+                })
+                console.log(posts)
+            }
+        }catch (error){
+            console.log(error);
+        }
+    }
+
     
     useEffect(() => {
         getAllUsers();
+        getAllPostsHandler();
     }, [])
 
 
 
     const value = {
         users : state?.users,
+        posts : state?.posts,
         userhandle : state?.userhandle,
         getAllUsers,
         getUserHandler,
-        getPosts,
-        getUserPost
+        getUserPostsHandler,
+        getUserPost,
+        likePostHandler,
+        dislikePostHandler
     }
 
     return(

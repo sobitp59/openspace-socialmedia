@@ -7,20 +7,23 @@ import { useData } from '../../context/DataContext';
 import "./postdetails.css";
 
 const PostDetails = () => {
-    const {getUserPost} = useData();
+    const {getUserPost, posts} = useData();
+    const [post,setPost] = useState({})
     const {postId} = useParams();
-    const [post, setPost] = useState({});
     const [postLoading, setPostLoading] = useState(true);
     const [showLikedBy, setShowLikedBy] = useState(false);
+
+    console.log('POST : ', post)
 
     useEffect(() => {
         if(post?._id) return;
         else if(postId){
             getUserPost(postId, setPostLoading, setPost)
         }
-    }, [getUserPost, postLoading, postId, post]);
+    }, [getUserPost, postId, post]);
     
-    console.log(post)
+    const userPost = posts?.find(({_id}) => _id === post?._id);
+    console.log("USERPOST :" ,userPost);
 
   return (
     <div className='postdetails'>
@@ -29,20 +32,20 @@ const PostDetails = () => {
         ) : (
           <>
             <Post
-                postId={post?._id} 
-                content={post?.content}
-                comments={post?.comments}
-                mediaURL={post?.mediaURL}
-                username={post?.username}
-                likes={post?.likes}
-                createdAt={post?.createdAt}
+                postId={userPost?._id} 
+                content={userPost?.content}
+                comments={userPost?.comments}
+                mediaURL={userPost?.mediaURL}
+                username={userPost?.username}
+                likes={userPost?.likes}
+                createdAt={userPost?.createdAt}
             />
             <hr />
-            <p className='postdetails__likes' onClick={() => setShowLikedBy(true)}>{post?.likes?.likeCount} likes</p>
+            <p className='postdetails__likes' onClick={() => setShowLikedBy(true)}>{userPost?.likes?.likeCount} likes</p>
             <hr />
             
             <ul className='postdetails__comments'>
-              {post?.comments?.map(({_id, text, username}) => {
+              {userPost?.comments?.map(({_id, text, username}) => {
                 return(
                 <li className='postdetails__comment' key={_id}>
                   <Avatar 
@@ -63,7 +66,7 @@ const PostDetails = () => {
                   <button onClick={() => setShowLikedBy(false)}>X</button>
                 </section>
                 <hr />  
-              {post?.likes?.likedBy?.map(({_id, username}) => (
+              {userPost?.likes?.likedBy?.map(({_id, username}) => (
                 <li className="likedby__section" key={_id}>
                     <LikedBy username={username}/>   
                 </li>
