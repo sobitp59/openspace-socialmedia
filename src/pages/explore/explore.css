@@ -1,0 +1,14 @@
+.exploreposts{
+    width: 70%;
+    margin: auto;
+    height: 86vh;
+    overflow-y: scroll;
+}
+
+.exploreposts__lists{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}

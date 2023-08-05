@@ -6,7 +6,6 @@ import "./liked.css";
 
 const Liked = () => {
   const {likedPosts} = useData();
-  console.log(likedPosts)
   return (
     <div className='likedposts'>
       <h2>liked posst</h2>
