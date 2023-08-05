@@ -12,7 +12,7 @@ import "./userpage.css";
 
 const UserPage = () => {
     const {username} = useParams();
-    const {users, getUserPostsHandler, getUserHandler} = useData(); 
+    const {users, getUserPostsHandler, getUserHandler, posts} = useData(); 
     const [userhandle, setUserhandle] = useState({});
     const [loadingHandle, setLoadingHandle] = useState(true);   
     const [loadingPosts, setLoadingPosts] = useState(true);   
@@ -24,16 +24,12 @@ const UserPage = () => {
     
 
     useEffect(() => {
-        if(username){
             getUserPostsHandler(username, setLoadingPosts, setUserPosts);
-        }
-    }, [getUserPostsHandler, username])
+    }, [username])
     
     useEffect(() => {
-        if(user?._id){
             getUserHandler(user?._id, setLoadingHandle, setUserhandle);
-        }
-    }, [getUserHandler, user?._id])
+    }, [user?._id])
 
     return (
     <div className='userprofile'>
@@ -64,19 +60,21 @@ const UserPage = () => {
         )}
         {loadingPosts ? <p>fetchning posts</p> : (
             <ul className='user__posts'>
-                {userPosts?.map(({_id, content, comments, mediaURL, username, likes, createdAt}) => (
-                        <li key={_id}>
+                {userPosts?.map(({_id}) => {
+                        const userPost = posts?.find((post) => post?._id === _id )
+                        return(<li key={_id}>
                             <Post
-                                postId={_id} 
-                                content={content}
-                                comments={comments}
-                                mediaURL={mediaURL}
-                                username={username}
-                                likes={likes}
-                                createdAt={createdAt}
+                                postId={userPost?._id} 
+                                content={userPost?.content}
+                                comments={userPost?.comments}
+                                mediaURL={userPost?.mediaURL}
+                                username={userPost?.username}
+                                likes={userPost?.likes}
+                                createdAt={userPost?.createdAt}
                             />
                         </li>
-                    )
+                        )
+}
                 )}
             </ul>
         ) }

@@ -18,10 +18,9 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt})
   const {currentUser : {token}} = useAuth();
   const {firstName, lastName, avatarUrl} = users?.find((user) => user?.username === username);
 
-  console.log(userInfo?.username === username);
   const isPostAlreadyLiked = likes?.likedBy?.find((user) => user?.username === userInfo?.username );
   return (
-    <div className='post'>
+    <>
         <User 
           username={username}
           firstname={firstName}
@@ -39,11 +38,11 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt})
               icon={isPostAlreadyLiked ? <AiFillHeart /> : <AiOutlineHeart />}
               onClick={isPostAlreadyLiked ? () => dislikePostHandler(postId, token): () => likePostHandler(postId, token)}
             />
-
-            <button>
-              {comments?.length}
-              < FaRegComment/>        
-            </button>
+            
+            <Button 
+              label={comments?.length}
+              icon={< FaRegComment/>}
+            />
             <button>
               < FiBookmark />
             </button>
@@ -51,7 +50,7 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt})
               <BiShareAlt />
             </button>
           </section>
-    </div>
+    </>
   )
 }
 

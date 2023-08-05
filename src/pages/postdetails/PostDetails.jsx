@@ -13,18 +13,16 @@ const PostDetails = () => {
     const [postLoading, setPostLoading] = useState(true);
     const [showLikedBy, setShowLikedBy] = useState(false);
 
-    console.log('POST : ', post)
+
+
+    const userPost = posts?.find(({_id}) => _id === post?._id);
 
     useEffect(() => {
-        if(post?._id) return;
-        else if(postId){
             getUserPost(postId, setPostLoading, setPost)
-        }
-    }, [getUserPost, postId, post]);
-    
-    const userPost = posts?.find(({_id}) => _id === post?._id);
-    console.log("USERPOST :" ,userPost);
+    }, [postId]);
 
+
+    console.log('POSTS', posts)
   return (
     <div className='postdetails'>
         {postLoading ? (

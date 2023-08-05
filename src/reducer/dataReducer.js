@@ -1,7 +1,8 @@
 export const initialState = {
     users : [],
     posts : [],
-    userhandle : {}
+    likedPosts : [],
+        
 }
 
 
@@ -21,6 +22,10 @@ export const userDataReducer = (state, {type, payload}) => {
         
         case "DISLIKE_POST" : {
             return {...state, posts : payload}
+        }
+
+        case "LIKED_POSTS" : {
+            return {...state, likedPosts : payload}
         }
         
 

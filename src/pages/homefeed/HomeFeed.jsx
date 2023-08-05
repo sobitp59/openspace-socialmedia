@@ -13,19 +13,21 @@ const HomeFeed = () => {
   return (
     <div className='homefeed'>
         <CreatePost />
-        {posts.length < 1 ? <p>posts loading...</p> : (
+        {posts?.length === 0  ? <p>posts loading...</p> : (
           <ul className='homefeed__posts'>
               {posts?.map(({_id, content, likes,  comments, mediaURL, username, createdAt}) => (
-                <Post 
-                  postId={_id}
-                  content={content}
-                  mediaURL={mediaURL}
-                  username={username}
-                  likes={likes}
-                  comments={comments}
-                  createdAt={createdAt}
-                
-                />
+                <li className='post' key={_id}>
+                  <Post 
+                    postId={_id}
+                    content={content}
+                    mediaURL={mediaURL}
+                    username={username}
+                    likes={likes}
+                    comments={comments}
+                    createdAt={createdAt}
+                  
+                  />
+                </li>
               ) )}
           </ul>
         ) }
