@@ -2,6 +2,7 @@ export const initialState = {
     users : [],
     posts : [],
     likedPosts : [],
+    bookmarks : []
         
 }
 
@@ -26,6 +27,14 @@ export const userDataReducer = (state, {type, payload}) => {
 
         case "LIKED_POSTS" : {
             return {...state, likedPosts : payload}
+        }
+        
+        case "SET_BOOKMARK" : {
+            return {...state, bookmarks : payload}
+        }
+        
+        case "REMOVE_BOOKMARK" : {
+            return {...state, bookmarks : payload}
         }
         
 

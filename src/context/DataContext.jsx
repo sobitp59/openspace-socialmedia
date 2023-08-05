@@ -1,8 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { LikedBy } from "../components/likedby/LikedBy";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
 import { dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService } from "../services/postservice";
-import { getAllUsersService, getUserService } from "../services/userService";
+import { getAllUsersService, getUserService, postBookmarkService, removeBookmarkService } from "../services/userService";
 import { useAuth } from "./AuthContext";
 
 const DataContext = createContext();
@@ -11,7 +10,6 @@ const DataContext = createContext();
 export const DataContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(userDataReducer, initialState);
     const {currentUser} = useAuth()
-    // const authToken = true;
     
     
     const getAllUsers = async () => {
@@ -123,6 +121,37 @@ export const DataContextProvider = ({children}) => {
                     }
     }
 
+    const postBookmark = async (postId, token) => {
+        try{
+            const response = await postBookmarkService(postId, token);
+            const {status, data : {bookmarks}} = response;
+            if(status === 200){
+                dispatch({
+                    type : "SET_BOOKMARK",
+                    payload : bookmarks
+                })
+            }
+        }catch(error){
+            console.log(error)
+        }
+    }
+    
+    const reomveBookmark = async (postId, token) => {
+        console.log(postId)
+        try{
+            const response = await removeBookmarkService(postId, token);
+            const {status, data : {bookmarks}} = response;
+            if(status === 200){
+                dispatch({
+                    type : "REMOVE_BOOKMARK",
+                    payload : bookmarks
+                })
+            }
+        }catch(error){
+            console.log(error)
+        }
+    }
+
     
     
     useEffect(() => {
@@ -141,10 +170,7 @@ export const DataContextProvider = ({children}) => {
                 type : 'LIKED_POSTS',
                 payload : likedPosts
             })
-       
         }
-       
-
     }, [state?.posts, currentUser?.userInfo?.username, state?.liked?.postID])
 
 
@@ -153,12 +179,15 @@ export const DataContextProvider = ({children}) => {
         posts : state?.posts,
         userhandle : state?.userhandle,
         likedPosts : state?.likedPosts,
+        bookmarks : state?.bookmarks,
         getAllUsers,
         getUserHandler,
         getUserPostsHandler,
         getUserPost,
         likePostHandler,
-        dislikePostHandler
+        dislikePostHandler,
+        postBookmark,
+        reomveBookmark
     }
 
     return(

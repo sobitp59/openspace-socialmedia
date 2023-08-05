@@ -2,7 +2,7 @@ import React from 'react'
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
 import { BiShareAlt } from "react-icons/bi"
 import { FaRegComment } from "react-icons/fa"
-import { FiBookmark } from "react-icons/fi"
+import { RiBookmarkFill, RiBookmarkLine } from "react-icons/ri"
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { useData } from '../../context/DataContext'
@@ -13,12 +13,14 @@ import './post.css'
 
 
 const Post = ({postId, content, comments, mediaURL, username, likes, createdAt}) => {
-  const {users, likePostHandler, dislikePostHandler} = useData();
+  const {users, likePostHandler, dislikePostHandler, bookmarks, postBookmark, reomveBookmark} = useData();
   const {currentUser : {userInfo}} = useAuth();
   const {currentUser : {token}} = useAuth();
   const {firstName, lastName, avatarUrl} = users?.find((user) => user?.username === username);
 
   const isPostAlreadyLiked = likes?.likedBy?.find((user) => user?.username === userInfo?.username );
+  const isPostAlreadBookmarked =  bookmarks?.find((bookmark) => bookmark?._id === postId);
+  
   return (
     <>
         <User 
@@ -43,12 +45,16 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt})
               label={comments?.length}
               icon={< FaRegComment/>}
             />
-            <button>
-              < FiBookmark />
-            </button>
-            <button>
-              <BiShareAlt />
-            </button>
+            
+            <Button 
+              icon={isPostAlreadBookmarked ? < RiBookmarkFill/> : < RiBookmarkLine />}
+              onClick={isPostAlreadBookmarked ? () => reomveBookmark(postId, token) : () => postBookmark(postId, token)}
+            />
+            
+            <Button 
+              icon={<BiShareAlt />}
+            />
+
           </section>
     </>
   )
