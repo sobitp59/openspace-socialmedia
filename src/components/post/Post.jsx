@@ -12,8 +12,8 @@ import './post.css'
 
 
 
-const Post = ({postId, content, comments, mediaURL, username, likes, createdAt}) => {
-  const {users, likePostHandler, dislikePostHandler, bookmarks, postBookmark, reomveBookmark} = useData();
+const Post = ({postId, content, comments, mediaURL, username, likes, createdAt, postdetails, focusCommentBox}) => {
+  const {users, likePostHandler, dislikePostHandler, bookmarks, postBookmark, reomveBookmark, hideShowCommentBox} = useData();
   const {currentUser : {userInfo}} = useAuth();
   const {currentUser : {token}} = useAuth();
   const {firstName, lastName, avatarUrl} = users?.find((user) => user?.username === username);
@@ -44,6 +44,7 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt})
             <Button 
               label={comments?.length}
               icon={< FaRegComment/>}
+              onClick={postdetails ? focusCommentBox : () => hideShowCommentBox('show')}
             />
             
             <Button 
@@ -52,7 +53,7 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt})
             />
             
             <Button 
-              icon={<BiShareAlt />}
+              icon={postdetails ? 'POST' : <BiShareAlt />}
             />
 
           </section>

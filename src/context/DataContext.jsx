@@ -12,6 +12,7 @@ export const DataContextProvider = ({children}) => {
     const {currentUser} = useAuth()
     
     
+    // USER
     const getAllUsers = async () => {
         try {
             const response = await getAllUsersService();
@@ -24,21 +25,6 @@ export const DataContextProvider = ({children}) => {
             }
         } catch (error) {
             console.log(error)
-        }
-    }
-
-    const getAllPostsHandler = async () => {
-        try {
-            const response = await getAllPostsService();
-            const {status, data : {posts} } = response;
-            if(status === 200){
-                dispatch({
-                    type : "GET_ALL_POSTS",
-                    payload : posts
-                })
-            }
-        } catch (error) {
-            console.log(error);
         }
     }
 
@@ -56,6 +42,26 @@ export const DataContextProvider = ({children}) => {
                 }
     }
 
+
+    // POST
+
+    const getAllPostsHandler = async () => {
+        try {
+            const response = await getAllPostsService();
+            const {status, data : {posts} } = response;
+            if(status === 200){
+                dispatch({
+                    type : "GET_ALL_POSTS",
+                    payload : posts
+                })
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+   
+
     const getUserPostsHandler = async (username, setLoadingPosts, setUserPosts) => {
             try {
                     setLoadingPosts(true);
@@ -71,9 +77,24 @@ export const DataContextProvider = ({children}) => {
                     }
     }
 
+    const getUserPost = async (postId, setPostLoading, setPost) => {
+        try {
+            setPostLoading(true);
+                  const response = await getUserPostDetails(`${postId}`);
+                   const {status, data :{post}  } = response;
+                   if(status === 200){
+                    setPost(post)
+                    } 
+                    console.log(post)
+                    setPostLoading(false);
+                } catch (error) {
+                    console.log(error);
+                }
+    }
 
 
 
+    // LIKES/ DISLIKES
     const likePostHandler = async (postID, token) => {
         try{
             const response = await likePostService(postID, token);
@@ -106,21 +127,10 @@ export const DataContextProvider = ({children}) => {
         }
     }
 
-    const getUserPost = async (postId, setPostLoading, setPost) => {
-            try {
-                setPostLoading(true);
-                      const response = await getUserPostDetails(`${postId}`);
-                       const {status, data :{post}  } = response;
-                       if(status === 200){
-                        setPost(post)
-                        } 
-                        console.log(post)
-                        setPostLoading(false);
-                    } catch (error) {
-                        console.log(error);
-                    }
-    }
 
+
+
+    // BOOKMARK
     const postBookmark = async (postId, token) => {
         try{
             const response = await postBookmarkService(postId, token);
@@ -152,6 +162,22 @@ export const DataContextProvider = ({children}) => {
         }
     }
 
+    // COMMENT
+    const getCommentText = (event) => {
+        const {value} = event?.target;
+        dispatch({
+            type : "GET_COMMENT_TEXT",
+            payload : value
+        })
+    }
+
+    const hideShowCommentBox = (type) => {
+        dispatch({
+            type : 'HIDE_SHOW_COMMENT_BOX',
+            payload : type === 'show' ? true : false
+        })
+    }
+
     
     
     useEffect(() => {
@@ -180,6 +206,8 @@ export const DataContextProvider = ({children}) => {
         userhandle : state?.userhandle,
         likedPosts : state?.likedPosts,
         bookmarks : state?.bookmarks,
+        showCommentBox : state?.showCommentBox,
+        commentText : state?.commentText,
         getAllUsers,
         getUserHandler,
         getUserPostsHandler,
@@ -187,7 +215,9 @@ export const DataContextProvider = ({children}) => {
         likePostHandler,
         dislikePostHandler,
         postBookmark,
-        reomveBookmark
+        reomveBookmark,
+        getCommentText,
+        hideShowCommentBox
     }
 
     return(

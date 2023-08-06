@@ -1,0 +1,48 @@
+.comment{
+    width: 30rem;
+    height: 10rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    outline: 2px solid rgba(25, 0, 58, 0.096);
+}
+
+.comment__top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment__content{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.comment__textarea{
+    height: 5rem;
+    outline: none;
+    background: transparent;
+    border: none;
+}
+
+.comment__bottom {
+    margin-top: 1rem;
+
+}
+
+.comment__button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

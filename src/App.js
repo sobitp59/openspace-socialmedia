@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css';
-import Footer from './components/footer/Footer';
+import Comment from "./components/commentbox/Comment";
 import Header from './components/header/Header';
 import RequiresAuth from "./components/requiresauth/RequiresAuth";
 import { useAuth } from "./context/AuthContext";
+import { useData } from "./context/DataContext";
 import Bookmark from './pages/bookmark/Bookmark';
 import Explore from './pages/explore/Explore';
 import Home from './pages/home/Home';
@@ -45,6 +46,7 @@ import UserPage from "./pages/userpage/UserPage";
 
 function App() {
   const {currentUser : {token}} = useAuth();
+  const {showCommentBox} = useData();
 
   return (
     <div className='app'>
@@ -69,7 +71,9 @@ function App() {
         <Route path='/signup' element={<Signup />}/>
 
       </Routes>
-      {/* {token && <Footer />} */}
+      
+      {showCommentBox && <Comment />}
+
   </div>
     );
 }

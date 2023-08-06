@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Avatar from '../../components/avatar/Avatar';
 import { LikedBy } from '../../components/likedby/LikedBy';
@@ -7,22 +7,25 @@ import { useData } from '../../context/DataContext';
 import "./postdetails.css";
 
 const PostDetails = () => {
-    const {getUserPost, posts} = useData();
+    const {getUserPost, posts, getCommentText, commentText} = useData();
     const [post,setPost] = useState({})
     const {postId} = useParams();
     const [postLoading, setPostLoading] = useState(true);
     const [showLikedBy, setShowLikedBy] = useState(false);
-
+    const textareaRef = useRef(null);
 
 
     const userPost = posts?.find(({_id}) => _id === post?._id);
 
+    const focusCommentBox = () => {
+       textareaRef?.current?.focus()
+    } 
+    
     useEffect(() => {
             getUserPost(postId, setPostLoading, setPost)
     }, [postId]);
 
 
-    console.log('POSTS', posts)
   return (
     <div className='postdetails'>
         {postLoading ? (
@@ -37,11 +40,21 @@ const PostDetails = () => {
                 username={userPost?.username}
                 likes={userPost?.likes}
                 createdAt={userPost?.createdAt}
+                postdetails
+                focusCommentBox={focusCommentBox}
+                textareaRef={textareaRef}
+
             />
             <hr />
             <p className='postdetails__likes' onClick={() => setShowLikedBy(true)}>{userPost?.likes?.likeCount} likes</p>
             <hr />
-            
+
+            {/* comments */}
+            <form className='postdetailsCommentBox'>
+              <textarea ref={textareaRef} onChange={getCommentText} placeholder='enter your comment..'></textarea>
+              <button>comment</button>
+            </form>
+
             <ul className='postdetails__comments'>
               {userPost?.comments?.map(({_id, text, username}) => {
                 return(

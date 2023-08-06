@@ -2,7 +2,9 @@ export const initialState = {
     users : [],
     posts : [],
     likedPosts : [],
-    bookmarks : []
+    bookmarks : [],
+    commentText : '',
+    showCommentBox : false,
         
 }
 
@@ -35,6 +37,15 @@ export const userDataReducer = (state, {type, payload}) => {
         
         case "REMOVE_BOOKMARK" : {
             return {...state, bookmarks : payload}
+        }
+
+        case "GET_COMMENT_TEXT" : {
+            return {...state, commentText : payload}
+        }
+
+        case "HIDE_SHOW_COMMENT_BOX" : {
+            console.log(payload)
+            return {...state, showCommentBox : payload, commentText : payload === false ? '' : state?.commentText}
         }
         
 
