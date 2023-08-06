@@ -32,7 +32,7 @@ export const getPostCommentsHandler = function (schema, request) {
  * send POST Request at /api/comments/add/:postId
  * */
 
-export const addPostCommentHandler = function (schema, request) {
+export const addCommentHandler = function (schema, request) {
   const user = requiresAuth.call(this, request);
   try {
     if (!user) {

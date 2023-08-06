@@ -25,6 +25,8 @@ import {
   unfollowUserHandler,
   editUserHandler,
 } from "./backend/controllers/UserController";
+import { addCommentHandler } from "./backend/controllers/CommentsController";
+
 
 export function makeServer({ environment = "development" } = {}) {
   return new Server({
@@ -87,6 +89,9 @@ export function makeServer({ environment = "development" } = {}) {
         "/users/unfollow/:followUserId/",
         unfollowUserHandler.bind(this)
       );
+
+       //post comments routes (private)
+       this.post("/comments/add/:postId", addCommentHandler.bind(this));
     },
   });
 }
