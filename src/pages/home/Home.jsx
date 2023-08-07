@@ -7,8 +7,10 @@ import { useData } from '../../context/DataContext';
 import './home.css';
 
 import { Toaster } from 'react-hot-toast';
+import Button from '../../components/button/Button';
 
 const Home = () => {
+    const {hideShowPostBox} = useData()
     const location = useLocation();
     const isHomePage = location.pathname === '/';
 
@@ -29,7 +31,12 @@ const Home = () => {
                 <NavLink to={"/explore"}> explore</NavLink>
                 <NavLink to={"/bookmarks"}> bookmarks</NavLink>
                 <NavLink to={"/likedposts"}> liked posts</NavLink>
-                <button>create a post</button>
+                
+                <Button 
+                    label={'create post'}
+                    onClick={() => hideShowPostBox('show')}
+                />
+
             </section>
             <section>
                 <User 

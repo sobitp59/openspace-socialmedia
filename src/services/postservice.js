@@ -41,3 +41,12 @@ export const addCommentService = (postId, commentData, encodedToken) => {
 
         )
 }
+
+export const addPostService = ( postData, encodedToken) => {
+    return axios.post(
+        `/api/user/posts/`,
+        {postData : postData},
+        {headers : {authorization : encodedToken}}
+
+        )
+}

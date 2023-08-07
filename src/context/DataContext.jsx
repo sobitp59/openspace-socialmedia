@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
-import { addCommentService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService } from "../services/postservice";
+import { addCommentService, addPostService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService } from "../services/postservice";
 import { getAllUsersService, getUserService, postBookmarkService, removeBookmarkService } from "../services/userService";
 import { useAuth } from "./AuthContext";
 
@@ -52,7 +52,7 @@ export const DataContextProvider = ({children}) => {
             if(status === 200){
                 dispatch({
                     type : "GET_ALL_POSTS",
-                    payload : posts
+                    payload : posts.reverse()
                 })
             }
         } catch (error) {
@@ -68,8 +68,7 @@ export const DataContextProvider = ({children}) => {
                       const response = await getUserPosts(username);
                        const {status, data : {posts} } = response;
                        if(status === 200){
-                        setUserPosts(posts)
-                         console.log(posts)
+                        setUserPosts(posts.reverse())
                         } 
                         setLoadingPosts(false);
                     } catch (error) {
@@ -92,6 +91,39 @@ export const DataContextProvider = ({children}) => {
                 }
     }
 
+    const hideShowPostBox = (type) => {
+        dispatch({
+            type : 'HIDE_SHOW_POST_BOX',
+            payload : {
+                show : type === 'show' ? true : false,
+            }
+        })
+    }
+
+    const setPostContent = (event) => {
+        const {value} = event?.target;
+        dispatch({
+            type : "SET_POST_CONTENT",
+            payload : value
+        })
+    }
+
+    const addPost = async (postData, token) => {
+       
+        try {
+            const response = await addPostService(postData, token);
+            const {status, data : {posts}} = response;
+            if(status === 201){
+                dispatch({
+                    type : "ADD_POST",
+                    payload : posts.reverse()
+                })
+            }
+            console.log(response)
+        } catch (error) {
+            
+        }
+    }
 
 
     // LIKES/ DISLIKES
@@ -102,7 +134,7 @@ export const DataContextProvider = ({children}) => {
             if(status === 201){
                 dispatch({
                     type : "LIKE_POST",
-                    payload : posts 
+                    payload : posts.reverse() 
                 })
                 console.log(posts)
             }
@@ -118,7 +150,7 @@ export const DataContextProvider = ({children}) => {
             if(status === 201){
                 dispatch({
                     type : "DISLIKE_POST",
-                    payload : posts,
+                    payload : posts.reverse(),
 
                 })
                 console.log('DISLIKED', posts)
@@ -191,7 +223,7 @@ export const DataContextProvider = ({children}) => {
             if(status === 201){
                 dispatch({
                     type : "ADD_COMMENT",
-                    payload : posts 
+                    payload : posts.reverse() 
                 })
             }
             console.log(posts)
@@ -230,6 +262,8 @@ export const DataContextProvider = ({children}) => {
         showCommentBox : state?.showCommentBox,
         commentText : state?.commentText,
         commentPostId : state?.commentPostId,
+        showPostBox : state?.showPostBox,
+        postData : state?.postData,
         getAllUsers,
         getUserHandler,
         getUserPostsHandler,
@@ -240,7 +274,10 @@ export const DataContextProvider = ({children}) => {
         reomveBookmark,
         getCommentText,
         hideShowCommentBox,
-        addComment
+        addComment,
+        hideShowPostBox,
+        addPost,
+        setPostContent
     }
 
     return(

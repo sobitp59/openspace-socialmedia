@@ -6,6 +6,12 @@ export const initialState = {
     commentText : '',
     commentPostId : '',
     showCommentBox : false,
+    showPostBox : false,
+    postData : {
+        content: "",
+        mediaURL: "",
+        comments : []
+    }
         
 }
 
@@ -51,6 +57,18 @@ export const userDataReducer = (state, {type, payload}) => {
         
         case "ADD_COMMENT" : {
             return {...state, posts : payload,  commentText : '', commentPostId : '', showCommentBox :false}
+        }
+
+        case "HIDE_SHOW_POST_BOX": {
+            return {...state, showPostBox : payload?.show}
+        }
+        
+        case "SET_POST_CONTENT": {
+            return {...state,  postData : { content: payload, mediaURL: "", comments : []} }
+        }
+
+        case "ADD_POST": {
+            return {...state, posts : payload,  postData : { ...state?.postData, content: "", mediaURL: "",}, showPostBox : false}
         }
         
 

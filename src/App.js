@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import './App.css';
 import Comment from "./components/commentbox/Comment";
+import CreatePost from "./components/createpost/CreatePost";
 import Header from './components/header/Header';
 import RequiresAuth from "./components/requiresauth/RequiresAuth";
 import { useAuth } from "./context/AuthContext";
@@ -46,7 +47,7 @@ import UserPage from "./pages/userpage/UserPage";
 
 function App() {
   const {currentUser : {token}} = useAuth();
-  const {showCommentBox, commentPostId} = useData();
+  const {showCommentBox, showPostBox} = useData();
 
   return (
     <div className='app'>
@@ -73,7 +74,7 @@ function App() {
       </Routes>
       
       {showCommentBox && <Comment />}
-
+      {showPostBox && <CreatePost postBox/>}
   </div>
     );
 }

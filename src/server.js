@@ -1,31 +1,31 @@
-import { Server, Model, RestSerializer } from "miragejs";
-import { posts } from "./backend/db/posts";
-import { users } from "./backend/db/users";
+import { Model, RestSerializer, Server } from "miragejs";
 import {
   loginHandler,
   signupHandler,
 } from "./backend/controllers/AuthController";
+import { addCommentHandler } from "./backend/controllers/CommentsController";
 import {
   createPostHandler,
+  deletePostHandler,
+  dislikePostHandler,
+  editPostHandler,
+  getAllUserPostsHandler,
   getAllpostsHandler,
   getPostHandler,
-  deletePostHandler,
-  editPostHandler,
   likePostHandler,
-  dislikePostHandler,
-  getAllUserPostsHandler,
 } from "./backend/controllers/PostController";
 import {
+  bookmarkPostHandler,
+  editUserHandler,
   followUserHandler,
   getAllUsersHandler,
-  getUserHandler,
   getBookmarkPostsHandler,
-  bookmarkPostHandler,
+  getUserHandler,
   removePostFromBookmarkHandler,
   unfollowUserHandler,
-  editUserHandler,
 } from "./backend/controllers/UserController";
-import { addCommentHandler } from "./backend/controllers/CommentsController";
+import { posts } from "./backend/db/posts";
+import { users } from "./backend/db/users";
 
 
 export function makeServer({ environment = "development" } = {}) {
@@ -66,7 +66,7 @@ export function makeServer({ environment = "development" } = {}) {
       this.get("/posts/user/:username", getAllUserPostsHandler.bind(this));
 
       // post routes (private)
-      this.post("/posts", createPostHandler.bind(this));
+      this.post("/user/posts", createPostHandler.bind(this));
       this.delete("/posts/:postId", deletePostHandler.bind(this));
       this.post("/posts/edit/:postId", editPostHandler.bind(this));
       this.post("/posts/like/:postId", likePostHandler.bind(this));
