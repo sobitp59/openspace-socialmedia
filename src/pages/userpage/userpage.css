@@ -8,19 +8,46 @@
 
 
 .userprofile__data {
+    border: 2px solid;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: left;
-    align-items: left;
+    align-items: center;
+    background-color:yellow;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+.userprofile__userBtns{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    gap: 0.5rem;
 }
 
 .userprofile__details{
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: left;
+    justify-content: space-between;
+    align-items: center;
     gap: 1rem;
+}
+
+.userprofile__bio{
+    width: 100%;
+    text-align: left;
+}
+
+.userprofile__bio > * {
+    margin-bottom: 0.2rem;
+}
+
+.userprofile__followings{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .user__posts{

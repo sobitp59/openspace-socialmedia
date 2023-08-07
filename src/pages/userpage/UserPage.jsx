@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import Avatar from '../../components/avatar/Avatar';
 import Button from '../../components/button/Button';
 import Post from '../../components/post/Post';
+import { useAuth } from '../../context/AuthContext';
 import { useData } from '../../context/DataContext';
 import { formateDate } from '../../utils/formateDate';
 import "./userpage.css";
@@ -12,7 +13,8 @@ import "./userpage.css";
 
 const UserPage = () => {
     const {username} = useParams();
-    const {users, getUserPostsHandler, getUserHandler, posts} = useData(); 
+    const {users, getUserPostsHandler, getUserHandler, posts} = useData();
+    const {currentUser : {userInfo}, userLogout} = useAuth(); 
     const [userhandle, setUserhandle] = useState({});
     const [loadingHandle, setLoadingHandle] = useState(true);   
     const [loadingPosts, setLoadingPosts] = useState(true);   
@@ -38,23 +40,33 @@ const UserPage = () => {
         <section className='userprofile__data' key={userhandle?._id}>
             
             <section className='userprofile__details'>
-                <section className='user_info'>
                     <Avatar 
                         userName={userhandle?.username}
                     />
-                </section>
-                <Button label="follow"/>
+                    {userInfo?.username === userhandle?.username ? (
+                        <section className='userprofile__userBtns'>
+                            <Button 
+                                label="edit"
+                            />
+                            <Button 
+                                label="logout"
+                                onClick={userLogout}
+                            />
+                        </section>
+                    ) : (
+                        <Button label="follow"/>
+                    )}
             </section>
 
-            <section>
+            <section className='userprofile__bio'>
                 <p>{userhandle?.bio}</p>
                 <Link to='#'>{userhandle?.website}</Link>
                 <p><MdDateRange /> {formateDate(userhandle?.createdAt)}</p>
             </section>
-            <p>
-                <span>{userPosts?.length} {userPosts?.length <= 1 ? 'post' : 'posts'}</span>
-                <span>{userhandle?.followers?.length} followers</span>
-                <span>{userhandle?.following?.length} following</span>
+            <p className='userprofile__followings'>
+                <span><strong>{userPosts?.length}</strong> {userPosts?.length <= 1 ? 'post' : 'posts'}</span>
+                <span><strong>{userhandle?.followers?.length}</strong> followers</span>
+                <span><strong>{userhandle?.following?.length}</strong> following</span>
             </p>
         </section>
         )}
