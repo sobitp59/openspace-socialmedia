@@ -4,6 +4,7 @@ export const initialState = {
     likedPosts : [],
     bookmarks : [],
     commentText : '',
+    commentPostId : '',
     showCommentBox : false,
         
 }
@@ -45,7 +46,11 @@ export const userDataReducer = (state, {type, payload}) => {
 
         case "HIDE_SHOW_COMMENT_BOX" : {
             console.log(payload)
-            return {...state, showCommentBox : payload, commentText : payload === false ? '' : state?.commentText}
+            return {...state, showCommentBox : payload.show, commentText : payload.show === false ? '' : state?.commentText, commentPostId : payload.show === false ? '' : payload?.id }
+        }
+        
+        case "ADD_COMMENT" : {
+            return {...state, posts : payload,  commentText : '', commentPostId : '', showCommentBox :false}
         }
         
 

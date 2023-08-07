@@ -46,7 +46,7 @@ import UserPage from "./pages/userpage/UserPage";
 
 function App() {
   const {currentUser : {token}} = useAuth();
-  const {showCommentBox} = useData();
+  const {showCommentBox, commentPostId} = useData();
 
   return (
     <div className='app'>

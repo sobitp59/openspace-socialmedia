@@ -31,3 +31,13 @@ export const dislikePostService = (postId, encodedToken) => {
 export const getAllPostsService = () => {
     return axios.get(`/api/posts`);
 }
+
+
+export const addCommentService = (postId, commentData, encodedToken) => {
+    return axios.post(
+        `/api/comments/add/${postId}`,
+        {commentData : commentData},
+        {headers : {authorization : encodedToken}}
+
+        )
+}

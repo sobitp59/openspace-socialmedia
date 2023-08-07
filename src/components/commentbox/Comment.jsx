@@ -7,8 +7,8 @@ import Button from '../button/Button'
 import "./comment.css"
 
 const Comment = () => {
-    const {currentUser : {userInfo}} = useAuth();
-    const {hideShowCommentBox, getCommentText, commentText} = useData();
+    const {currentUser : {userInfo, token}} = useAuth();
+    const {hideShowCommentBox, getCommentText, commentText, addComment, commentPostId} = useData();
 
 
   return (
@@ -28,9 +28,10 @@ const Comment = () => {
                     onlyAvatar 
                 />
                 <textarea autoFocus onChange={getCommentText} value={commentText} className='comment__textarea' placeholder='write your thoughts..'></textarea>
-                <button className='comment__button'>
-                    comment
-                </button>
+                <Button 
+                    label={'comment'}
+                    onClick={() => addComment(commentPostId, commentText, token)}
+                />
             </section>
         </section>
     </div>

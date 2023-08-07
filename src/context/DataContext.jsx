@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
-import { dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService } from "../services/postservice";
+import { addCommentService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService } from "../services/postservice";
 import { getAllUsersService, getUserService, postBookmarkService, removeBookmarkService } from "../services/userService";
 import { useAuth } from "./AuthContext";
 
@@ -104,6 +104,7 @@ export const DataContextProvider = ({children}) => {
                     type : "LIKE_POST",
                     payload : posts 
                 })
+                console.log(posts)
             }
         }catch (error){
             console.log(error);
@@ -171,15 +172,33 @@ export const DataContextProvider = ({children}) => {
         })
     }
 
-    const hideShowCommentBox = (type) => {
+    const hideShowCommentBox = (type, postId) => {
         dispatch({
             type : 'HIDE_SHOW_COMMENT_BOX',
-            payload : type === 'show' ? true : false
+            payload : {
+                show : type === 'show' ? true : false,
+                id : postId
+            }
         })
     }
 
 
-    
+    const addComment = async (postId, commentData, encodedToken) => {
+
+        try {
+            const response = await addCommentService(postId, {text : commentData}, encodedToken);
+            const {status, data : {posts}} = response;
+            if(status === 201){
+                dispatch({
+                    type : "ADD_COMMENT",
+                    payload : posts 
+                })
+            }
+            console.log(posts)
+        } catch (error) {
+            console.log(error)
+        }       
+    }
     
     
     useEffect(() => {
@@ -210,6 +229,7 @@ export const DataContextProvider = ({children}) => {
         bookmarks : state?.bookmarks,
         showCommentBox : state?.showCommentBox,
         commentText : state?.commentText,
+        commentPostId : state?.commentPostId,
         getAllUsers,
         getUserHandler,
         getUserPostsHandler,
@@ -219,7 +239,8 @@ export const DataContextProvider = ({children}) => {
         postBookmark,
         reomveBookmark,
         getCommentText,
-        hideShowCommentBox
+        hideShowCommentBox,
+        addComment
     }
 
     return(
@@ -229,4 +250,5 @@ export const DataContextProvider = ({children}) => {
     )
 }
 
-export const useData = () => useContext(DataContext);
+
+export const useData = () =>  useContext(DataContext);

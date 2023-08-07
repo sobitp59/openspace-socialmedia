@@ -44,7 +44,7 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt, 
             <Button 
               label={comments?.length}
               icon={< FaRegComment/>}
-              onClick={postdetails ? focusCommentBox : () => hideShowCommentBox('show')}
+              onClick={postdetails ? focusCommentBox : () => hideShowCommentBox('show', postId)}
             />
             
             <Button 
@@ -53,7 +53,7 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt, 
             />
             
             <Button 
-              icon={postdetails ? 'POST' : <BiShareAlt />}
+              icon={<BiShareAlt />}
             />
 
           </section>
