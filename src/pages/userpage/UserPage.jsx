@@ -13,25 +13,26 @@ import "./userpage.css";
 
 const UserPage = () => {
     const {username} = useParams();
-    const {users, getUserPostsHandler, getUserHandler, posts} = useData();
-    const {currentUser : {userInfo}, userLogout} = useAuth(); 
+    const {users, getUserPostsHandler, getUserHandler, posts, followUserHandler, unfollowUserHandler} = useData();
+    const {currentUser : {userInfo, token}, userLogout} = useAuth(); 
     const [userhandle, setUserhandle] = useState({});
     const [loadingHandle, setLoadingHandle] = useState(true);   
     const [loadingPosts, setLoadingPosts] = useState(true);   
     const [userPosts, setUserPosts] = useState([]);
     
     const user = users?.find((user) => user?.username === username );
+    const isUserAlreadyFollowing = user?.followers?.find(({username})  => username === userInfo?.username);
 
     document.title = 'profile | openspace'
     
-
+    
     useEffect(() => {
             getUserPostsHandler(username, setLoadingPosts, setUserPosts);
     }, [username])
     
     useEffect(() => {
-            getUserHandler(user?._id, setLoadingHandle, setUserhandle);
-    }, [user?._id])
+        getUserHandler(user, setLoadingHandle, setUserhandle);
+    }, [user])
 
     return (
     <div className='userprofile'>
@@ -54,7 +55,10 @@ const UserPage = () => {
                             />
                         </section>
                     ) : (
-                        <Button label="follow"/>
+                        <Button 
+                            label={isUserAlreadyFollowing ? "following" : "follow"}
+                            onClick={isUserAlreadyFollowing ? () => unfollowUserHandler(userhandle?._id, token): () => followUserHandler(userhandle?._id, token)}
+                        />
                     )}
             </section>
 

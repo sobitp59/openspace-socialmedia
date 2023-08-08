@@ -50,6 +50,11 @@
     align-items: center;
 }
 
+.userprofile__followings > span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .user__posts{
     width: 100%;
     display: flex;

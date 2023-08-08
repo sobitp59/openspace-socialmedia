@@ -1,13 +1,21 @@
 import React from 'react';
 import { formateDate } from '../../utils/formateDate';
 
+import { useAuth } from '../../context/AuthContext';
+import { useData } from '../../context/DataContext';
 import Avatar from '../avatar/Avatar';
 import Button from '../button/Button';
 import "./user.css";
 
 
 
-const User = ({username, currentuser, createdAt}) => {
+const User = ({isCurrentuser, username, createdAt, userId}) => {
+  const {currentUser :  {token, userInfo}} = useAuth();
+  const {users, followUserHandler, unfollowUserHandler} = useData();
+
+  const isUserAlreadyFollowing = users?.find((user) => user?.username === username)
+                                ?.followers?.find((follower) => follower?.username === userInfo?.username);
+  
   return (
     <div className='user'>
         <Avatar 
@@ -16,9 +24,9 @@ const User = ({username, currentuser, createdAt}) => {
         
         {createdAt  && <p className='user__date'>{formateDate(createdAt)}</p> }     
         
-        {!currentuser && !createdAt &&   <Button label="follow"/> }    
+        {!createdAt && !isCurrentuser &&   <Button label={isUserAlreadyFollowing ? "unfollow" : "follow"} onClick={isUserAlreadyFollowing ? () => unfollowUserHandler(userId, token) : () => followUserHandler(userId, token)}/> }  
     </div>
   )
 }
 
-export default User
+export default User;

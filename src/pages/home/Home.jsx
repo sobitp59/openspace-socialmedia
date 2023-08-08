@@ -44,7 +44,7 @@ const Home = () => {
                     lastname={userInfo?.lastName}
                     avatar={userInfo?.avatarUrl}
                     username={userInfo?.username}
-                    currentuser={true}
+                    isCurrentuser={true}
                 />
             </section>
         </aside>
@@ -66,11 +66,13 @@ const Home = () => {
                 <ul className='users__lists'>
                     {allUsers?.map((user) => (
                         <li className='user__list' key={user?._id}>
-                            <User  
+                            <User
+                                user={user}  
                                 username={user?.username}
                                 firstname={user?.firstName}
                                 lastname={user?.lastName}
                                 avatar={user?.avatarUrl}
+                                userId={user?._id}
                             />
                         </li>
                     ))}

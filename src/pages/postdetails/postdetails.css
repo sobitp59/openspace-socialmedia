@@ -37,6 +37,27 @@
     cursor: pointer;
 }
 
+
+.postdetails__top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.postdetails__doticon{
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+}
+
+.postdetails__doticon:hover{
+    background: rgba(18, 0, 31, 0.144);
+
+}
+
+
 .likedby{
     width: 100%;
     margin: auto;

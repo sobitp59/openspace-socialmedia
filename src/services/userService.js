@@ -29,7 +29,27 @@ export const removeBookmarkService = (postId, encodedToken) => {
         {
           headers: { authorization: encodedToken },
         }
-        )
+   )
+}
+
+export const followUserService = (followUserId, encodedToken) => {
+    return axios.post(
+        `/api/users/follow/${followUserId}/`,
+        {},
+        {
+          headers: { authorization: encodedToken },
+        }
+   )
+}
+
+export const unfollowUserService = (followUserId, encodedToken) => {
+    return axios.post(
+        `/api/users/unfollow/${followUserId}/`,
+        {},
+        {
+          headers: { authorization: encodedToken },
+        }
+   )
 }
 
 

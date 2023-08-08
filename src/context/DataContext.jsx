@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
 import { addCommentService, addPostService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService } from "../services/postservice";
-import { getAllUsersService, getUserService, postBookmarkService, removeBookmarkService } from "../services/userService";
+import { followUserService, getAllUsersService, getUserService, postBookmarkService, removeBookmarkService, unfollowUserService } from "../services/userService";
 import { useAuth } from "./AuthContext";
 
 const DataContext = createContext();
@@ -28,10 +28,10 @@ export const DataContextProvider = ({children}) => {
         }
     }
 
-    const getUserHandler = async (userId, setLoadingHandle, setUserhandle) => {
+    const getUserHandler = async (userData, setLoadingHandle, setUserhandle) => {
         try {
                 setLoadingHandle(true);
-                  const response = await getUserService(userId);
+                  const response = await getUserService(userData?._id);
                    const {status, data : {user}} = response;
                    if(status === 200){
                      setUserhandle(user)
@@ -232,6 +232,63 @@ export const DataContextProvider = ({children}) => {
         }       
     }
     
+
+    // FOLLOW - UNFOLLOW USERS
+    const followUserHandler = async (followUserId, token) => {
+        try {
+            const response = await followUserService(followUserId, token);
+            const {status, data : {followUser, user}} = response;
+            
+            if(status === 200){
+                const updatedUsers = state?.users?.map((userData) => {
+                    if(userData?.username === followUser?.username){
+                        return {...userData, followers : followUser?.followers, following : followUser?.following }
+                    }
+                    if(userData?.username === user?.username){
+                        return {...userData, followers : user?.followers, following : user?.following }
+                    }
+                    return userData
+                })
+                dispatch({
+                    type : "FOLLOW_USER",
+                    payload : updatedUsers
+                }); 
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    
+    const unfollowUserHandler = async (followUserId, token) => {
+        try {
+            const response = await unfollowUserService(followUserId, token);
+            const {status, data : {followUser, user}} = response;
+            
+            if(status === 200){
+                const updatedUsers = state?.users?.map((userData) => {
+                    if(userData?.username === followUser?.username){
+                        return {...userData, followers : followUser?.followers, following : followUser?.following }
+                    }
+                    if(userData?.username === user?.username){
+                        return {...userData, followers : user?.followers, following : user?.following }
+                    }
+                    return userData
+                })
+                dispatch({
+                    type : "UNFOLLOW_USER",
+                    payload : updatedUsers
+                }); 
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+
+
     
     useEffect(() => {
         getAllUsers();
@@ -277,7 +334,9 @@ export const DataContextProvider = ({children}) => {
         addComment,
         hideShowPostBox,
         addPost,
-        setPostContent
+        setPostContent,
+        followUserHandler,
+        unfollowUserHandler
     }
 
     return(

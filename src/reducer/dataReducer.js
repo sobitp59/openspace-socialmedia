@@ -71,6 +71,14 @@ export const userDataReducer = (state, {type, payload}) => {
             return {...state, posts : payload,  postData : { ...state?.postData, content: "", mediaURL: "",}, showPostBox : false}
         }
         
+        case "FOLLOW_USER": {
+            return {...state, users : payload }
+        }
+        
+        case "UNFOLLOW_USER": {
+            return {...state, users : payload }
+        }
+        
 
 
         default:

@@ -4,6 +4,7 @@ import Avatar from '../../components/avatar/Avatar';
 import Button from '../../components/button/Button';
 import { LikedBy } from '../../components/likedby/LikedBy';
 import Post from '../../components/post/Post';
+import {BiDotsHorizontalRounded} from "react-icons/bi";
 import { useAuth } from '../../context/AuthContext';
 import { useData } from '../../context/DataContext';
 import "./postdetails.css";
@@ -65,9 +66,13 @@ const PostDetails = () => {
               {userPost?.comments?.map(({_id, text, username}) => {
                 return(
                 <li className='postdetails__comment' key={_id}>
-                  <Avatar 
-                    userName={username}
-                  />
+                  <section className='postdetails__top' >
+                    <Avatar 
+                      userName={username}
+                    />
+
+                    <BiDotsHorizontalRounded className='postdetails__doticon' />
+                  </section>
                   <p className='postdetails__text'>{text}</p>
                 </li>
                 )
