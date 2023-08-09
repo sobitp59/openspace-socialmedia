@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { BiDotsHorizontalRounded } from "react-icons/bi";
+import { RxCross2 } from "react-icons/rx";
 import { useParams } from 'react-router-dom';
 import Avatar from '../../components/avatar/Avatar';
 import Button from '../../components/button/Button';
-import { LikedBy } from '../../components/likedby/LikedBy';
 import Post from '../../components/post/Post';
-import {BiDotsHorizontalRounded} from "react-icons/bi";
+import { UserListsModal } from '../../components/userslistsmodal/UserListsModal';
 import { useAuth } from '../../context/AuthContext';
 import { useData } from '../../context/DataContext';
 import "./postdetails.css";
 
 const PostDetails = () => {
     const {getUserPost, posts, getCommentText, commentText, addComment} = useData();
-    const {currentUser : {token}} = useAuth();
+    const {currentUser : {userInfo, token}} = useAuth();
     const [post,setPost] = useState({})
     const {postId} = useParams();
     const [postLoading, setPostLoading] = useState(true);
@@ -85,12 +86,15 @@ const PostDetails = () => {
             <section className='likedBy__div'>
                 <section className='likedBy__top'>
                   <span>liked by</span>
-                  <button onClick={() => setShowLikedBy(false)}>X</button>
+                  <Button
+                        icon={<RxCross2 />}
+                        onClick={() => setShowLikedBy(false)}
+                    />
                 </section>
                 <hr />  
               {userPost?.likes?.likedBy?.map(({_id, username}) => (
                 <li className="likedby__section" key={_id}>
-                    <LikedBy username={username}/>   
+                    <UserListsModal userId={_id} username={username} isCurrentUser={userInfo?.username === username}/>   
                 </li>
               ))}
             </section>

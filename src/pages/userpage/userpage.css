@@ -3,7 +3,7 @@
     margin: auto;
     height: 86vh;
     overflow-y: scroll;
-
+    position: relative;
 }
 
 
@@ -62,4 +62,52 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+}
+
+/* t */
+.userprofile__followLists{
+    width: 30%;
+    margin: auto;
+    position: fixed;
+    gap: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.userprofile__followList{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+    background: white;
+    border-radius: 0.5rem;
+    border: 2px solid white;
+    border: 2px solid rgba(0, 0, 0, 0.192);
+    box-shadow: 0.5px 0.5px 0.5px black;
+    padding: 1rem;
+}
+
+.userprofile__followHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userprofile__followUser{
+    width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 1rem;
+   /* margin: 0.8rem 0; */
+   padding: 0.8rem;
+    border-radius: 0.5rem;
+}
+
+.userprofile__followUser:hover{
+    background: rgba(0, 0, 0, 0.096);
 }
