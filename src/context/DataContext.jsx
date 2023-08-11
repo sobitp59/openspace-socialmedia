@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
-import { addCommentService, addPostService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService, updatedUserHandleService } from "../services/postservice";
+import { addCommentService, addPostService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService, updatedPostService, updatedUserHandleService } from "../services/postservice";
 import { followUserService, getAllUsersService, getUserService, postBookmarkService, removeBookmarkService, unfollowUserService } from "../services/userService";
 import { useAuth } from "./AuthContext";
 
@@ -306,6 +306,23 @@ export const DataContextProvider = ({children}) => {
         }
     }
 
+    const updatePostHandler = async (postId, postData, token, setShowEditPost) => {
+        try{
+            const response = await updatedPostService(postId, postData, token);
+            const {status, data : {posts}} = response;
+            if(status === 201){
+                dispatch({  
+                    type : "UPDATE_POST",
+                    payload : posts.reverse()
+                })
+            }
+        }catch(error){
+            console.log(error)
+        }finally{
+            setShowEditPost(false);
+        }
+    }
+
 
     
     useEffect(() => {
@@ -355,7 +372,8 @@ export const DataContextProvider = ({children}) => {
         setPostContent,
         followUserHandler,
         unfollowUserHandler,
-        updateUserHandle
+        updateUserHandle,
+        updatePostHandler
     }
 
     return(

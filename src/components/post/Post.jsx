@@ -20,7 +20,7 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt, 
 
   const isPostAlreadyLiked = likes?.likedBy?.find((user) => user?.username === userInfo?.username );
   const isPostAlreadBookmarked =  bookmarks?.find((bookmark) => bookmark?._id === postId);
-  
+  const isCurrentUser = users?.find((user) => user?.username === userInfo?.username)
   return (
     <>
         <User 
@@ -29,6 +29,8 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt, 
           lastname={lastName}
           avatar={avatarUrl}
           createdAt={createdAt}
+          postData={{postId : postId, content : content, mediaURL : mediaURL}}
+          isCurrentuser={isCurrentUser}
         />
       <Link to={`/posts/${postId}`} className='post__info'>
           <p className='post__content'>{content}</p>

@@ -51,7 +51,6 @@ export const userDataReducer = (state, {type, payload}) => {
         }
 
         case "HIDE_SHOW_COMMENT_BOX" : {
-            console.log(payload)
             return {...state, showCommentBox : payload.show, commentText : payload.show === false ? '' : state?.commentText, commentPostId : payload.show === false ? '' : payload?.id }
         }
         
@@ -81,6 +80,10 @@ export const userDataReducer = (state, {type, payload}) => {
         
         case "UPDATE_USER": {
             return {...state, users : payload }
+        }
+        
+        case "UPDATE_POST": {
+            return {...state, posts : payload }
         }
         
 

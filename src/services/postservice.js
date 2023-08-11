@@ -57,3 +57,10 @@ export const updatedUserHandleService = (userData, encodedToken) => {
         {headers : {authorization : encodedToken}}
     )
 }
+
+export const updatedPostService = (postId, postData, encodedToken) => {
+    return axios.post(`/api/posts/edit/${postId}`, 
+        {postData : postData},
+        {headers : {authorization : encodedToken}}
+    )
+}

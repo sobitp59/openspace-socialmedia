@@ -56,7 +56,10 @@ const LoginForm = () => {
         />
         {showUsers && (
           <section className='loginForm__users'>
+              <section>
+                <p><strong>select an user</strong></p>
               <Button label={"X"} onClick={() => setShowUsers(false)}/>
+              </section>
               
               {users?.map(({_id, firstName, lastName, avatarUrl, username, password}) => 
                 <button className='loginForm__user' type='submit' onClick={() => setGuestLoginData(username, password)} key={_id}>

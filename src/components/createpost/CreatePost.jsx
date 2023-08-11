@@ -9,7 +9,7 @@ import Avatar from '../avatar/Avatar';
 import Button from '../button/Button';
 import "./createpost.css";
 
-const CreatePost = ({postBox}) => {
+const  CreatePost = ({postBox}) => {
   const {currentUser : {userInfo, token}} = useAuth();
   const {hideShowPostBox, addPost, postData, setPostContent} = useData();
 
