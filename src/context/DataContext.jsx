@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
-import { addCommentService, addPostService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService } from "../services/postservice";
+import { addCommentService, addPostService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService, updatedUserHandleService } from "../services/postservice";
 import { followUserService, getAllUsersService, getUserService, postBookmarkService, removeBookmarkService, unfollowUserService } from "../services/userService";
 import { useAuth } from "./AuthContext";
 
@@ -286,7 +286,25 @@ export const DataContextProvider = ({children}) => {
         }
     }
 
-
+    // updates
+    const updateUserHandle = async(e, userData, token, setShowEditForm) => {
+        e.preventDefault();
+        try {
+            const response = await updatedUserHandleService(userData, token);
+            const {status, data: {user}} = response;
+            if(status === 201){
+                const updatedUsers = state?.users?.map((oldUser) => oldUser?.username === user?.username ? user : oldUser);
+                dispatch({
+                    type : "UPDATE_USER",
+                    payload : updatedUsers
+                })
+            }
+        } catch (error) {
+            console.log(error)
+        }finally{
+            setShowEditForm(false);
+        }
+    }
 
 
     
@@ -336,7 +354,8 @@ export const DataContextProvider = ({children}) => {
         addPost,
         setPostContent,
         followUserHandler,
-        unfollowUserHandler
+        unfollowUserHandler,
+        updateUserHandle
     }
 
     return(

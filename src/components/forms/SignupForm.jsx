@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from '../../context/AuthContext';
 import Button from '../button/Button';
-import "./signupform.css";
+import "./formstyles/signupform.css";
 
 const SignupForm = () => {
   const {signupData,userSignup, signupFormDataHandler} = useAuth();

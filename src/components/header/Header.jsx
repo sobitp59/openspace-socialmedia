@@ -24,10 +24,10 @@ const Header = () => {
             />
             
             <button className='header__theme'>light/dark</button>
-            <span className='header__profile'>
+            {/* <span className='header__profile'>
             {!userInfo?.avatarUrl ? <section className='header__avatar'>{userDefault}</section> : <img className='header__avatar' src={userInfo?.avatarUrl} alt={`avatar of ${userInfo?.firstName}`} /> }
               
-            </span>
+            </span> */}
         </section>
     </div>
   )

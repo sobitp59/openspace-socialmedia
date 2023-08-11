@@ -50,3 +50,10 @@ export const addPostService = ( postData, encodedToken) => {
 
         )
 }
+
+export const updatedUserHandleService = (userData, encodedToken) => {
+    return axios.post(`/api/users/edit`, 
+        {userData : userData},
+        {headers : {authorization : encodedToken}}
+    )
+}

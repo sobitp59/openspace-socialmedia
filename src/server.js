@@ -92,6 +92,9 @@ export function makeServer({ environment = "development" } = {}) {
 
        //post comments routes (private)
        this.post("/comments/add/:postId", addCommentHandler.bind(this));
+      
+       this.passthrough();
+       this.passthrough("https://api.cloudinary.com/v1_1/dibzjsyhk/auto/upload",["post"]);
     },
   });
 }

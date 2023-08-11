@@ -3,7 +3,7 @@ import { BiSolidBadgeCheck } from "react-icons/bi";
 import { useAuth } from '../../context/AuthContext';
 import { useData } from '../../context/DataContext';
 import Button from '../button/Button';
-import "./loginform.css";
+import "./formstyles/loginform.css";
 
 
 const LoginForm = () => {

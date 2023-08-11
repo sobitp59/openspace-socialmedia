@@ -79,6 +79,10 @@ export const userDataReducer = (state, {type, payload}) => {
             return {...state, users : payload }
         }
         
+        case "UPDATE_USER": {
+            return {...state, users : payload }
+        }
+        
 
 
         default:

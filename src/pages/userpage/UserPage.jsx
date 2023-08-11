@@ -5,6 +5,7 @@ import { RxCross2 } from "react-icons/rx";
 import { Link, useParams } from 'react-router-dom';
 import Avatar from '../../components/avatar/Avatar';
 import Button from '../../components/button/Button';
+import ProfileEditForm from '../../components/forms/ProfileEditForm';
 import Post from '../../components/post/Post';
 import { UserListsModal } from '../../components/userslistsmodal/UserListsModal';
 import { useAuth } from '../../context/AuthContext';
@@ -20,12 +21,12 @@ const UserPage = () => {
     const [userPosts, setUserPosts] = useState([]);
     const [showFollowersModal, setShowFollowersModal] = useState(false);
     const [showFollowingsModal, setShowFollowingsModal] = useState(false);
-    
+    const [showEditForm, setShowEditForm] = useState(false);
+
+
     const {username} = useParams();
     const {users, getUserPostsHandler, getUserHandler, posts, followUserHandler, unfollowUserHandler} = useData();
     const {currentUser : {userInfo, token}, userLogout} = useAuth(); 
-
-    
     const user = users?.find((user) => user?.username === username );
     const isUserAlreadyFollowing = user?.followers?.find(({username})  => username === userInfo?.username);
 
@@ -44,6 +45,8 @@ const UserPage = () => {
 
     return (
     <div className='userprofile'>
+        {showEditForm && <ProfileEditForm setShowEditForm={setShowEditForm} user={user}/>}
+        
         {loadingHandle ? <p>data is loading...</p> : (
 
         <section className='userprofile__data' key={userhandle?._id}>
@@ -56,6 +59,7 @@ const UserPage = () => {
                         <section className='userprofile__userBtns'>
                             <Button 
                                 label="edit"
+                                onClick={() => setShowEditForm(true)}
                             />
                             <Button 
                                 label="logout"
