@@ -34,10 +34,12 @@ const UserPage = () => {
     
     
     useEffect(() => {
-            if(showFollowersModal) setShowFollowersModal(false)
-            if(showFollowingsModal) setShowFollowingsModal(false)
-            getUserPostsHandler(username, setLoadingPosts, setUserPosts);
-    }, [username])
+            if(posts){
+                if(showFollowersModal) setShowFollowersModal(false)
+                if(showFollowingsModal) setShowFollowingsModal(false)
+                getUserPostsHandler(username, setLoadingPosts, setUserPosts);
+            }
+    }, [posts, username])
     
     useEffect(() => {
         getUserHandler(user, setLoadingHandle, setUserhandle);
