@@ -86,6 +86,10 @@ export const userDataReducer = (state, {type, payload}) => {
             return {...state, posts : payload }
         }
         
+        case "DELETE_POST": {
+            return {...state, posts : payload }
+        }
+        
 
 
         default:

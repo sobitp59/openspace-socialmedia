@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
-import { addCommentService, addPostService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService, updatedPostService, updatedUserHandleService } from "../services/postservice";
+import { addCommentService, addPostService, deletePostService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService, updatedPostService, updatedUserHandleService } from "../services/postservice";
 import { followUserService, getAllUsersService, getUserService, postBookmarkService, removeBookmarkService, unfollowUserService } from "../services/userService";
 import { useAuth } from "./AuthContext";
 
@@ -235,6 +235,7 @@ export const DataContextProvider = ({children}) => {
 
     // FOLLOW - UNFOLLOW USERS
     const followUserHandler = async (followUserId, token) => {
+        console.log(followUserId, token)
         try {
             const response = await followUserService(followUserId, token);
             const {status, data : {followUser, user}} = response;
@@ -322,6 +323,24 @@ export const DataContextProvider = ({children}) => {
             setShowEditPost(false);
         }
     }
+    
+    const deletePostHandler = async (postId, token, setShowUserPostBox) => {
+        try{
+            const response = await deletePostService(postId, token);
+            const {status, data : {posts}} = response;
+            if(status === 201){
+                dispatch({  
+                    type : "DELETE_POST",
+                    payload : posts.reverse()
+                })
+            }
+            console.log('DELETE :',  posts)
+        }catch(error){
+            console.log(error)
+        }finally{
+            setShowUserPostBox(false);
+        }
+    }
 
 
     
@@ -373,7 +392,8 @@ export const DataContextProvider = ({children}) => {
         followUserHandler,
         unfollowUserHandler,
         updateUserHandle,
-        updatePostHandler
+        updatePostHandler,
+        deletePostHandler
     }
 
     return(

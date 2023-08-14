@@ -64,3 +64,11 @@ export const updatedPostService = (postId, postData, encodedToken) => {
         {headers : {authorization : encodedToken}}
     )
 }
+
+export const deletePostService = (postId, encodedToken) => {
+    return axios.delete(`/api/posts/${postId}`, 
+        {
+            headers : {authorization : encodedToken}
+        }
+    )
+}

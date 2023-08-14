@@ -16,21 +16,28 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt, 
   const {users, likePostHandler, dislikePostHandler, bookmarks, postBookmark, reomveBookmark, hideShowCommentBox} = useData();
   const {currentUser : {userInfo}} = useAuth();
   const {currentUser : {token}} = useAuth();
-  const {firstName, lastName, avatarUrl} = users?.find((user) => user?.username === username);
+  // const {firstName, lastName, avatarUrl} = users?.find((user) => user?.username === username);
+  // console.log(firstName, lastName, avatarUrl)
+
 
   const isPostAlreadyLiked = likes?.likedBy?.find((user) => user?.username === userInfo?.username );
   const isPostAlreadBookmarked =  bookmarks?.find((bookmark) => bookmark?._id === postId);
-  const isCurrentUser = users?.find((user) => user?.username === userInfo?.username)
+  const isCurrentUser = username === userInfo?.username;
+  const userId = users?.find(user => user.username === username)?._id;
+
   return (
+    postId?.length && (
+
     <>
         <User 
           username={username}
-          firstname={firstName}
-          lastname={lastName}
-          avatar={avatarUrl}
+          // firstname={firstName}
+          // lastname={lastName}
+          // avatar={avatarUrl}
           createdAt={createdAt}
           postData={{postId : postId, content : content, mediaURL : mediaURL}}
           isCurrentuser={isCurrentUser}
+          userId={userId}
         />
       <Link to={`/posts/${postId}`} className='post__info'>
           <p className='post__content'>{content}</p>
@@ -60,6 +67,7 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt, 
 
           </section>
     </>
+    )
   )
 }
 

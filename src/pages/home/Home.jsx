@@ -67,11 +67,7 @@ const Home = () => {
                     {allUsers?.map((user) => (
                         <li className='user__list' key={user?._id}>
                             <User
-                                user={user}  
                                 username={user?.username}
-                                firstname={user?.firstName}
-                                lastname={user?.lastName}
-                                avatar={user?.avatarUrl}
                                 userId={user?._id}
                             />
                         </li>

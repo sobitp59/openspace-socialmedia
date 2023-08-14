@@ -15,7 +15,7 @@ import "./user.css";
 const User = ({isCurrentuser, username, createdAt, userId, postData}) => {
   const [showUserPostBox, setShowUserPostBox] = useState(false);    
   const [showEditPost, setShowEditPost] = useState(false);
-  
+   
   const [userPostData, setUserPostData] = useState({
     content : postData?.content,
     mediaURL : postData?.mediaURL
@@ -25,12 +25,14 @@ const User = ({isCurrentuser, username, createdAt, userId, postData}) => {
   const postBoxRef = useRef();
   const editPostBoxRef = useRef();
 
-  const {users, followUserHandler, unfollowUserHandler, updatePostHandler} = useData();
+  const {users, followUserHandler, unfollowUserHandler, updatePostHandler, deletePostHandler} = useData();
   const {currentUser :  {token, userInfo}} = useAuth();
 
 
   const isUserAlreadyFollowing = users?.find((user) => user?.username === username)
-    ?.followers?.find((follower) => follower?.username === userInfo?.username);
+    ?.followers?.find((follower) => follower?.username === userInfo?.username) ? true : false;
+
+
 
   const uploadMedia = async (e) => {
     setImageUploading(true);
@@ -83,20 +85,20 @@ const User = ({isCurrentuser, username, createdAt, userId, postData}) => {
                             onClick={() => setShowUserPostBox(true)}
                           /> 
           }
-          <section ref={postBoxRef}>
-            {showUserPostBox && isCurrentuser && (
-              !(username === userInfo.username) ? (
-                <>
-                  <Button label={isUserAlreadyFollowing ? "unfollow" : "follow"} onClick={isUserAlreadyFollowing ? () => unfollowUserHandler(userId, token) : () => followUserHandler(userId, token)}/> 
-                </>
-              ) : (
-                <>
-                  <Button label={"edit"} onClick={() => setShowEditPost(true)}/>  
-                  <Button label={"delete"}/>  
-                </>
-              )
-            )}
-          </section>     
+          {showUserPostBox && (
+            <section ref={postBoxRef}>
+              {!isCurrentuser ? (
+                  <>
+                    <Button label={isUserAlreadyFollowing ? "unfollow" : "follow"} onClick={isUserAlreadyFollowing ? () => unfollowUserHandler(userId, token) : () => followUserHandler(userId, token)}/> 
+                  </>
+                ) : (
+                  <>
+                    <Button label={"edit"} onClick={() => setShowEditPost(true)}/>  
+                    <Button label={"delete"} onClick={() => deletePostHandler(postData?.postId, token, setShowUserPostBox)}/>  
+                  </>
+                )}
+            </section>     
+          )}
         </section>
 
         

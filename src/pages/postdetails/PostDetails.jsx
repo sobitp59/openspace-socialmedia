@@ -63,22 +63,24 @@ const PostDetails = () => {
               />
             </section>
 
-            <ul className='postdetails__comments'>
-              {userPost?.comments?.map(({_id, text, username}) => {
-                return(
-                <li className='postdetails__comment' key={_id}>
-                  <section className='postdetails__top' >
-                    <Avatar 
-                      userName={username}
-                    />
+            {userPost?.comments?.length > 0 && (
+              <ul className='postdetails__comments'>
+                {userPost?.comments?.map(({_id, text, username}) => {
+                  return(
+                  <li className='postdetails__comment' key={_id}>
+                    <section className='postdetails__top' >
+                      <Avatar 
+                        userName={username}
+                      />
 
-                    <BiDotsHorizontalRounded className='postdetails__doticon' />
-                  </section>
-                  <p className='postdetails__text'>{text}</p>
-                </li>
-                )
-              })}
-            </ul>
+                      <BiDotsHorizontalRounded className='postdetails__doticon' />
+                    </section>
+                    <p className='postdetails__text'>{text}</p>
+                  </li>
+                  )
+                })}
+              </ul>
+            )}
           </>
         )}
         {showLikedBy && (
