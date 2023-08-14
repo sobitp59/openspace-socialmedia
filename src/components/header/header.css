@@ -29,3 +29,18 @@
     align-items: center;
     gap: 1.5rem;
 }
+
+.header__searchUsers{
+    width: 30%;
+    max-height: 80vh;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    outline: 3px solid rgba(0, 0, 0, 0.158);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    overflow-y: scroll;
+}

@@ -18,7 +18,7 @@ const PostDetails = () => {
     const [postLoading, setPostLoading] = useState(true);
     const [showLikedBy, setShowLikedBy] = useState(false);
     const textareaRef = useRef(null);
-
+    // const [showCommentModal, setSowCommentModal] = useState(false)
 
     const userPost = posts?.find(({_id}) => _id === post?._id);
 
@@ -72,10 +72,13 @@ const PostDetails = () => {
                       <Avatar 
                         userName={username}
                       />
-
-                      <BiDotsHorizontalRounded className='postdetails__doticon' />
+                      <Button 
+                        icon={<BiDotsHorizontalRounded />}
+                      />
+                      
                     </section>
                     <p className='postdetails__text'>{text}</p>
+                    {/* {showCommentModal && userPost && <Button label={"edit"}/>} */}
                   </li>
                   )
                 })}
