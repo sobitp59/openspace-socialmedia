@@ -100,11 +100,19 @@ export const DataContextProvider = ({children}) => {
         })
     }
 
-    const setPostContent = (event) => {
-        const {value} = event?.target;
+    const setPostContent = (name, value) => {
         dispatch({
             type : "SET_POST_CONTENT",
-            payload : value
+            payload : {
+                value : value,
+                name : name
+            }
+        })
+    }
+
+    const removeMediaFromUploadPost = () => {
+        dispatch({
+            type : "REMOVE_MEDIA"
         })
     }
 
@@ -393,7 +401,8 @@ export const DataContextProvider = ({children}) => {
         unfollowUserHandler,
         updateUserHandle,
         updatePostHandler,
-        deletePostHandler
+        deletePostHandler,
+        removeMediaFromUploadPost
     }
 
     return(

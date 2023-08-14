@@ -63,7 +63,11 @@ export const userDataReducer = (state, {type, payload}) => {
         }
         
         case "SET_POST_CONTENT": {
-            return {...state,  postData : { content: payload, mediaURL: "", comments : []} }
+            return {...state,  postData : {...state?.postData, [payload?.name] : payload?.value } }
+        }
+        
+        case "REMOVE_MEDIA": {
+            return {...state,  postData : {...state?.postData, mediaURL : "" } }
         }
 
         case "ADD_POST": {

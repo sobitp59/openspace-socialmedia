@@ -15,6 +15,7 @@ const Avatar = ({userName, onlyAvatar, query, setQuery}) => {
         setQuery("")
       }
       return;
+      
     }
 
     return (
