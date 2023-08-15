@@ -38,3 +38,18 @@
 .avatar_name  p:last-child{
     font-size: small;
 }
+
+.avatar_badge{
+    color: var(--background-primary-CTA);
+}
+
+.avatar__hover{
+
+    padding: 0.5rem;
+}
+
+.avatar__hover:hover{
+    width: 100%;
+    background: var(--background-secondary-CTA);
+    border-radius: 0.5rem;
+}

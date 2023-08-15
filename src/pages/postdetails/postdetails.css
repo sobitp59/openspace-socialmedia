@@ -6,6 +6,15 @@
     position: relative;
 }
 
+.postdetails__back{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--background-secondary-CTA);
+}
+
 .postdetails__comments{
     width: 100%;
     margin: 1.5rem 0;
@@ -23,8 +32,9 @@
     justify-content: start;
 
     align-items: start;
-    border: 2px solid;
-    padding: 0.5rem;
+    border: 1.5px solid var(--background-secondary-CTA);
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
 
 .postdetails__text{
@@ -45,17 +55,7 @@
     align-items: center;
 }
 
-.postdetails__doticon{
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.2rem;
-    border-radius: 0.2rem;
-}
 
-.postdetails__doticon:hover{
-    background: rgba(18, 0, 31, 0.144);
-
-}
 
 
 .likedby{
@@ -104,19 +104,24 @@
 /* comments */
 .postdetailsCommentBox{
     width: 100%;
-    border: 2px solid;
+    border: 1.5px solid var(--background-secondary-CTA);
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items: center;
+    margin-top: 2rem;
 }
 
 .postdetailsCommentBox textarea{
     width: 100%;
+    height: 100%;
     outline: none;
     resize: none;
+    border: none;
+    padding: 0.3rem;
 }
 
 .postdetailsCommentBox button{
     width: 100%;
     height: 100%;
+    border: none;
 }

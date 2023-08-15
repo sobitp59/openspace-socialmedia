@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <div className='header'>
         <section className='header__logo'>
-            <h2>//openspace</h2>
+            <h2><span>{'//'}</span>openspace</h2>
         </section>
         
         <section className='header__search'>
@@ -60,6 +60,7 @@ const Header = () => {
                     userName={username}
                     query={query}
                     setQuery={setQuery}
+                    hover
                   />
                 )}
             </ul>

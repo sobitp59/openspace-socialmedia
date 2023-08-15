@@ -1,5 +1,6 @@
 .homefeed{
-    width: 70%;
+    width: 100%;
+    padding: 0 6rem;
     margin: auto;
     height: 87vh;
     overflow-y: scroll;
@@ -11,5 +12,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    list-style: none;
+}
+
+.homefeed__post{
+    width: 100%;
+    border: 2px solid var(--background-secondary-CTA);
+    border-radius: 0.5rem;
 }

@@ -6,8 +6,8 @@ import "./signup.css";
 const Signup = () => {
   return (
     <div className='signup'>
-        <section>
-            <h1><span>//</span>openspace</h1>
+        <section className='signup__section'>
+            <h1 className='signup__logo'><span>{'//'}</span>openspace</h1>
             
             <h2>get started</h2>
 

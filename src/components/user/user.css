@@ -1,12 +1,20 @@
 .user{
     width: 100%;
-    border: 2px solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0.8rem;
     cursor: pointer;
     position: relative;
+}
+
+.user__style{
+    border: 1.5px solid var(--background-secondary-CTA);
+    border-radius: 0.5rem;
+}
+
+.user__style:hover{
+    background: var(--background-secondary-CTA );
 }
 
 
@@ -35,6 +43,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    outline: 2px solid var(--background-secondary-CTA);
 }
 
 .user__updateContent{
@@ -55,14 +64,22 @@
 }
 
 .user__updateImage{
-    width: 100%;
+    width: 200px;
     display: flex;
     justify-content: start;
     align-items: start;
+    position: relative;
+}
+
+
+.user__updateImage button{
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .user__updatemedia{
-    width: 30%;
+    width: 100%;
     border-radius: 0.5rem;
 }
 

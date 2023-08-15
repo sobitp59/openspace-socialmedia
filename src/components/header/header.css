@@ -1,13 +1,14 @@
 .header{
     width: 100%;
-    border: 2px solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
     height: 13vh;
-}
+    background: white;
+    border-bottom: 1.5px solid var(--background-secondary-color);
 
+}
 
 .header__avatar{
     width: 1.8rem;
@@ -31,7 +32,7 @@
 }
 
 .header__searchUsers{
-    width: 30%;
+    width: 25%;
     max-height: 80vh;
     background: white;
     padding: 1rem;
@@ -43,4 +44,30 @@
     transform: translate(-50%, -50%);
     z-index: 1000;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.header__search input{
+    width: 350px;
+    padding: 0.8rem 1.5rem;
+    border: 1.5px solid rgba(0, 0, 0, 0.096);
+    border-radius: 2rem;
+    outline: none;
+}
+
+.header__search input:hover{
+    outline: 2px solid rgba(0, 0, 0, 0.363);
+}
+
+.header__logo{
+    font-size: 1.4rem;
+}
+
+.header__logo span{
+    color: rgb(136, 72, 255);
+    font-weight: bolder;
 }

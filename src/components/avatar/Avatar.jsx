@@ -5,7 +5,7 @@ import { useData } from '../../context/DataContext';
 import "./avatar.css";
 
 
-const Avatar = ({userName, onlyAvatar, query, setQuery}) => {
+const Avatar = ({userName, onlyAvatar, query, setQuery, hover}) => {
     const {users} = useData();
     const {firstName, lastName, avatarUrl, username} = users?.find((user) => user?.username === userName) ?? [];
     const userDefault = firstName?.charAt(0)?.toUpperCase();
@@ -19,14 +19,14 @@ const Avatar = ({userName, onlyAvatar, query, setQuery}) => {
     }
 
     return (
-    <Link to={`/profile/${username}`}  onClick={closeSearchedBox} className='avatar'>
+    <Link to={`/profile/${username}`}  onClick={closeSearchedBox} className={hover ? 'avatar avatar__hover' : 'avatar'}>
         {onlyAvatar ? (
           !avatarUrl ? <section className='avatar__image--default'>{userDefault}</section> : <img className='avatar__image' src={avatarUrl} alt={`avatar of ${firstName}`} />
         ) : (
           <>
           {!avatarUrl ? <section className='avatar__image--default'>{userDefault}</section> : <img className='avatar__image' src={avatarUrl} alt={`avatar of ${firstName}`} />}
           <section className='avatar_name'>
-              <p><strong>{firstName} {lastName} <BiSolidBadgeCheck /> </strong></p>
+              <p><strong>{firstName} {lastName} <BiSolidBadgeCheck className='avatar_badge'/> </strong></p>
               <p>{username}</p>
           </section>
           </>

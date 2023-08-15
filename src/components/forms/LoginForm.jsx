@@ -61,12 +61,15 @@ const LoginForm = () => {
               <Button label={"X"} onClick={() => setShowUsers(false)}/>
               </section>
               
+              <ul>
+
               {users?.map(({_id, firstName, lastName, avatarUrl, username, password}) => 
                 <button className='loginForm__user' type='submit' onClick={() => setGuestLoginData(username, password)} key={_id}>
                     <img className='loginForm__avatar' src={avatarUrl} alt="" />
                     <p><strong>{firstName} {lastName}</strong> <BiSolidBadgeCheck /> </p>
                 </button>
               )}          
+              </ul>
           </section>
         )}
       </form>

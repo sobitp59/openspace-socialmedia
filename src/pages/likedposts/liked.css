@@ -5,10 +5,15 @@
     overflow-y: scroll;
 }
 
+.likedposts h2{
+    text-align: left;
+    padding: 1.5rem 0;
+}
+
 .likedposts__lists{
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
 }

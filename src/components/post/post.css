@@ -4,7 +4,10 @@
 }
 
 .post__media{
-    width: 100%;
+    width: 85%;
+    margin: auto;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
 }
 
 .post__content{
@@ -25,4 +28,8 @@
     gap: 0.5rem;
     padding: 0.5rem;
     cursor: pointer;
+}
+
+.post__content{
+    padding: 1rem;
 }

@@ -7,8 +7,8 @@ const Login = () => {
 
   return (
     <div className='login'>
-        <section>
-            <h1><span>//</span>openspace</h1>
+        <section className='login__section'>
+            <h1 className='login__logo'><span>{'//'}</span>openspace</h1>
             
             <h2>welcome back</h2>
 

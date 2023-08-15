@@ -8,7 +8,7 @@ const Liked = () => {
   const {likedPosts} = useData();
   return (
     <div className='likedposts'>
-      <h2>liked posst</h2>
+      <h2>liked posts</h2>
       <ul className='likedposts__lists'>
           {likedPosts?.map(({_id, content, comments, mediaURL, username, likes, createdAt}) => (
             <li className='post' key={_id}>

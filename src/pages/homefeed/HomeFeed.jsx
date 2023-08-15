@@ -16,7 +16,7 @@ const HomeFeed = () => {
         {posts?.length === 0  ? <p>posts loading...</p> : (
           <ul className='homefeed__posts'>
               {posts?.map(({_id, content, likes,  comments, mediaURL, username, createdAt}) => (
-                <li className='post' key={_id}>
+                <li className='homefeed__post' key={_id}>
                   <Post 
                     postId={_id}
                     content={content}

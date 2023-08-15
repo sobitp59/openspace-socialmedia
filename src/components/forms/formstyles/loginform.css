@@ -12,32 +12,72 @@
     flex-direction: column;
 }
 
+.loginForm__label input{
+    margin-bottom: 0.5rem;
+    border: none;
+    padding: 0.7rem;
+    outline: 2px solid var(--background-secondary-CTA);
+    border-radius: 0.2rem;
+}
+.loginForm__label input:active, .loginForm__label input:hover{
+    outline: 2px solid var(--background-primary-CTA);
+}
+
 .loginForm__users{
     position: fixed;
     top: 50%;
     left: 50%;
     width: 30%;
-    max-height: 50vh;
+    max-height: 70vh;
     transform: translate(-50%, -50%);
     overflow-y: scroll;
     background: white;
     padding: 1.5rem;
-    border-radius: 1rem;
-    outline: 2px solid rgba(20, 0, 39, 0.151);
+    border-radius: 0.5rem;
+    outline: 2px solid  var(--background-secondary-CTA);
 }
 
 .loginForm__avatar{
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    outline: 2px solid;
+    outline: 1.5px solid var(--background-secondary-CTA);
     outline-offset: 2px;
+    object-fit: cover;
 }
 
 .loginForm__user{
-    width: 80%;
+    width: 70%;
     margin: 0.5rem auto;
     display: grid;
     grid-template-columns: 0.5fr 2fr;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    background: transparent;
+    margin-bottom: 1rem;
+    border: none;
+    outline: 1.5px solid var(--background-secondary-CTA);
+    border-radius: 0.3rem;
+}
+
+.loginForm__user:hover{
+    background: var(--background-secondary-CTA);
+}
+
+.loginForm__user p{
+    width: 100%;
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
+.loginForm button:first-child{
+    margin-top: 1rem;
+}
+
+.loginForm__users section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }

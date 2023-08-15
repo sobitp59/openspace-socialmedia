@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
-import { useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import Avatar from '../../components/avatar/Avatar';
 import Button from '../../components/button/Button';
 import Post from '../../components/post/Post';
@@ -18,7 +18,7 @@ const PostDetails = () => {
     const [postLoading, setPostLoading] = useState(true);
     const [showLikedBy, setShowLikedBy] = useState(false);
     const textareaRef = useRef(null);
-    // const [showCommentModal, setSowCommentModal] = useState(false)
+    const navigate = useNavigate();
 
     const userPost = posts?.find(({_id}) => _id === post?._id);
 
@@ -49,14 +49,12 @@ const PostDetails = () => {
                 focusCommentBox={focusCommentBox}
                 textareaRef={textareaRef}
             />
-            <hr />
             <p className='postdetails__likes' onClick={() => setShowLikedBy(true)}>{userPost?.likes?.likeCount} likes</p>
-            <hr />
+            
 
             {/* comments */}
             <section className='postdetailsCommentBox'>
               <textarea value={commentText} ref={textareaRef} onChange={getCommentText} placeholder='enter your comment..'></textarea>
-              {/* <button>comment</button> */}
               <Button 
                 label={'comment'}
                 onClick={() => addComment(postId, commentText, token)}

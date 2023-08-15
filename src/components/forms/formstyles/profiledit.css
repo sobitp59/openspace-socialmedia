@@ -1,5 +1,5 @@
 .editprofile{
-    width: 30%;
+    width: 25%;
     background: white;
     border-radius: 0.5rem;
 
@@ -12,6 +12,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 1000;
+    outline: 2px solid var(--background-secondary-CTA);
+}
+
+.editprofile > p {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .editprofileForm{
@@ -22,12 +32,34 @@
     align-items: center;
 }
 
+.editprofileForm button{
+    width: 100%;
+}
+
+.editprofileForm p{
+    font-size: small;
+    color: var(--background-primary-CTA);
+    text-align: left;
+    margin-top: 0.3rem;
+}
+
 .editprofileForm__label{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.editprofileForm__noneditable{
+    color: var(--background-primary-CTA);
+}
+
+.editprofileForm__label input{
+    padding: 0.5rem;
+    border: none;
+    outline: none;
     cursor: pointer;
 }
 
@@ -63,10 +95,10 @@
 
 .editprofileForm__uploadicon{
     font-size: 1.5rem;
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 0.2rem;
     border-radius: 1rem;
-    background: rgb(208, 255, 0);
+    background: var(--background-primary-CTA);
 }
 
 .editprofileForm__fileinput{

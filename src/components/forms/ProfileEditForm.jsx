@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { HiCamera } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
 import { useAuth } from '../../context/AuthContext';
@@ -15,9 +15,10 @@ const ProfileEditForm = ({user, setShowEditForm}) => {
         avatarUrl : user?.avatarUrl,
         bio : user?.bio,
         website : user?.website
-    })
+    });
+    const editFormRef = useRef();
 
-    const {userId, firstName, lastName, username, avatarUrl, bio, website} = user;
+    const {firstName, lastName, username} = user;
 
     const onEditFormChange = (e) => {
         const {name, value}= e?.target;
@@ -46,11 +47,22 @@ const ProfileEditForm = ({user, setShowEditForm}) => {
         }
     }
 
+    useEffect(() => {
+        const closeForm = (e) => {
+           if(!editFormRef.current.contains(e.target)){
+            setShowEditForm(false);
+           }
+        }
+
+       document.addEventListener('mousedown', closeForm);
+       return () => document.removeEventListener('mousedown', closeForm);
+    }, [])
+
 
     return (
         userInfo?.username === username && (
 
-            <div className='editprofile'>
+            <div className='editprofile' ref={editFormRef}>
                 <p>
                     <span><strong>edit profile</strong></span>
                     <Button 
@@ -79,11 +91,11 @@ const ProfileEditForm = ({user, setShowEditForm}) => {
                     </label>
                     <label className='editprofileForm__label'>
                         <strong>name</strong>
-                        <input type="text" readOnly   value={`${firstName} ${lastName}`} />
+                        <input type="text" className="editprofileForm__noneditable" readOnly   value={`${firstName} ${lastName}`} />
                     </label>
                     <label className='editprofileForm__label'>
                         <strong>username</strong>
-                        <input type="text" readOnly  value={username} />
+                        <input type="text" className="editprofileForm__noneditable" readOnly  value={username} />
                     </label>
                     <label className='editprofileForm__label'>
                         <strong>
@@ -106,8 +118,13 @@ const ProfileEditForm = ({user, setShowEditForm}) => {
                             onChange={onEditFormChange}
                         />
                     </label>
-                    <input className='editprofileForm__submit' type="submit" value={imageUploading ? "please wait.." : "submit"} disabled={imageUploading}/>
-                </form> 
+                    <Button 
+                       label={imageUploading ? "please wait.." : "submit"}
+                       disabled={imageUploading}
+                       type={'submit'}
+                    />
+                <p>*name and username cannot be edited</p> 
+                </form>
             </div>
           )
         )

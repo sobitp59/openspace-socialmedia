@@ -12,7 +12,7 @@ import "./user.css";
 
 
 
-const User = ({isCurrentuser, username, createdAt, userId, postData}) => {
+const User = ({isCurrentuser, username, createdAt, userId, postData, userNotStyle}) => {
   const [showUserPostBox, setShowUserPostBox] = useState(false);    
   const [showEditPost, setShowEditPost] = useState(false);
    
@@ -73,7 +73,7 @@ const User = ({isCurrentuser, username, createdAt, userId, postData}) => {
                                
 
   return (
-    <div className='user'>
+    <div className={!userNotStyle ? 'user user__style' : 'user'}>
         <Avatar 
           userName={username}
         />
@@ -110,16 +110,18 @@ const User = ({isCurrentuser, username, createdAt, userId, postData}) => {
             <section className='user__updateContent'>
               <Avatar userName={username} onlyAvatar/>
               <textarea className='user__updateTextArea' name="content" onChange={(e) => setUserPostData((prev) =>({...prev, [e?.target?.name] : e?.target?.value}) )} value={userPostData?.content}></textarea>
-            </section>
             {userPostData?.mediaURL && (
-              <section className='user__updateImage'>
+              // <section className='user__updateImage'>
+              <div className='user__updateImage'>
                 <img className='user__updatemedia' src={userPostData?.mediaURL} alt="" />
                 <Button 
                   icon={<RxCross2/>}
                   onClick={() => setUserPostData((prev) => ({...prev, mediaURL : ""}))}
                 />
-              </section>
+              </div>
+              // </section>
             )}
+            </section>
             <section className='user__updateBtns'>
               <section className='user__uploadUserMedia'>
                 <section className='user__uploadMedia'>

@@ -31,9 +31,7 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt, 
     <>
         <User 
           username={username}
-          // firstname={firstName}
-          // lastname={lastName}
-          // avatar={avatarUrl}
+          userNotStyle
           createdAt={createdAt}
           postData={{postId : postId, content : content, mediaURL : mediaURL}}
           isCurrentuser={isCurrentUser}

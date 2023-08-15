@@ -99,7 +99,7 @@ const UserPage = () => {
             <ul className='user__posts'>
                 {userPosts?.map(({_id}) => {
                         const userPost = posts?.find((post) => post?._id === _id )
-                        return(<li key={_id}>
+                        return(<li className='user__post'  key={_id}>
                             <Post
                                 postId={userPost?._id} 
                                 content={userPost?.content}
