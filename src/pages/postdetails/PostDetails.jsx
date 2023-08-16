@@ -18,7 +18,7 @@ const PostDetails = () => {
     const [postLoading, setPostLoading] = useState(true);
     const [showLikedBy, setShowLikedBy] = useState(false);
     const textareaRef = useRef(null);
-    const navigate = useNavigate();
+    const  likedByRef = useRef();
 
     const userPost = posts?.find(({_id}) => _id === post?._id);
 
@@ -30,6 +30,15 @@ const PostDetails = () => {
             getUserPost(postId, setPostLoading, setPost)
     }, [postId]);
 
+
+    useEffect(() => {
+      const  closeLikeBy = (e) => {
+         if(!likedByRef?.current?.contains(e?.target)){
+          setShowLikedBy(false);
+         }
+      }
+      document.addEventListener('mousedown', closeLikeBy)
+    }, [])
 
   return (
     <div className='postdetails'>
@@ -86,7 +95,7 @@ const PostDetails = () => {
         )}
         {showLikedBy && (
            <ul className='likedby'>
-            <section className='likedBy__div'>
+            <section className='likedBy__div' ref={likedByRef}>
                 <section className='likedBy__top'>
                   <span>liked by</span>
                   <Button
@@ -94,7 +103,6 @@ const PostDetails = () => {
                         onClick={() => setShowLikedBy(false)}
                     />
                 </section>
-                <hr />  
               {userPost?.likes?.likedBy?.map(({_id, username}) => (
                 <li className="likedby__section" key={_id}>
                     <UserListsModal userId={_id} username={username} isCurrentUser={userInfo?.username === username}/>   

@@ -57,7 +57,7 @@
     background: transparent;
     margin-bottom: 1rem;
     border: none;
-    outline: 1.5px solid var(--background-secondary-CTA);
+    outline: 2px solid var(--background-secondary-CTA);
     border-radius: 0.3rem;
 }
 
@@ -80,4 +80,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.badge{
+    color: var(--background-primary-CTA);
 }

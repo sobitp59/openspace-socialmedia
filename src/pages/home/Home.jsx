@@ -1,4 +1,8 @@
 import React from 'react';
+import { AiFillFire, AiTwotoneHeart } from "react-icons/ai";
+import { GoHomeFill } from "react-icons/go";
+import { IoIosWater, IoMdBookmarks } from "react-icons/io";
+import { MdExplore } from "react-icons/md";
 import { useLocation } from "react-router";
 import { NavLink, Outlet } from "react-router-dom";
 import User from '../../components/user/User';
@@ -25,7 +29,6 @@ const Home = () => {
     const activeStyle = ({isActive}) => ({
         color : isActive ?   'var(--text-dark)' : 'var(--text-dark)',
         background : isActive ? 'var(--background-secondary-CTA)' : 'transparent',
-        padding : isActive && '0.8rem 1rem',
         borderRadius : isActive && '0.6rem',
         fontWeight : isActive && '700',
     })
@@ -36,10 +39,10 @@ const Home = () => {
 
         <aside className='home__left'>
             <section className='home__links'>
-                <NavLink style={activeStyle} to={"/"}> home</NavLink>
-                <NavLink style={activeStyle} to={"/explore"}> explore</NavLink>
-                <NavLink style={activeStyle} to={"/bookmarks"}> bookmarks</NavLink>
-                <NavLink style={activeStyle} to={"/likedposts"}> liked posts</NavLink>
+                <NavLink style={activeStyle} className={'home__navlink'} to={"/"}> <GoHomeFill /> home</NavLink>
+                <NavLink style={activeStyle} className={'home__navlink'} to={"/explore"}> <MdExplore /> explore</NavLink>
+                <NavLink style={activeStyle} className={'home__navlink'} to={"/bookmarks"}> < IoMdBookmarks/> bookmarks</NavLink>
+                <NavLink style={activeStyle} className={'home__navlink'} to={"/likedposts"}> < AiTwotoneHeart /> liked posts</NavLink>
                 
                 <Button 
                     label={'create post'}
@@ -68,9 +71,11 @@ const Home = () => {
                 <section className='home__right__header'>
                     <Button 
                          label={'trending'}
-                    />
+                         icon={<AiFillFire/>}
+                         />
                     <Button 
                          label={'latest'}
+                         icon={<IoIosWater/>}
                     />
                 </section>
             }

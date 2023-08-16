@@ -9,7 +9,7 @@
 .avatar__image{
     width: 3rem;
     height: 3rem;
-    outline: 1.5px solid ;
+    outline: 1.5px solid var(--background-primary-CTA);
     border-radius: 50%;
     outline-offset: 2px;
     object-fit: cover;

@@ -86,7 +86,7 @@ const User = ({isCurrentuser, username, createdAt, userId, postData, userNotStyl
                           /> 
           }
           {showUserPostBox && (
-            <section ref={postBoxRef}>
+            <section className='user__postmodal' ref={postBoxRef}>
               {!isCurrentuser ? (
                   <>
                     <Button label={isUserAlreadyFollowing ? "unfollow" : "follow"} onClick={isUserAlreadyFollowing ? () => unfollowUserHandler(userId, token) : () => followUserHandler(userId, token)}/> 
@@ -134,7 +134,7 @@ const User = ({isCurrentuser, username, createdAt, userId, postData, userNotStyl
                   icon={<BsFillEmojiSmileFill/>}
                 />
               </section>
-              <section>
+              <section className='user__actionBtns'>
                 <Button onClick={() => updatePostHandler(postData.postId, userPostData,token, setShowEditPost )} label={imageUploading ? 'please wait...' : 'update'} disabled={imageUploading}/>
                 <Button label={'discard'} onClick={() =>{
                   setShowEditPost(false)

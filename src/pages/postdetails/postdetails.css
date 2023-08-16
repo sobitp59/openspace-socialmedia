@@ -81,8 +81,8 @@
     background: rgb(255, 255, 255);
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0.5px 0.5px 0.5px black;
-    border: 2px solid rgba(0, 0, 0, 0.192);
+    border: 2px solid var(--background-secondary-CTA);
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.205);
 }
 
 .likedby__section{
@@ -103,12 +103,14 @@
 
 /* comments */
 .postdetailsCommentBox{
-    width: 100%;
-    border: 1.5px solid var(--background-secondary-CTA);
+    width: 95%;
+    outline: 1.5px solid var(--background-secondary-CTA);
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items: center;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    outline-offset: 4px;
+    border-radius: 3rem;
 }
 
 .postdetailsCommentBox textarea{
@@ -117,7 +119,7 @@
     outline: none;
     resize: none;
     border: none;
-    padding: 0.3rem;
+    padding: 0.3rem 0.5rem;
 }
 
 .postdetailsCommentBox button{

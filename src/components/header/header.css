@@ -6,7 +6,7 @@
     padding: 1.5rem 2rem;
     height: 13vh;
     background: white;
-    border-bottom: 1.5px solid var(--background-secondary-color);
+    border-bottom: 2px solid var(--background-primary-CTA);
 
 }
 
@@ -37,7 +37,7 @@
     background: white;
     padding: 1rem;
     border-radius: 0.5rem;
-    outline: 3px solid rgba(0, 0, 0, 0.158);
+    outline: 3px solid var(--background-secondary-CTA);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -54,13 +54,14 @@
 .header__search input{
     width: 350px;
     padding: 0.8rem 1.5rem;
-    border: 1.5px solid rgba(0, 0, 0, 0.096);
+    border: 1.5px solid var(--background-secondary-CTA);
     border-radius: 2rem;
     outline: none;
 }
 
 .header__search input:hover{
-    outline: 2px solid rgba(0, 0, 0, 0.363);
+    outline: 2px solid var(--background-primary-CTA);
+    outline-offset: 2px;
 }
 
 .header__logo{

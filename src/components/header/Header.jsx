@@ -46,7 +46,9 @@ const Header = () => {
               onClick={userLogout}
             />
             
-            <button className='header__theme'>light/dark</button>
+            <Button 
+              label={'light/dark'}
+            />
             {/* <span className='header__profile'>
             {!userInfo?.avatarUrl ? <section className='header__avatar'>{userDefault}</section> : <img className='header__avatar' src={userInfo?.avatarUrl} alt={`avatar of ${userInfo?.firstName}`} /> }
               

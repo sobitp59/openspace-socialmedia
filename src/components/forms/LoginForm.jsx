@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BiSolidBadgeCheck } from "react-icons/bi";
+import { RxCross2 } from "react-icons/rx";
 import { useAuth } from '../../context/AuthContext';
 import { useData } from '../../context/DataContext';
 import Button from '../button/Button';
@@ -58,7 +59,7 @@ const LoginForm = () => {
           <section className='loginForm__users'>
               <section>
                 <p><strong>select an user</strong></p>
-              <Button label={"X"} onClick={() => setShowUsers(false)}/>
+              <Button icon={<RxCross2 />} onClick={() => setShowUsers(false)}/>
               </section>
               
               <ul>
@@ -66,7 +67,7 @@ const LoginForm = () => {
               {users?.map(({_id, firstName, lastName, avatarUrl, username, password}) => 
                 <button className='loginForm__user' type='submit' onClick={() => setGuestLoginData(username, password)} key={_id}>
                     <img className='loginForm__avatar' src={avatarUrl} alt="" />
-                    <p><strong>{firstName} {lastName}</strong> <BiSolidBadgeCheck /> </p>
+                    <p><strong>{firstName} {lastName}</strong> <BiSolidBadgeCheck className='badge'/> </p>
                 </button>
               )}          
               </ul>

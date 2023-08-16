@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BiSolidImageAdd } from "react-icons/bi";
 import { BsEmojiSmileFill } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
@@ -13,6 +13,7 @@ const   CreatePost = ({postBox}) => {
   const [mediaUploading, setMediaUploading] = useState(false);
   const {currentUser : {userInfo, token}} = useAuth();
   const {hideShowPostBox, addPost, postData, setPostContent, removeMediaFromUploadPost} = useData();
+  const postBoxref = useRef();
 
   const uploadMedia = async (e) => {
     setMediaUploading(true);
@@ -35,9 +36,17 @@ const   CreatePost = ({postBox}) => {
     }
   }
 
+  useEffect(() => {
+    const  closeLikeBy = (e) => {
+       if(!postBoxref?.current?.contains(e?.target)){
+        hideShowPostBox(false);
+       }
+    }
+    document.addEventListener('mousedown', closeLikeBy)
+  }, [])
 
   return (
-    <div className={postBox ? 'createpost--postBox' : 'createpost'}>
+    <div ref={postBoxref} className={postBox ? 'createpost--postBox' : 'createpost'}>
       
         {postBox && (
           <section className='createpost__header'>
