@@ -9,11 +9,10 @@ import Avatar from '../avatar/Avatar';
 import Button from '../button/Button';
 import "./createpost.css";
 
-const   CreatePost = ({postBox}) => {
+const   CreatePost = ({postBox, postBoxref}) => {
   const [mediaUploading, setMediaUploading] = useState(false);
   const {currentUser : {userInfo, token}} = useAuth();
   const {hideShowPostBox, addPost, postData, setPostContent, removeMediaFromUploadPost} = useData();
-  const postBoxref = useRef();
 
   const uploadMedia = async (e) => {
     setMediaUploading(true);
@@ -36,14 +35,7 @@ const   CreatePost = ({postBox}) => {
     }
   }
 
-  useEffect(() => {
-    const  closeLikeBy = (e) => {
-       if(!postBoxref?.current?.contains(e?.target)){
-        hideShowPostBox(false);
-       }
-    }
-    document.addEventListener('mousedown', closeLikeBy)
-  }, [])
+  
 
   return (
     <div ref={postBoxref} className={postBox ? 'createpost--postBox' : 'createpost'}>

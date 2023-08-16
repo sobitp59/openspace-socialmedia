@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Route, Routes } from "react-router-dom";
 import './App.css';
 import Comment from "./components/commentbox/Comment";
@@ -16,38 +17,24 @@ import PostDetails from "./pages/postdetails/PostDetails";
 import Signup from "./pages/signup/Signup";
 import UserPage from "./pages/userpage/UserPage";
 
-/*
-  ::HEADER
-    :Logo
-    :SearchBar
-    :Profile
-    :Theme
-
-  ::BODY
-    :SIDE-LEFT
-      -HOME (BTN)
-      -EXPLORE (BTN)
-      -BOOKMARKS (BTN)
-      -LIKED POSTS (BTN)
-      -POST (BTN)
-    
-    :MAIN
-      -POST SECTION
-    
-    :SIDE-RIGHT
-      -Trending / Latest
-      -suggestions
-  ::FOOTER
-    :COPYRIGHT
-    : OTHER INFO
-
-*/
-
 
 
 function App() {
   const {currentUser : {token}} = useAuth();
-  const {showCommentBox, showPostBox} = useData();
+  const {showCommentBox, showPostBox, hideShowPostBox} = useData();
+
+  const postBoxref = useRef();
+
+
+  useEffect(() => {
+  const  closeLikeBy = (e) => {
+    if(!postBoxref?.current?.contains(e?.target)){
+    hideShowPostBox(false);
+    }
+  }
+  document.addEventListener('mousedown', closeLikeBy)
+}, [])
+
 
   return (
     <div className='app'>
@@ -74,7 +61,7 @@ function App() {
       </Routes>
       
       {showCommentBox && <Comment />}
-      {showPostBox && <CreatePost postBox/>}
+      {showPostBox && <CreatePost postBox postBoxref={postBoxref}/>}
   </div>
     );
 }
