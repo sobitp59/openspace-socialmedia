@@ -28,11 +28,13 @@ const Comment = () => {
                     onlyAvatar 
                 />
                 <textarea autoFocus onChange={getCommentText} value={commentText} className='comment__textarea' placeholder='write your thoughts..'></textarea>
-                <Button 
-                    label={'comment'}
-                    onClick={() => addComment(commentPostId, commentText, token)}
-                />
             </section>
+        </section>
+        <section className='comment__btn'>
+            <Button 
+                label={'comment'}
+                onClick={() => addComment(commentPostId, commentText, token)}
+            />
         </section>
     </div>
   )

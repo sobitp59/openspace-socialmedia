@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { initialState, userDataReducer } from "../reducer/dataReducer";
 import { addCommentService, addPostService, deletePostService, dislikePostService, getAllPostsService, getUserPostDetails, getUserPosts, likePostService, updatedPostService, updatedUserHandleService } from "../services/postservice";
 import { followUserService, getAllUsersService, getUserService, postBookmarkService, removeBookmarkService, unfollowUserService } from "../services/userService";
+import { formateDate } from "../utils/formateDate";
 import { useAuth } from "./AuthContext";
 
 const DataContext = createContext();
@@ -351,6 +352,25 @@ export const DataContextProvider = ({children}) => {
     }
 
 
+    // TRENDING AND LATEST POSTS
+    const showTrendingPosts = () => {
+        const trendingPosts = state?.posts?.sort((a, b) => b?.likes?.likeCount - a?.likes?.likeCount);
+        dispatch({
+            type : 'SET_TRENDING_POSTS',
+            payload : trendingPosts
+        })   
+    }
+    
+    const showLatestPosts = () => {
+        const latestPosts = state?.posts?.sort((a, b) => {
+            return a.createdAt < b.createdAt ? 1 : -1;
+        });
+        dispatch({
+            type : 'SET_LATEST_POSTS',
+            payload : latestPosts
+        })   
+    }
+
     
     useEffect(() => {
         getAllUsers();
@@ -402,7 +422,9 @@ export const DataContextProvider = ({children}) => {
         updateUserHandle,
         updatePostHandler,
         deletePostHandler,
-        removeMediaFromUploadPost
+        removeMediaFromUploadPost,
+        showTrendingPosts,
+        showLatestPosts
     }
 
     return(

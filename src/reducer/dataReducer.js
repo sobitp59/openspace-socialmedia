@@ -94,6 +94,14 @@ export const userDataReducer = (state, {type, payload}) => {
             return {...state, posts : payload }
         }
         
+        case "SET_TRENDING_POSTS": {
+            return {...state, posts : payload }
+        }
+        
+        case "SET_LATEST_POSTS": {
+            return {...state, posts : payload }
+        }
+        
 
 
         default:

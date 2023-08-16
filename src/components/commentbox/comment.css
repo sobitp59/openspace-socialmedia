@@ -1,6 +1,6 @@
 .comment{
     width: 30rem;
-    height: 10rem;
+    /* height: 10rem; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9,7 +9,8 @@
     background: white;
     padding: 1rem;
     border-radius: 0.5rem;
-    outline: 2px solid rgba(25, 0, 58, 0.096);
+    outline: 2px solid var(--background-secondary-CTA);
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.122);
 }
 
 .comment__top{
@@ -41,8 +42,9 @@
 
 }
 
-.comment__button{
-    position: absolute;
-    right: 0;
-    bottom: 0;
+.comment__btn{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }

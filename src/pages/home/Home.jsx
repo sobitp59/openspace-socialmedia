@@ -15,7 +15,7 @@ import { Toaster } from 'react-hot-toast';
 import Button from '../../components/button/Button';
 
 const Home = () => {
-    const {hideShowPostBox} = useData()
+    const {hideShowPostBox, showTrendingPosts, showLatestPosts} = useData()
     const location = useLocation();
     const isHomePage = location.pathname === '/';
 
@@ -72,10 +72,12 @@ const Home = () => {
                     <Button 
                          label={'trending'}
                          icon={<AiFillFire/>}
+                         onClick={showTrendingPosts}
                          />
                     <Button 
                          label={'latest'}
                          icon={<IoIosWater/>}
+                         onClick={showLatestPosts}
                     />
                 </section>
             }

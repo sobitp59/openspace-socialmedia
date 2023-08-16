@@ -53,8 +53,8 @@ export const posts = [
       }
     ],
     "username": "shikamaru_nara",
-    "createdAt": "2022-02-10T10:55:06+05:30",
-    "updatedAt": "2023-07-27T12:00:00+05:30"
+    "createdAt": "2023-02-14T10:55:06+05:30",
+    "updatedAt": "2023-08-15T12:00:00+05:30"
   },
   {
     "_id": "r9jWpTzKs",
@@ -110,7 +110,7 @@ export const posts = [
       }
     ],
     "username": "shikamaru_nara",
-    "createdAt": "2022-02-11T15:20:12+05:30",
+    "createdAt": "2023-02-11T15:20:12+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -159,7 +159,7 @@ export const posts = [
       }
     ],
     "username": "shikamaru_nara",
-    "createdAt": "2022-02-13T09:45:30+05:30",
+    "createdAt": "2023-02-13T09:45:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -223,7 +223,7 @@ export const posts = [
       }
     ],
     "username": "madara_uchiha",
-    "createdAt": "2022-02-20T13:10:30+05:30",
+    "createdAt": "2023-02-20T13:10:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -279,7 +279,7 @@ export const posts = [
       }
     ],
     "username": "madara_uchiha",
-    "createdAt": "2022-02-22T08:55:12+05:30",
+    "createdAt": "2023-02-22T08:55:12+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -318,7 +318,7 @@ export const posts = [
       },
     ],
     "username": "sasuke_uchiha",
-    "createdAt": "2022-03-02T11:20:30+05:30",
+    "createdAt": "2023-03-02T11:20:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -388,7 +388,7 @@ export const posts = [
       }
     ],
     "username": "sasuke_uchiha",
-    "createdAt": "2022-03-08T09:30:30+05:30",
+    "createdAt": "2023-03-08T09:30:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -444,7 +444,7 @@ export const posts = [
       }
     ],
     "username": "naruto_uzumaki",
-    "createdAt": "2022-03-15T12:05:30+05:30",
+    "createdAt": "2023-03-15T12:05:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -521,7 +521,7 @@ export const posts = [
       }
     ],
     "username": "naruto_uzumaki",
-    "createdAt": "2022-03-18T17:30:20+05:30",
+    "createdAt": "2023-03-18T17:30:20+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -569,7 +569,7 @@ export const posts = [
       }
     ],
     "username": "obito_akatsuki",
-    "createdAt": "2022-04-02T11:25:15+05:30",
+    "createdAt": "2023-04-02T11:25:15+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -646,7 +646,7 @@ export const posts = [
       }
     ],
     "username": "obito_akatsuki",
-    "createdAt": "2022-04-08T08:30:50+05:30",
+    "createdAt": "2023-04-08T08:30:50+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -716,7 +716,7 @@ export const posts = [
       }
     ],
     "username": "itachi_uchiha",
-    "createdAt": "2022-04-12T14:35:30+05:30",
+    "createdAt": "2023-04-12T14:35:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -771,7 +771,7 @@ export const posts = [
       }
     ],
     "username": "itachi_uchiha",
-    "createdAt": "2022-04-15T12:20:12+05:30",
+    "createdAt": "2023-04-15T12:20:12+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -834,7 +834,7 @@ export const posts = [
       }
     ],
     "username": "pain_akatsuki",
-    "createdAt": "2022-04-25T15:30:00+05:30",
+    "createdAt": "2023-04-25T15:30:00+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -874,7 +874,7 @@ export const posts = [
       },
     ],
     "username": "pain_akatsuki",
-    "createdAt": "2022-04-30T10:15:20+05:30",
+    "createdAt": "2023-04-30T10:15:20+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -913,7 +913,7 @@ export const posts = [
       }
     ],
     "username": "sasori_akatsuki",
-    "createdAt": "2022-05-05T12:40:30+05:30",
+    "createdAt": "2023-05-05T12:40:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -952,7 +952,7 @@ export const posts = [
       }
     ],
     "username": "sasori_akatsuki",
-    "createdAt": "2022-05-10T09:55:50+05:30",
+    "createdAt": "2023-05-10T09:55:50+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1015,7 +1015,7 @@ export const posts = [
       }
     ],
     "username": "hidan_akatsuki",
-    "createdAt": "2022-05-15T13:20:40+05:30",
+    "createdAt": "2023-05-15T13:20:40+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1057,7 +1057,7 @@ export const posts = [
       },
     ],
     "username": "hidan_akatsuki",
-    "createdAt": "2022-05-20T11:10:15+05:30",
+    "createdAt": "2023-05-20T11:10:15+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1097,7 +1097,7 @@ export const posts = [
       }
     ],
     "username": "hidan_akatsuki",
-    "createdAt": "2022-05-25T14:55:30+05:30",
+    "createdAt": "2023-05-25T14:55:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1146,7 +1146,7 @@ export const posts = [
       }
     ],
     "username": "deidara_akatsuki",
-    "createdAt": "2022-06-01T09:45:20+05:30",
+    "createdAt": "2023-06-01T09:45:20+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1192,7 +1192,7 @@ export const posts = [
       },
     ],
     "username": "deidara_akatsuki",
-    "createdAt": "2022-06-05T12:30:10+05:30",
+    "createdAt": "2023-06-05T12:30:10+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1254,7 +1254,7 @@ export const posts = [
       }
     ],
     "username": "konan_akatsuki",
-    "createdAt": "2022-06-10T14:15:50+05:30",
+    "createdAt": "2023-06-10T14:15:50+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1309,7 +1309,7 @@ export const posts = [
       }
     ],
     "username": "konan_akatsuki",
-    "createdAt": "2022-06-15T10:50:20+05:30",
+    "createdAt": "2023-06-15T10:50:20+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1371,7 +1371,7 @@ export const posts = [
       }
     ],
     "username": "kakashi_hatake",
-    "createdAt": "2022-07-01T15:20:45+05:30",
+    "createdAt": "2023-07-01T15:20:45+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1419,7 +1419,7 @@ export const posts = [
       }
     ],
     "username": "kakashi_hatake",
-    "createdAt": "2022-07-05T11:40:20+05:30",
+    "createdAt": "2023-07-05T11:40:20+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1465,7 +1465,7 @@ export const posts = [
       }
     ],
     "username": "kakashi_hatake",
-    "createdAt": "2022-07-10T09:15:30+05:30",
+    "createdAt": "2023-07-10T09:15:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1513,7 +1513,7 @@ export const posts = [
       }
     ],
     "username": "shisui_uchiha",
-    "createdAt": "2022-08-01T08:30:15+05:30",
+    "createdAt": "2023-08-01T08:30:15+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1575,7 +1575,7 @@ export const posts = [
       }
     ],
     "username": "shisui_uchiha",
-    "createdAt": "2022-08-05T14:10:30+05:30",
+    "createdAt": "2023-08-05T14:10:30+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1630,7 +1630,7 @@ export const posts = [
       }
     ],
     "username": "kisame_akatsuki",
-    "createdAt": "2022-08-10T12:05:20+05:30",
+    "createdAt": "2023-08-10T12:05:20+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   },
   {
@@ -1687,7 +1687,7 @@ export const posts = [
       
     ],
     "username": "kisame_akatsuki",
-    "createdAt": "2022-08-15T09:30:45+05:30",
+    "createdAt": "2023-08-15T09:30:45+05:30",
     "updatedAt": "2023-07-27T12:00:00+05:30"
   }
 ];
