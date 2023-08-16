@@ -18,7 +18,7 @@
     gap: 0.5rem;
     margin: 2rem 0;
     border: 2px solid var(--background-primary-CTA);
-    border-radius: 0.5rem;
+    border-radius: 0.5rem ;
 }
 
 .userprofile__userBtns{
@@ -87,9 +87,8 @@
     margin: 0.5rem 0;
     background: white;
     border-radius: 0.5rem;
-    border: 2px solid white;
-    border: 2px solid rgba(0, 0, 0, 0.192);
-    box-shadow: 0.5px 0.5px 0.5px black;
+    outline: 2px solid VAR(--background-secondary-CTA);
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.096);
     padding: 1rem;
 }
 

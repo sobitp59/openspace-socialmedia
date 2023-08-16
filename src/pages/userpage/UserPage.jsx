@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BiSolidBadgeCheck } from "react-icons/bi";
 import { MdDateRange } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
@@ -19,10 +19,12 @@ const UserPage = () => {
     const [loadingHandle, setLoadingHandle] = useState(true);   
     const [loadingPosts, setLoadingPosts] = useState(true);   
     const [userPosts, setUserPosts] = useState([]);
-    const [showFollowersModal, setShowFollowersModal] = useState(false);
-    const [showFollowingsModal, setShowFollowingsModal] = useState(false);
+    const [showUserConnections, setShowUserConnections] = useState({
+        showConnection : false,
+        connectionType : ''
+    })
     const [showEditForm, setShowEditForm] = useState(false);
-
+    const userFollowList = useRef();
 
     const {username} = useParams();
     const {users, getUserPostsHandler, getUserHandler, posts, followUserHandler, unfollowUserHandler} = useData();
@@ -35,15 +37,25 @@ const UserPage = () => {
     
     useEffect(() => {
             if(posts){
-                if(showFollowersModal) setShowFollowersModal(false)
-                if(showFollowingsModal) setShowFollowingsModal(false)
                 getUserPostsHandler(username, setLoadingPosts, setUserPosts);
             }
-    }, [posts, username])
+    }, [posts, username]);
     
     useEffect(() => {
         getUserHandler(user, setLoadingHandle, setUserhandle);
-    }, [user])
+    }, [user]);
+
+    useEffect(() => {
+        const closeUserFollowModal = (e) => {
+            if(!userFollowList?.current?.contains(e?.target)){
+                setShowUserConnections({
+                    showConnection : false,
+                    connectionType : ''
+                })
+            }
+        }
+        document.addEventListener('mousedown', closeUserFollowModal)
+    }, []);
 
     return (
     <div className='userprofile'>
@@ -84,14 +96,12 @@ const UserPage = () => {
             <p className='userprofile__followings'>
                 <span><strong>{userPosts?.length}</strong> {userPosts?.length <= 1 ? 'post' : 'posts'}</span>
                 <span onClick={() => {
-                    setShowFollowersModal(true)
-                    setShowFollowingsModal(false)
+                   setShowUserConnections((prev) => ({...prev,  showConnection : true, connectionType : 'FOLLOWERS'}))
                 }}><strong>{userhandle?.followers?.length}</strong> followers</span>
                 
                 <span onClick={() => {
-                    setShowFollowingsModal(true)
-                    setShowFollowersModal(false)
-                }}><strong>{userhandle?.following?.length}</strong> following</span>
+                    setShowUserConnections((prev) => ({...prev,  showConnection : true, connectionType : 'FOLLOWINGS'}))
+                }}><strong>{userhandle?.following?.length}</strong> followings</span>
             </p>
         </section>
         )}
@@ -117,47 +127,41 @@ const UserPage = () => {
         ) }
 
 
-        {/* followers-follwoing lists */}
-        {showFollowersModal ? (
-            <ul className='userprofile__followLists'>
+    
+        {showUserConnections?.showConnection && (
+            <ul ref={userFollowList} className='userprofile__followLists'>
                 <section className='userprofile__followList'>
                     <section className='userprofile__followHeader'>
-                    <span>followers</span>
+                    <span>{showUserConnections?.connectionType === 'FOLLOWERS' ? 'followers' : 'followings'}</span>
                     <Button
                         icon={<RxCross2 />}
-                        onClick={() => setShowFollowersModal(false)}
+                        onClick={() => setShowUserConnections({
+                            showConnection : false,
+                            connectionType : ''
+                        })}
                     />
                     </section>
-                    <hr />
-                    {user?.followers?.length === 0 && <p>no followers found</p>}
-                    {user?.followers?.map((follower) => (
+
+                    
+                    {(showUserConnections?.connectionType === 'FOLLOWERS' && userhandle?.followers?.length === 0) ? <p>no followers found</p> : (showUserConnections?.connectionType === 'FOLLOWINGS' && userhandle?.following?.length === 0) &&  <p>no followings found</p>} 
+
+                    {showUserConnections?.connectionType === 'FOLLOWERS' ? 
+                    userhandle?.followers?.map((follower) => (
                         <li className="userprofile__followUser" key={follower?._id}>
                             <UserListsModal username={follower?.username} userId={follower?._id} isCurrentUser={follower?.username === userInfo?.username}/>
                         </li>
-                    ))}
+                    )) : 
+                    
+                    userhandle?.following?.map((followings) => (
+                        <li className="userprofile__followUser" key={followings?._id}>
+                            <UserListsModal username={followings?.username} userId={followings?._id} isCurrentUser={followings?.username === userInfo?.username}/>
+                        </li>
+                    ))  
+                    }
                 </section>
-        </ul>
-        ) : showFollowingsModal && (
-            <ul className='userprofile__followLists'>
-            <section className='userprofile__followList'>
-                <section className='userprofile__followHeader'>
-                <span>followings</span>
-                <Button
-                    icon={<RxCross2 />}
-                    onClick={() => setShowFollowingsModal(false)}
-                />
-                </section>
-                <hr />
-                {user?.following?.length === 0 && <p>no followings found</p>}
-                {user?.following?.map((following) => (
-                    <li className="userprofile__followUser" key={following?._id}>
-                        <UserListsModal userId={following?._id} username={following?.username} isCurrentUser={following?.username === userInfo?.username}/>
-                    </li>
-                ))}
-            </section>
         </ul>
         )}
-
+    
 
     </div>
   )

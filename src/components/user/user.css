@@ -96,13 +96,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
-/* .user__uploadMedia{
+.user__uploadMedia{
     width: 100%;
     position: relative;
     overflow: hidden;
-} */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
 
 .user__mediaFile{
     position: absolute;

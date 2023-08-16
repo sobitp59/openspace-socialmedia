@@ -71,17 +71,14 @@ const   CreatePost = ({postBox, postBoxref}) => {
         )}
 
       <section className='createpost__buttons'>
-        <Button 
-          icon={<BsEmojiSmileFill/>}
-        />
         
         <section className='createpost__uploadmedia'>
-          <Button 
-            icon={<BiSolidImageAdd />}
-          />
+          <BiSolidImageAdd className='upload__icons'/>
           <input type="file" accept='/images' name='mediaURL' onChange={uploadMedia} className='createpost__inputmedia'/>
         </section>
 
+        <BsEmojiSmileFill className='upload__icons'/>
+        
         <Button 
           label={mediaUploading ? 'please wait...' : 'POST'}
           onClick={() => addPost(postData, token)}

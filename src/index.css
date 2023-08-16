@@ -28,6 +28,10 @@ a{
   color: black;
 }
 
+.upload__icons{
+  color: var(--background-primary-CTA);
+}
+
 :root{
   /* THEME-LIGHT */
   --background-primary-color : #eff8e2;

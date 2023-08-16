@@ -124,15 +124,16 @@ const User = ({isCurrentuser, username, createdAt, userId, postData, userNotStyl
             </section>
             <section className='user__updateBtns'>
               <section className='user__uploadUserMedia'>
+                
                 <section className='user__uploadMedia'>
-                  <Button 
-                    icon={<BiSolidImageAdd />}
-                  />
+                  <BiSolidImageAdd  className='upload__icons'/>
                   <input type='file' onChange={uploadMedia} name='mediaURL' accept='/image' className='user__mediaFile'/>
                 </section>
-                <Button 
-                  icon={<BsFillEmojiSmileFill/>}
-                />
+
+                <section>
+                <BsFillEmojiSmileFill className='upload__icons'/>
+                </section>
+
               </section>
               <section className='user__actionBtns'>
                 <Button onClick={() => updatePostHandler(postData.postId, userPostData,token, setShowEditPost )} label={imageUploading ? 'please wait...' : 'update'} disabled={imageUploading}/>

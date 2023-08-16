@@ -16,8 +16,7 @@ const Post = ({postId, content, comments, mediaURL, username, likes, createdAt, 
   const {users, likePostHandler, dislikePostHandler, bookmarks, postBookmark, reomveBookmark, hideShowCommentBox} = useData();
   const {currentUser : {userInfo}} = useAuth();
   const {currentUser : {token}} = useAuth();
-  // const {firstName, lastName, avatarUrl} = users?.find((user) => user?.username === username);
-  // console.log(firstName, lastName, avatarUrl)
+
 
 
   const isPostAlreadyLiked = likes?.likedBy?.find((user) => user?.username === userInfo?.username );
