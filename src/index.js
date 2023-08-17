@@ -9,6 +9,7 @@ import { makeServer } from './server';
 
 import { AuthContextProvider } from './context/AuthContext';
 import { DataContextProvider } from './context/DataContext';
+import { ThemeContextProvider } from './context/ThemeContext';
 
 // Call make Server
 makeServer()
@@ -17,11 +18,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+      <ThemeContextProvider>
       <AuthContextProvider>
         <DataContextProvider>
           <App />
         </DataContextProvider>
       </AuthContextProvider>
+      </ThemeContextProvider>
     </Router>
   </React.StrictMode>
 );

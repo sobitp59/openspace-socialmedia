@@ -1,6 +1,7 @@
 .editprofile{
     width: 25%;
-    background: white;
+    background: var(--background-primary-color);
+
     border-radius: 0.5rem;
 
     display: flex;
@@ -14,6 +15,7 @@
     transform: translate(-50%, -50%);
     z-index: 1000;
     outline: 2px solid var(--background-secondary-CTA);
+    color: var(--text-color-primary);
 }
 
 .editprofile > p {
@@ -61,6 +63,8 @@
     border: none;
     outline: none;
     cursor: pointer;
+    background: transparent;
+    color: var(--text-color-primary);
 }
 
 .editprofileForm__label > p{

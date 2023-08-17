@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import './App.css';
 import Comment from "./components/commentbox/Comment";
@@ -7,6 +7,8 @@ import Header from './components/header/Header';
 import RequiresAuth from "./components/requiresauth/RequiresAuth";
 import { useAuth } from "./context/AuthContext";
 import { useData } from "./context/DataContext";
+import { useTheme } from "./context/ThemeContext";
+import './index.css';
 import Bookmark from './pages/bookmark/Bookmark';
 import Explore from './pages/explore/Explore';
 import Home from './pages/home/Home';
@@ -22,7 +24,7 @@ import UserPage from "./pages/userpage/UserPage";
 function App() {
   const {currentUser : {token}} = useAuth();
   const {showCommentBox, showPostBox, hideShowPostBox} = useData();
-
+  const {theme} = useTheme();
   const postBoxref = useRef();
 
 
@@ -33,11 +35,11 @@ function App() {
     }
   }
   document.addEventListener('mousedown', closeLikeBy)
-}, [])
+  }, []);
 
 
   return (
-    <div className='app'>
+    <div className={`app ${theme}`}>
 
 
 

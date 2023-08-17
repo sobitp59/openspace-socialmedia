@@ -1,20 +1,30 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { MdColorLens } from 'react-icons/md';
+import { RxCross2 } from 'react-icons/rx';
+import THEMEDARK from "../../assets/images/theme-dark.png";
+import THEMEGRAY from "../../assets/images/theme-gray.png";
+import THEMEGREEN from "../../assets/images/theme-green.png";
+import THEMELIGHT from "../../assets/images/theme-light.png";
+import THEMEORANGE from "../../assets/images/theme-orange.png";
+import THEMERED from "../../assets/images/theme-red.png";
 import { useAuth } from '../../context/AuthContext';
 import { useData } from '../../context/DataContext';
+import { useTheme } from '../../context/ThemeContext';
 import Avatar from '../avatar/Avatar';
 import Button from '../button/Button';
-import User from '../user/User';
 import './header.css';
 
+
 const Header = () => {
-  const searchedBoxRef = useRef();
-
-  const {userLogout, currentUser : {userInfo}}= useAuth();
-  const {users}= useData();
-
-  const userDefault = userInfo?.firstName?.charAt(0)?.toUpperCase();
-
   const [query, setQuery] = useState('');
+  const searchedBoxRef = useRef();
+  const themeRef = useRef();
+  const [showThemes, setShowThemes] = useState(false);
+
+  const {users}= useData();
+  const {userLogout, currentUser : {userInfo}}= useAuth();
+  const {changeTheme, theme} = useTheme();
+  
   const searchedUsers = users?.filter(({firstName, lastName, username}) => (firstName + lastName)?.toLowerCase()?.includes(query?.toLowerCase()) || username?.toLowerCase()?.includes(query?.toLowerCase()));
 
   useEffect(() => {
@@ -28,6 +38,19 @@ const Header = () => {
     document.addEventListener('mousedown', closeSearchBox)
 
     return () => document.removeEventListener('mousedown', closeSearchBox)
+  }, [])
+  
+  useEffect(() => {
+
+    const closeTheme = (e) => {
+      if(!themeRef?.current?.contains(e?.target)){
+        setShowThemes(false)
+      }
+    }
+
+    document.addEventListener('mousedown', closeTheme)
+
+    return () => document.removeEventListener('mousedown', closeTheme)
   }, [])
 
   return (
@@ -47,12 +70,10 @@ const Header = () => {
             />
             
             <Button 
-              label={'light/dark'}
+              label={'theme '}
+              icon={<MdColorLens />}
+              onClick={() => setShowThemes(prev => !prev)}
             />
-            {/* <span className='header__profile'>
-            {!userInfo?.avatarUrl ? <section className='header__avatar'>{userDefault}</section> : <img className='header__avatar' src={userInfo?.avatarUrl} alt={`avatar of ${userInfo?.firstName}`} /> }
-              
-            </span> */}
         </section>
 
           {query?.length > 0 && (
@@ -66,6 +87,41 @@ const Header = () => {
                   />
                 )}
             </ul>
+          )}
+
+          {showThemes && (
+            <section className='theme-options'>
+              <div className="theme-div">
+                <section className='theme-header'>
+                  <h1>choose theme</h1>
+                  <Button 
+                    icon={<RxCross2 />}
+                    onClick={() =>  setShowThemes(false)}
+                  />
+                </section>
+                
+                <section ref={themeRef} className='theme-lists'>
+                  <article className={theme ===  'theme-dark' ? 'theme-option active-theme': 'theme-option'} onClick={() => changeTheme('theme-dark', setShowThemes)}>
+                    <img src={THEMEDARK} alt="theme-dark-option" />
+                  </article>
+                  <article className={theme ===  'theme-light' ? 'theme-option active-theme': 'theme-option'} onClick={() => changeTheme('theme-light', setShowThemes)}>
+                    <img src={THEMELIGHT} alt="theme-light-option" />
+                  </article>
+                  <article className={theme ===  'theme-green' ? 'theme-option active-theme': 'theme-option'} onClick={() => changeTheme('theme-green', setShowThemes)}>
+                    <img src={THEMEGREEN} alt="theme-green-option" />
+                  </article>
+                  <article className={theme ===  'theme-red' ? 'theme-option active-theme': 'theme-option'} onClick={() => changeTheme('theme-red', setShowThemes)}>
+                    <img src={THEMERED} alt="theme-red-option" />
+                  </article>
+                  <article className={theme ===  'theme-gray' ? 'theme-option active-theme': 'theme-option'} onClick={() => changeTheme('theme-gray', setShowThemes)}>
+                    <img src={THEMEGRAY} alt="theme-gray-option" />
+                  </article>
+                  <article className={theme ===  'theme-orange' ? 'theme-option active-theme': 'theme-option'} onClick={() => changeTheme('theme-orange', setShowThemes)}>
+                    <img src={THEMEORANGE} alt="theme-orange-option" />
+                  </article>
+                </section>
+              </div>
+          </section>
           )}
     </div>
   )

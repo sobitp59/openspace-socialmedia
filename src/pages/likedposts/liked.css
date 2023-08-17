@@ -8,6 +8,8 @@
 .likedposts h2{
     text-align: left;
     padding: 1.5rem 0;
+    color: var(--background-primary-CTA);
+
 }
 
 .likedposts__lists{

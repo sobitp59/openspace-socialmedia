@@ -6,6 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 
 import { useAuth } from '../../context/AuthContext';
 import { useData } from '../../context/DataContext';
+import { useTheme } from '../../context/ThemeContext';
 import Avatar from '../avatar/Avatar';
 import Button from '../button/Button';
 import "./createpost.css";
@@ -15,6 +16,7 @@ const   CreatePost = ({postBox, postBoxref}) => {
   const {currentUser : {userInfo, token}} = useAuth();
   const [showEmojiBox, setShowEmojiBox] = useState(false);
   const {hideShowPostBox, addPost, postData, setPostContent, removeMediaFromUploadPost, addEmoji} = useData();
+  const {theme} = useTheme();
   const emojiRef = useRef();
 
   const uploadMedia = async (e) => {
@@ -100,7 +102,7 @@ const   CreatePost = ({postBox, postBoxref}) => {
 
         {showEmojiBox && 
           <section ref={emojiRef} className='upload__emoji'>
-            <EmojiPicker onEmojiClick={(e) => addEmoji(e?.emoji)} width={'100%'} height={300}/>
+            <EmojiPicker onEmojiClick={(e) => addEmoji(e?.emoji)} width={'100%'} height={300} Theme={theme === 'theme-dark' ? 'dark' : 'light'}/>
           </section>
         }
       </div>

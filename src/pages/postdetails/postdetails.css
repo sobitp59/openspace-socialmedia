@@ -120,6 +120,8 @@
     resize: none;
     border: none;
     padding: 0.3rem 0.5rem;
+    background: transparent;
+    color: var(--text-color-primary);
 }
 
 .postdetailsCommentBox button{

@@ -6,10 +6,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    color: var(--text-color-secondary);
 
-    border: 2px solid;
 }
 
-.signup__logo span{
+.signup__logo span, .signup__link{
     color: var(--background-primary-CTA);
 }

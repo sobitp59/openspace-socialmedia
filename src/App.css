@@ -1,5 +1,93 @@
+
 .app{
   width: 100%;
   height: 100vh;
   position: relative;
+  background: var(--background-primary-color); 
+  color : var(--text-color-primary);
 }
+
+
+
+
+body{
+  width: 100%;
+  height: 100vh;
+}
+
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  
+  background: transparent; 
+}
+
+a{
+  text-decoration: none;
+  color: var(--text-color-primary);
+}
+
+.upload__icons{
+  color: var(--background-primary-CTA);
+  cursor: pointer;
+}
+
+::placeholder{
+  color: var(--text-color-primary);
+  opacity: 1;
+}
+
+:root{
+  /* THEME-LIGHT */
+  --background-primary-color : rgb(34, 0, 56);
+  --background-secondary-color : #f4f7ef;
+  --text-color-primary : #23022E;
+  /* --text-color-primary : #f7f7f7; */
+  --text-color-secondary : #CECFC7;
+  --background-primary-CTA : #9234FF;
+  --background-secondary-CTA : #7d0cff21;
+}
+
+
+.theme-light{
+  --background-primary-color : #ffffff;
+  --text-color-primary : rgb(34, 0, 56);
+}
+
+.theme-dark{
+  --background-primary-color : rgb(34, 0, 56);
+  --text-color-primary :  #f4f7ef;
+}
+
+.theme-gray{
+  --background-primary-color : #adb5bd;
+  --text-color-primary :  #212529;
+  --background-primary-CTA : #212529;
+  --background-secondary-CTA : #49505760;
+}
+
+.theme-red{
+  --background-primary-color : #fdfcdc;
+  --text-color-primary :  #00afb9;
+  --background-primary-CTA : #f07167;
+  --background-secondary-CTA : #fed9b77c;
+}
+
+.theme-green{
+  --background-primary-color : #f8ffe3;
+  --text-color-primary :  #132a13;
+  --background-primary-CTA : #70e000;
+  --background-secondary-CTA : #9ef01a44;
+}
+
+.theme-orange{
+  --background-primary-color : #fff5eb;
+  --text-color-primary :  #132a13;
+  --background-primary-CTA : #ff8800;
+  --background-secondary-CTA : #ff7b0054;
+}
+
+/* .theme- */

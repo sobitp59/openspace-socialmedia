@@ -5,7 +5,7 @@
     align-items: center;
     padding: 1.5rem 2rem;
     height: 13vh;
-    background: white;
+    background: var(--background-primary-color);
     border-bottom: 2px solid var(--background-primary-CTA);
 
 }
@@ -34,7 +34,7 @@
 .header__searchUsers{
     width: 25%;
     max-height: 80vh;
-    background: white;
+    background: var(--background-primary-color);
     padding: 1rem;
     border-radius: 0.5rem;
     outline: 2px solid var(--background-secondary-CTA);
@@ -55,13 +55,13 @@
 .header__search input{
     width: 350px;
     padding: 0.8rem 1.5rem;
-    border: 1.5px solid var(--background-secondary-CTA);
     border-radius: 2rem;
-    outline: none;
+    outline: 2px solid var(--background-primary-CTA);
+    background: transparent;
+    border: none;
 }
 
 .header__search input:hover{
-    outline: 2px solid var(--background-primary-CTA);
     outline-offset: 2px;
 }
 
@@ -70,6 +70,73 @@
 }
 
 .header__logo span{
-    color: rgb(136, 72, 255);
+    color: var(--background-primary-CTA) ;
     font-weight: bolder;
+}
+
+/* THEME */
+.theme-options{
+    position: fixed;
+    top: 0%;
+    left: 0%; 
+    transform: translate(-0%, -0%);
+    width: 100%;
+    height: 100vh;
+    background: var(--background-secondary-CTA);
+    backdrop-filter: blur(10px);
+    z-index: 1400;
+}
+
+.theme-div{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+
+.theme-lists{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-content: center;
+    gap: 2rem;
+}
+
+.theme-option{
+    width : 100%;
+    border-radius : 0.5rem;
+}
+
+.theme-option:active, .theme-option:hover{
+    outline: 3px solid var(--background-primary-CTA);
+    outline-offset: 3px;
+}
+
+.theme-header{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.theme-option{
+    width: 100%;
+    display: grid;
+    place-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.theme-option img{
+    width : 100%;
+    height: 100%;
+    border-radius : 0.5rem;
+}
+
+.active-theme{
+    outline :4px solid white;
+    outline-offset: 4px;
 }

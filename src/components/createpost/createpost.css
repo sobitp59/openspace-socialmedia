@@ -6,6 +6,8 @@
     padding: 1rem;
     margin: 2rem 0;
     border-radius: 0.5rem;
+    background: var(--background-primary-color);
+
 }
 
 
@@ -13,7 +15,7 @@
 .createpost--postBox{
     width: 500px;
     position: absolute;
-    background: white;
+    background: var(--background-primary-color);
     padding: 1rem;
     border-radius: 0.5rem;
     outline: 2px solid rgba(5, 0, 51, 0.096);
@@ -53,6 +55,8 @@
     resize: none;
     outline: none;
     border: none;
+    background: transparent;
+    color: var(--text-color-primary);
 }
 
 .createpost__message{

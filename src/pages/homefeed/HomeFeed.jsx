@@ -8,8 +8,6 @@ import "./homefeed.css"
 const HomeFeed = () => {
   const {posts} = useData();
 
-  console.log(posts)
-
   return (
     <div className='homefeed'>
         <CreatePost />

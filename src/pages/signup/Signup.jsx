@@ -11,7 +11,7 @@ const Signup = () => {
             
             <h2>get started</h2>
 
-            <p>already have an account? <NavLink to={"/login"}>sign in</NavLink></p>
+            <p>already have an account? <NavLink className='signup__link' to={"/login"}>sign in</NavLink></p>
 
             <SignupForm />
         </section>

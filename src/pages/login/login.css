@@ -6,12 +6,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-
-    border: 2px solid;
+    color: var(--text-color-secondary);
 }
 
 
-.login__section .login__logo span{
+.login__section .login__logo span, .login__link{
    color: var(--background-primary-CTA);
 }
 

@@ -12,7 +12,7 @@ const Login = () => {
             
             <h2>welcome back</h2>
 
-            <p>new to openspace? <NavLink to={"/signup"}>create an account</NavLink></p>
+            <p>new to openspace? <NavLink className="login__link" to={"/signup"}>create an account</NavLink></p>
 
             <LoginForm />
           </section>

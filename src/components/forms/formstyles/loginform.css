@@ -4,6 +4,7 @@
     flex-direction: column;
     gap: 0.5rem;
     position: relative;
+    margin-top: 1.5rem;
 }
 
 .loginForm__label{
@@ -16,11 +17,10 @@
     margin-bottom: 0.5rem;
     border: none;
     padding: 0.7rem;
-    outline: 2px solid var(--background-secondary-CTA);
-    border-radius: 0.2rem;
-}
-.loginForm__label input:active, .loginForm__label input:hover{
+    border-radius: 3rem;
+    background: transparent;
     outline: 2px solid var(--background-primary-CTA);
+    color: var(--text-color-primary);
 }
 
 .loginForm__users{
@@ -31,7 +31,8 @@
     max-height: 70vh;
     transform: translate(-50%, -50%);
     overflow-y: scroll;
-    background: white;
+    background: var(--background-primary-color);
+
     padding: 1.5rem;
     border-radius: 0.5rem;
     outline: 2px solid  var(--background-secondary-CTA);

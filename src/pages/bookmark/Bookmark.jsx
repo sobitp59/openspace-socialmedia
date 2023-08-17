@@ -1,4 +1,5 @@
 import React from 'react';
+import "../../App.css";
 import Post from '../../components/post/Post';
 import { useData } from '../../context/DataContext';
 import "./bookmark.css";
