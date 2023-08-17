@@ -101,6 +101,11 @@ export const userDataReducer = (state, {type, payload}) => {
         case "SET_LATEST_POSTS": {
             return {...state, posts : payload }
         }
+
+        case "ADD_EMOJI_CONTENT": {
+            return {...state,  postData : {...state?.postData, content : state?.postData?.content + payload
+            } }
+        }
         
 
 

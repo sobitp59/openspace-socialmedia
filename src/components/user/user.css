@@ -149,3 +149,8 @@
     align-items: center;
     gap: 1rem;
 }
+
+.upload__emoji{
+    width : 100%;
+    margin-top: 1rem;
+}

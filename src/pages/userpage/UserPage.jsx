@@ -55,6 +55,7 @@ const UserPage = () => {
             }
         }
         document.addEventListener('mousedown', closeUserFollowModal)
+        return () => document.removeEventListener('mousedown', closeUserFollowModal)
     }, []);
 
     return (
@@ -143,16 +144,16 @@ const UserPage = () => {
                     </section>
 
                     
-                    {(showUserConnections?.connectionType === 'FOLLOWERS' && userhandle?.followers?.length === 0) ? <p>no followers found</p> : (showUserConnections?.connectionType === 'FOLLOWINGS' && userhandle?.following?.length === 0) &&  <p>no followings found</p>} 
+                    {(showUserConnections?.connectionType === 'FOLLOWERS' && user?.followers?.length === 0) ? <p>no followers found</p> : (showUserConnections?.connectionType === 'FOLLOWINGS' && user?.following?.length === 0) &&  <p>no followings found</p>} 
 
                     {showUserConnections?.connectionType === 'FOLLOWERS' ? 
-                    userhandle?.followers?.map((follower) => (
+                    user?.followers?.map((follower) => (
                         <li className="userprofile__followUser" key={follower?._id}>
                             <UserListsModal username={follower?.username} userId={follower?._id} isCurrentUser={follower?.username === userInfo?.username}/>
                         </li>
                     )) : 
                     
-                    userhandle?.following?.map((followings) => (
+                    user?.following?.map((followings) => (
                         <li className="userprofile__followUser" key={followings?._id}>
                             <UserListsModal username={followings?.username} userId={followings?._id} isCurrentUser={followings?.username === userInfo?.username}/>
                         </li>

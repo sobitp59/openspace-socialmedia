@@ -110,6 +110,13 @@ export const DataContextProvider = ({children}) => {
             }
         })
     }
+    
+    const addEmoji = (emoji) => {
+        dispatch({
+            type : "ADD_EMOJI_CONTENT",
+            payload : emoji,
+        })
+    }
 
     const removeMediaFromUploadPost = () => {
         dispatch({
@@ -424,7 +431,8 @@ export const DataContextProvider = ({children}) => {
         deletePostHandler,
         removeMediaFromUploadPost,
         showTrendingPosts,
-        showLatestPosts
+        showLatestPosts,
+        addEmoji
     }
 
     return(

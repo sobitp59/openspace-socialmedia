@@ -30,6 +30,7 @@ a{
 
 .upload__icons{
   color: var(--background-primary-CTA);
+  cursor: pointer;
 }
 
 :root{

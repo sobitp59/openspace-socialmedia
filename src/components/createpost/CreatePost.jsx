@@ -1,3 +1,4 @@
+import EmojiPicker from 'emoji-picker-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { BiSolidImageAdd } from "react-icons/bi";
 import { BsEmojiSmileFill } from "react-icons/bs";
@@ -12,7 +13,9 @@ import "./createpost.css";
 const   CreatePost = ({postBox, postBoxref}) => {
   const [mediaUploading, setMediaUploading] = useState(false);
   const {currentUser : {userInfo, token}} = useAuth();
-  const {hideShowPostBox, addPost, postData, setPostContent, removeMediaFromUploadPost} = useData();
+  const [showEmojiBox, setShowEmojiBox] = useState(false);
+  const {hideShowPostBox, addPost, postData, setPostContent, removeMediaFromUploadPost, addEmoji} = useData();
+  const emojiRef = useRef();
 
   const uploadMedia = async (e) => {
     setMediaUploading(true);
@@ -35,11 +38,20 @@ const   CreatePost = ({postBox, postBoxref}) => {
     }
   }
 
-  
+  useEffect(() => {
+    const closeEmojiModal = (e) => {
+      if(!emojiRef?.current?.contains(e?.target)){
+        setShowEmojiBox(false);
+      }
+    }
+
+    document.addEventListener('mousedown', closeEmojiModal);
+    return () => document.removeEventListener('mousedown', closeEmojiModal);
+  }, [])
 
   return (
-    <div ref={postBoxref} className={postBox ? 'createpost--postBox' : 'createpost'}>
-      
+    <div className='createPost'>
+      <div ref={postBoxref} className={postBox ? 'createpost--postBox' : 'createpost'}>
         {postBox && (
           <section className='createpost__header'>
             <p><strong>new post</strong></p>
@@ -77,7 +89,7 @@ const   CreatePost = ({postBox, postBoxref}) => {
           <input type="file" accept='/images' name='mediaURL' onChange={uploadMedia} className='createpost__inputmedia'/>
         </section>
 
-        <BsEmojiSmileFill className='upload__icons'/>
+        <BsEmojiSmileFill className='upload__icons' onClick={() => setShowEmojiBox(prev => !prev)}/>
         
         <Button 
           label={mediaUploading ? 'please wait...' : 'POST'}
@@ -85,7 +97,13 @@ const   CreatePost = ({postBox, postBoxref}) => {
           disabled={mediaUploading}
         />
       </section>
-    
+
+        {showEmojiBox && 
+          <section ref={emojiRef} className='upload__emoji'>
+            <EmojiPicker onEmojiClick={(e) => addEmoji(e?.emoji)} width={'100%'} height={300}/>
+          </section>
+        }
+      </div>
     </div>
   )
 }

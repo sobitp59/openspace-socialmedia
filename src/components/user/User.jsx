@@ -1,3 +1,5 @@
+import EmojiPicker from 'emoji-picker-react';
+
 import React, { useEffect, useRef, useState } from 'react';
 import { BiSolidImageAdd } from "react-icons/bi";
 import { BsFillEmojiSmileFill } from "react-icons/bs";
@@ -15,6 +17,8 @@ import "./user.css";
 const User = ({isCurrentuser, username, createdAt, userId, postData, userNotStyle}) => {
   const [showUserPostBox, setShowUserPostBox] = useState(false);    
   const [showEditPost, setShowEditPost] = useState(false);
+  const [showEmojiBox, setShowEmojiBox] = useState(false);
+
    
   const [userPostData, setUserPostData] = useState({
     content : postData?.content,
@@ -24,7 +28,8 @@ const User = ({isCurrentuser, username, createdAt, userId, postData, userNotStyl
 
   const postBoxRef = useRef();
   const editPostBoxRef = useRef();
-
+  const emojiRef = useRef();
+ 
   const {users, followUserHandler, unfollowUserHandler, updatePostHandler, deletePostHandler} = useData();
   const {currentUser :  {token, userInfo}} = useAuth();
 
@@ -69,7 +74,16 @@ const User = ({isCurrentuser, username, createdAt, userId, postData, userNotStyl
     return () => document.removeEventListener('mousedown', closePostBox)
   }, [])
   
+  useEffect(() => {
+    const closeEmojiModal = (e) => {
+      if(!emojiRef?.current?.contains(e?.target)){
+        setShowEmojiBox(false);
+      }
+    }
 
+    document.addEventListener('mousedown', closeEmojiModal);
+    return () => document.removeEventListener('mousedown', closeEmojiModal);
+  }, [])
                                
 
   return (
@@ -131,7 +145,7 @@ const User = ({isCurrentuser, username, createdAt, userId, postData, userNotStyl
                 </section>
 
                 <section>
-                <BsFillEmojiSmileFill className='upload__icons'/>
+                  <BsFillEmojiSmileFill className='upload__icons' onClick={() => setShowEmojiBox(prev => !prev)}/>
                 </section>
 
               </section>
@@ -143,7 +157,13 @@ const User = ({isCurrentuser, username, createdAt, userId, postData, userNotStyl
                 } }/>
               </section>
             </section>
-          </section>
+
+              {showEmojiBox && 
+              <section ref={emojiRef} className='upload__emoji'>
+                <EmojiPicker onEmojiClick={(e) => setUserPostData((prev) => ({...prev, content : prev?.content + e?.emoji}))} width={'100%'} height={300}/>
+              </section>
+              }
+            </section>
         } 
     </div>
   )
