@@ -1,7 +1,6 @@
 # [OpenSpace](https://openspace-socialmedia.vercel.app/) : A social-mdeia app for anime fans
 
-## [Here is quick video walkthrough of the application 🎥](https://www.loom.com/share/66fefc4a82864c1cb23c8afe1f0f70a1?sid=9303b7e2-b49a-4d93-8915-42cc0996c8ce)
-<div style="position: relative; padding-bottom: 56.782334384858046%; height: 0;"><iframe src="https://www.loom.com/embed/66fefc4a82864c1cb23c8afe1f0f70a1?sid=311fb009-374a-47b3-b40b-6f7b42fa55fa" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+[![Video](https://cdn.loom.com/sessions/thumbnails/66fefc4a82864c1cb23c8afe1f0f70a1-with-play.gif)](https://www.loom.com/embed/66fefc4a82864c1cb23c8afe1f0f70a1?sid=311fb009-374a-47b3-b40b-6f7b42fa55fa)
 
 ## Install and Run Locally
 ```js
